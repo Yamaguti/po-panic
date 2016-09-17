@@ -7,7 +7,7 @@ function update(dt){
 
 
 var Game = {}
-function gameStart() {
+Game.gameStart = function gameStart() {
     newBackground()
 
     var popup = newPopup()
@@ -18,6 +18,3 @@ function gameStart() {
     Revenue.createText()
     Hud.createRevenueBar()
 }
-
-
-Game.gameStart = gameStart
