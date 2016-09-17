@@ -23,12 +23,18 @@ function waitForStart() {
 requestAnimationFrame(waitForStart)
 
 
-
 function setupPosLoad() {
     var text = new PIXI.Text('This is a text',{fontFamily : 'gameFont', fontSize: 24, align : 'center', });
     text.position.x = centerX
     text.position.y = centerY
     stage.addChild(text)
+}
+
+
+function update(dt){
+    // console.log(dt)
+    // just for fun, lets rotate mr rabbit a little
+    // bunny.rotation += (0.1 * dt/1000);
 }
 
 
@@ -65,10 +71,21 @@ function setupPreLoad() {
 
     requestAnimationFrame( animate );
 
-    function animate() {
+    var lastUpdateTime = 0;
+    var logicDt = 1000/60;
+    var lag = 0;
+
+    function animate(currentUpdateTime) {
         requestAnimationFrame( animate );
-        // just for fun, lets rotate mr rabbit a little
-        bunny.rotation += 0.1;
+        // console.log(testStuff)
+        dt = currentUpdateTime - lastUpdateTime;
+        lag += dt;
+        while (lag > logicDt){
+            // gambs
+            update(logicDt, bunny);
+            lag -= logicDt;
+        }
+        bunny.rotation += 0.1
 
         // render the stage
         renderer.render(stage);
