@@ -2,6 +2,7 @@
 function update(dt){
     TimerManager.update()
     Revenue.update(dt)
+    Hud.updateRevenueBar()
 }
 
 
@@ -13,6 +14,9 @@ function gameStart() {
     popup.showPopup()
 
     loader.load();
+
+    Revenue.createText()
+    Hud.createRevenueBar()
 }
 
 
