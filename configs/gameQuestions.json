@@ -62,31 +62,31 @@
 		},
 
 		{
-			"question" : "",
+			"question" : "The new Corona update has broken all of the games! What do we do?",
 			"options" : [
 				{
-					"text" : "",
+					"text" : "Get Devs to fix it",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" : ""
+					"resultGood" : "The devs decided to wait before doing the fixes and started working on features as if the error hadn't hapened. Corona issued a fix later that solved the problems.",
+					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Corona issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
 				},
 				{
-					"text" : "",
+					"text" : "Ask Pizza for a fix!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" : ""
+					"resultGood" : "It took a lot of work, but Pizza triumphed against Corona. The studio bought pizza for everyone.",
+					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week Corona fixed the problem."
 				},
 				{
-					"text" : "",
+					"text" : "Let's change to Unity!",
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" : ""
+					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners! Corona was fixed later, so half of the teams went back to Corona.",
+					"resultBad" : "There were some problems and Corona issued a fix a week later, so everyone just went back to Corona."
 				}
 			]
 		}
