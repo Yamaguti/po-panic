@@ -4,8 +4,9 @@
     src: url(fonts/Mecha_Condensed.woff);
 }
 
-div {
-    font-family: gameFont;
+@font-face {
+    font-family: gameFontBold;
+    src: url(fonts/Mecha_Condensed_Bold.woff);
 }
 
 body {
