@@ -61,7 +61,7 @@ HomeScreen.setGameAvailable = function() {
     })
 
     button.position.x = centerX
-    button.position.y = centerY
+    button.position.y = screenBottom - 80
     stage.addChild(button);
 }
 
