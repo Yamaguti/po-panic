@@ -15,16 +15,6 @@ function preLoadFont(fontName) {
 
 
 function setupPosLoad() {
-    var text = new PIXI.Text('This is a text',{fontFamily : 'gameFont', fontSize: 24, align : 'center', });
-    text.position.x = centerX
-    text.position.y = centerY
-    stage.addChild(text)
-
-    var text = new PIXI.Text('This is a bold text',{fontFamily : 'gameFontBold', fontSize: 24, align : 'center', });
-    text.position.x = centerX
-    text.position.y = centerY + 100
-    stage.addChild(text)
-
     Revenue.createText()
     HomeScreen.setGameAvailable()
 }
