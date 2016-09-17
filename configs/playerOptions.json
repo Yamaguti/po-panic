@@ -1,6 +1,6 @@
 {
-	"playerOptions" : {
-		"round1" : {
+	"playerOptions" : [
+		{
 			"question" : "You have a situation!",
 			"options" : [
 				{
@@ -29,5 +29,5 @@
 				}
 			]
 		},
-	}
+	]
 }

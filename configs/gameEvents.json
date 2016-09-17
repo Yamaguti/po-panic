@@ -1,18 +1,18 @@
 {
-	"gameEvents" : {
-		"January" : {
+	"gameEvents" : [
+		{
 			"label" : "January Event",
 			"optionALabel" : "Do this",
 			"optionBLabel" : "Do that",
 			"optionARewardRevenue" : "5",
 			"optionBRewardRevenue" : "-2"
 		},
-		"February" : {
+		{
 			"label" : "February Event",
 			"optionALabel" : "Do this",
 			"optionBLabel" : "Do that",
 			"optionARewardRevenue" : "5",
 			"optionBRewardRevenue" : "-2"
-		},
-	}
+		}
+	]
 }
