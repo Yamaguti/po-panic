@@ -7,7 +7,7 @@ Game.newGame = function newGame() {
     Game.background = background
     stage.addChild(background);
 
-    // ChoicesScreen.showPlayerOptions(0)
+    ChoicesScreen.showPlayerOptions(0)
 
     loader.load();
 
