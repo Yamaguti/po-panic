@@ -7,7 +7,7 @@ Game.newGame = function newGame() {
     Game.background = background
     stage.addChild(background);
 
-    ChoicesScreen.showPlayerOptions(0)
+    // ChoicesScreen.showPlayerOptions(0)
 
     loader.load();
 
@@ -19,6 +19,10 @@ Game.newGame = function newGame() {
     Revenue.setUpdate()
 
     Game.elapsedTime = 0
+
+    for(i = 1; i < 5; i++) {
+        Devguy.new(i)   
+    }
 
     // Game.background.fadeOut()
 }
