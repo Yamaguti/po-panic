@@ -1,21 +1,36 @@
 
 
-function showPopup(msg) {
-    var texture = PIXI.Texture.fromImage('assets/background.png');
+function showPopup(popup) {
+    function animatePopup() {
+        popup.position.y -= 10
+
+        if (popup.position.y > centerY) {
+            requestAnimationFrame(animatePopup);
+        }
+    }
+    requestAnimationFrame(animatePopup);
+}
+
+
+function newPopup(msg) {
     // create a new Sprite using the texture
-    var background = new PIXI.Sprite(texture);
+    var texture = PIXI.Texture.fromImage('assets/options_popup.png');
+    var popup = new PIXI.Sprite(texture);
+    stage.addChild(popup)
 
     // center the sprite's anchor point
-    background.anchor.x = 0.5;
-    background.anchor.y = 0.5;
+    popup.anchor.x = 0.5;
+    popup.anchor.y = 0.5;
 
-    background.position.x = centerX
-    background.position.y = centerY
+    popup.position.x = centerX;
+    popup.position.y = centerY;
 
-    background.scale.x = 4
-    background.scale.y = 4
+    popup.position.y = screenBottom
 
-    // move the sprite to the center of the scree
-    stage.addChild(background);
+    popup.showPopup = function() {
+        showPopup(popup)
+    }
+
+    return popup
 }
 

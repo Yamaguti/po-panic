@@ -7,6 +7,9 @@ var screenHeight = 540
 var centerX = screenWidth/2
 var centerY = screenHeight/2
 
+var screenBottom = screenWidth
+var screenHeight = screenHeight
+
 var projectPath = "http://localhost:8000/"
 
 // create a renderer instance.

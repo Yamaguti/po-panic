@@ -44,7 +44,7 @@ function setupPreLoad() {
 
     // Add the renderer view element to the DOM
     document.body.appendChild(renderer.view);
-    requestAnimationFrame( animate );
+    requestAnimationFrame(animate);
 
     var lastUpdateTime = 0;
     var logicDt = 1000/60;
@@ -68,6 +68,9 @@ function setupPreLoad() {
     preLoadFont('gameFontBold')
 
     newBackground()
+
+    var popup = newPopup()
+    popup.showPopup()
 
     loader.load();
 }
