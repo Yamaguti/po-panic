@@ -38,7 +38,6 @@ var Hud = {
     getDate: function(days){
         for(i = 11; i >= 0; i--){
             if (days >= Hud.stupidConversionTable[i]){
-                console.log(days, Hud.stupidConversionTable[i])
                 return[days - Hud.stupidConversionTable[i] + 1, i]
             }
         }
