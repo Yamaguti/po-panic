@@ -1,7 +1,6 @@
 
 
 // Initialization
-
 function preLoadFont(fontName) {
     var text = new PIXI.Text('This is a dummy text, dont remove pls', {fontFamily : fontName, fontSize: 24, align : 'center', });
     stage.addChild(text)
@@ -68,9 +67,8 @@ function setupPreLoad() {
     preLoadFont('gameFont')
     preLoadFont('gameFontBold')
 
+    newBackground()
+
     loader.load();
 }
 
-
-
-showPopup()
