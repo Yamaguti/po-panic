@@ -15,6 +15,5 @@ function newBackground() {
     background.scale.x = 2
     background.scale.y = 2
 
-    // move the sprite to the center of the scree
     stage.addChild(background);
 }
