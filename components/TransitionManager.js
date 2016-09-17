@@ -32,7 +32,10 @@ function startTransition(object, originalParams) {
         if (currentValue < startTime + totalTime) {
             requestAnimationFrame(animationHandler);
 
-        } else {
+        } else { // end of transition
+            if (originalParams.onComplete) {
+                originalParams.onComplete()
+            }
             for (var param in animationParams) {
                 object[param] = animationParams[param]
             }
