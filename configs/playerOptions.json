@@ -1,0 +1,33 @@
+{
+	"playerOptions" : {
+		"round1" : {
+			"question" : "You have a situation!",
+			"options" : [
+				{
+					"text" : "This is the option A",
+					"risk" : "20",
+					"reward" : "10",
+					"time" : "5"
+				},
+				{
+					"text" : "This is the option B",
+					"risk" : "30",
+					"reward" : "15",
+					"time" : "5"
+				},
+				{
+					"text" : "This is the option C",
+					"risk" : "40",
+					"reward" : "20",
+					"time" : "5"
+				},
+				{
+					"text" : "This is the option D",
+					"risk" : "50",
+					"reward" : "30",
+					"time" : "5"
+				}
+			]
+		},
+	}
+}
