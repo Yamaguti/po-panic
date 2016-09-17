@@ -1,3 +1,4 @@
+#Instancia o arquivo Web e abre o Browser
 
 import os
 import time
