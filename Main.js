@@ -34,7 +34,9 @@ function setupPosLoad() {
 function update(dt){
     TimerManager.update()
     Revenue.update(dt)
+    Hud.updateRevenueBar()
 }
+
 
 
 function setupPreLoad() {

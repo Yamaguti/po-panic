@@ -31,11 +31,11 @@ HomeScreen.finish = function(callback){
         "time" : 500,
         "easing" : "inBack",
         "onComplete" : function() {
+            HomeScreen.background.destroy()
+            HomeScreen.playButton.destroy()
             if (callback) {
                 callback()
             }
-            HomeScreen.background.destroy()
-            HomeScreen.playButton.destroy()
         }
     })
 }
@@ -45,7 +45,7 @@ HomeScreen.finish = function(callback){
 HomeScreen.setGameAvailable = function() {
     var button = Button.newButton("assets/Home/bt_play.png", {
         "onRelease" : function() {
-            HomeScreen.finish(Game.gameStart)
+            HomeScreen.finish(Game.newGame)
         }
     })
 

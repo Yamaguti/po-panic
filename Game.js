@@ -1,14 +1,11 @@
 
-function update(dt){
-    TimerManager.update()
-    Revenue.update(dt)
-    Hud.updateRevenueBar()
-}
-
-
 var Game = {}
-Game.gameStart = function gameStart() {
-    newBackground()
+
+
+Game.newGame = function newGame() {
+    var background  = newBackground()
+    Game.background = background
+    stage.addChild(background);
 
     var popup = newPopup()
     popup.showPopup()
@@ -17,4 +14,6 @@ Game.gameStart = function gameStart() {
 
     Revenue.createText()
     Hud.createRevenueBar()
+
+    Game.background.fadeOut()
 }
