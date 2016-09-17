@@ -1,8 +1,10 @@
 
 
 function showPopup(popup) {
-    TransitionManager.startTransition(popup.position, 1000, {
+    TransitionManager.startTransition(popup.position, {
+        "time" : 1000,
         "y" : centerY,
+        "easing" : "outQuad",
     })
 }
 
@@ -18,8 +20,6 @@ function newPopup(msg) {
     popup.anchor.y = 0.5;
 
     popup.position.x = centerX;
-    popup.position.y = centerY;
-
     popup.position.y = screenBottom
 
     popup.showPopup = function() {
