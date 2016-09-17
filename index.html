@@ -1,14 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>pixi example</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #AAAAAA;
-        }
-    </style>
+    <title>Tapps Game Jam!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="pixi.js/bin/pixi.js"></script>
 </head>
 <body>
@@ -16,12 +10,12 @@
     var projectPath = "http://localhost:8000/"
 
     // create an new instance of a pixi stage
-    var container = new PIXI.Container();
+    var stage = new PIXI.Container();
 
     // create a renderer instance.
     var screenWidth  = 600
     var screenHeight = 600
-    var renderer = PIXI.autoDetectRenderer(screenWidth, screenHeight);
+    var renderer = PIXI.autoDetectRenderer(screenWidth, screenHeight, {backgroundColor : 0x1099bb});
 
 
     // Resizing renderer to center of browser window. Credits: http://www.html5gamedevs.com/topic/18406-how-to-center-stage-on-browser/
@@ -50,7 +44,7 @@
     bunny.position.x = 200;
     bunny.position.y = 150;
 
-    container.addChild(bunny);
+    stage.addChild(bunny);
 
     requestAnimationFrame( animate );
     function animate() {
@@ -62,7 +56,7 @@
         bunny.position.x += 01;
 
         // render the stage
-        renderer.render(container);
+        renderer.render(stage);
     }
 
 
