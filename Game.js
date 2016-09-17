@@ -1,26 +1,12 @@
 
-var appStart = TimerManager.getTime();
-var stage = new PIXI.Container();
 
-// create a renderer instance.
-var screenWidth  = 600
-var screenHeight = 600
+// Initialization
 
-var centerX = screenWidth/2
-var centerY = screenHeight/2
-
-var renderer = PIXI.autoDetectRenderer(screenWidth, screenHeight, {backgroundColor : 0x1099bb});
-var projectPath = "http://localhost:8000/"
-
-function waitForStart() {
-    var now = getTime()
-    if (now - appStart > 2000) {
-        setupPosLoad()
-    }
-    else
-        requestAnimationFrame( waitForStart );
+function preLoadFont(fontName) {
+    var text = new PIXI.Text('This is a dummy text, dont remove pls', {fontFamily : fontName, fontSize: 24, align : 'center', });
+    stage.addChild(text)
+    text.alpha = 0
 }
-requestAnimationFrame(waitForStart)
 
 
 function setupPosLoad() {
@@ -28,7 +14,13 @@ function setupPosLoad() {
     text.position.x = centerX
     text.position.y = centerY
     stage.addChild(text)
+
+    var text = new PIXI.Text('This is a bold text',{fontFamily : 'gameFontBold', fontSize: 24, align : 'center', });
+    text.position.x = centerX
+    text.position.y = centerY + 100
+    stage.addChild(text)
 }
+
 
 
 function update(dt){
@@ -37,7 +29,10 @@ function update(dt){
 
 
 function setupPreLoad() {
-    console.log("SETUP GAME");
+    // Prepare pos load elements, like fonts
+    TimerManager.startTimer(2000, function (){
+        setupPosLoad()
+    })
 
     // Resizing renderer to center of browser window. Credits: http://www.html5gamedevs.com/topic/18406-how-to-center-stage-on-browser/
     function resize() {
@@ -48,25 +43,8 @@ function setupPreLoad() {
     window.addEventListener('resize', resize);
 
 
-    // add the renderer view element to the DOM
+    // Add the renderer view element to the DOM
     document.body.appendChild(renderer.view);
-
-    // create a texture from an image path
-    var texture = PIXI.Texture.fromImage(projectPath + "bunny.png");
-
-    // create a new Sprite using the texture
-    var bunny = new PIXI.Sprite(texture);
-
-    // center the sprites anchor point
-    bunny.anchor.x = 0.5;
-    bunny.anchor.y = 0.5;
-
-    // move the sprite t the center of the screen
-    bunny.position.x = 200;
-    bunny.position.y = 150;
-
-    stage.addChild(bunny);
-
     requestAnimationFrame( animate );
 
     var lastUpdateTime = 0;
@@ -87,14 +65,12 @@ function setupPreLoad() {
         renderer.render(stage);
     }
 
-    var text = new PIXI.Text('This is a dummy text, dont remove pls', {fontFamily : 'gameFont', fontSize: 24, align : 'center', });
-    stage.addChild(text)
-    text.alpha = 0
+    preLoadFont('gameFont')
+    preLoadFont('gameFontBold')
 
     loader.load();
 }
 
 
-TimerManager.startTimer(3000, function(){
-    console.log("YAAAY")
-})
+
+showPopup()
