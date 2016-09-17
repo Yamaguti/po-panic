@@ -1,11 +1,5 @@
 
-function getTime() {
-    var date = new Date();
-    var now  = date.getTime();
-    return now
-}
-var appStart = getTime()
-
+var appStart = TimerManager.getTime();
 var stage = new PIXI.Container();
 
 // create a renderer instance.
@@ -20,7 +14,6 @@ var projectPath = "http://localhost:8000/"
 
 function waitForStart() {
     var now = getTime()
-    console.log(now, appStart, now-appStart)
     if (now - appStart > 2000) {
         setupPosLoad()
     }
@@ -87,3 +80,8 @@ function setupPreLoad() {
 
     loader.load();
 }
+
+
+TimerManager.startTimer(3000, function(){
+    console.log("YAAAY")
+})
