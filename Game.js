@@ -2,7 +2,7 @@
 function update(dt){
     TimerManager.update()
     Revenue.update(dt)
-    Hud.updateRevenueBar()
+    Hud.updateRevenueBar(dt)
 }
 
 
