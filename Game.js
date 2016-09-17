@@ -20,6 +20,7 @@ function setupPosLoad() {
     stage.addChild(text)
 
     Revenue.createText()
+    Hud.createRevenueBar()
 }
 
 
@@ -27,6 +28,7 @@ function setupPosLoad() {
 function update(dt){
     TimerManager.update()
     Revenue.update(dt)
+    Hud.updateRevenueBar()
 }
 
 
