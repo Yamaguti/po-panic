@@ -30,11 +30,14 @@ HomeScreen.finish = function(callback){
         "y" : 0.001,
         "time" : 500,
         "easing" : "inBack",
-        "onComplete" : callback,
+        "onComplete" : function() {
+            if (callback) {
+                callback()
+            }
+            HomeScreen.background.destroy()
+            HomeScreen.playButton.destroy()
+        }
     })
-
-    // HomeScreen.background
-    // HomeScreen.playButton
 }
 
 
