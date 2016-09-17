@@ -1,31 +1,31 @@
 {
 	"playerOptions" : [
 		{
-			"question" : "You have a situation!",
+			"question" : "It's time to launch the game! You have a few options to do that:",
 			"options" : [
 				{
-					"text" : "This is the option A",
-					"risk" : "20",
+					"text" : "Soft Launch",
+					"risk" : "10",
 					"reward" : "10",
-					"time" : "5"
+					"time" : "5",
+					"resultGood" : "Only canadians are playing your game, but you managed to fix a few bugs before international release!",
+					"resultBad" : "You game is being played by chinese bots, and your mechanic is already being copied"
 				},
 				{
-					"text" : "This is the option B",
+					"text" : "Windows Phone exclusive",
 					"risk" : "30",
 					"reward" : "15",
-					"time" : "5"
+					"time" : "5",
+					"resultGood" : "Microsoft loved your game and decided to invest money on it!",
+					"resultBad" : "Who the hell has a windows phone Mr. PO?"
 				},
 				{
-					"text" : "This is the option C",
-					"risk" : "40",
-					"reward" : "20",
-					"time" : "5"
-				},
-				{
-					"text" : "This is the option D",
-					"risk" : "50",
+					"text" : "International Release",
+					"risk" : "60",
 					"reward" : "30",
-					"time" : "5"
+					"time" : "5",
+					"resultGood" : "A celebrity played your game and tweeted about it! Revenue is incresing fast worldwide!",
+					"resultBad" : "You just discovered that your game has debug texts like 'Your mom'. WORLDWIDE."
 				}
 			]
 		},
