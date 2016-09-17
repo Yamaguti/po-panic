@@ -15,5 +15,5 @@ Game.newGame = function newGame() {
     Revenue.createText()
     Hud.createRevenueBar()
 
-    Game.background.fadeOut()
+    // Game.background.fadeOut()
 }
