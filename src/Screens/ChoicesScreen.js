@@ -2,7 +2,7 @@
 var ChoicesScreen = {}
 
 
-var optionTextStyle = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 55, align : 'center', }
+var optionTextStyle = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 40, align : 'left', }
 
 
 ChoicesScreen.newAnswerButton = function(params) {
@@ -11,6 +11,8 @@ ChoicesScreen.newAnswerButton = function(params) {
     // Holder
     var holder = Utils.newImage({
         "name": "assets/ChoicesScreen/action_cell.png",
+        "x" : (params.x || centerX),
+        "y" : (params.y || centerY),
     })
     stage.addChild(holder)
 
@@ -29,7 +31,7 @@ ChoicesScreen.newAnswerButton = function(params) {
     // Title
     var title = new PIXI.Text(params.option.text, optionTextStyle);
     stage.addChild(title)
-    title.position.x = holder.position.x;
+    title.position.x = holder.position.x - 100;
     title.position.y = holder.position.y;
 
     // title.anchor.x = 0
@@ -43,6 +45,7 @@ ChoicesScreen.showPlayerOptions = function(index) {
     for (i = 0; i < 3; i++) {
         var option = gameQuestions.playerOptions[index].options[i];
         ChoicesScreen.newAnswerButton({
+            "x" : centerX - (i - 1) * 240,
             "option" : option,
         })
     }
