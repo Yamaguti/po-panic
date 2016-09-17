@@ -15,5 +15,5 @@ function newBackground() {
     background.scale.x = 2
     background.scale.y = 2
 
-    stage.addChild(background);
+    return background
 }
