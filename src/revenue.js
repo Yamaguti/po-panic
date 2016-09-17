@@ -1,6 +1,7 @@
 
 var Revenue = {
     revenue: 0,
+    revenuePerSecond: 10,
 }
 
 Revenue.createText = function(){
@@ -14,8 +15,7 @@ Revenue.createText = function(){
 
 
 Revenue.update = function(dt){
-
-    Revenue.revenue += 10 * (dt/1000)
+    Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
     if (Revenue.revText){
         // console.log(Revenue.revenue)
         Revenue.revText.text = Math.floor(Revenue.revenue).toString()
