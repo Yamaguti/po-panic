@@ -1,8 +1,8 @@
 
 var stage = new PIXI.Container();
 
-var screenWidth  = 1920 //960
-var screenHeight = 1080 //540
+var screenWidth  = 960
+var screenHeight = 540
 
 var centerX = screenWidth/2
 var centerY = screenHeight/2
