@@ -11,7 +11,7 @@ var Hud = {
         hudContainer.addChild(fill)
         Hud.fill = fill
         Hud.maxWidth = bar.width
-
+        hudContainer.scale.x = hudContainer.scale.y = 2
 
         stage.addChild(hudContainer)
     },
