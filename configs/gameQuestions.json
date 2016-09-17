@@ -13,7 +13,7 @@
 					"resultBad" : "You game is being played by chinese bots, and your mechanic is already being copied"
 				},
 				{
-					"text" : "Windows Phone exclusive",
+					"text" : "Windows Phone\nexclusive",
 					"risk" : "30",
 					"reward" : "15",
 					"time" : "5",
@@ -21,7 +21,7 @@
 					"resultBad" : "Who the hell has a windows phone Mr. PO?"
 				},
 				{
-					"text" : "International Release",
+					"text" : "International\nRelease",
 					"risk" : "60",
 					"reward" : "30",
 					"time" : "5",
