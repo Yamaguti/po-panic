@@ -75,18 +75,23 @@ var Hud = {
     },
 
     updateRevenueBar: function(dt){
-        if (Hud.fill){
-            Hud.fill.width = (Math.min(Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240), 1) * (Hud.bar.width - 43) * 5)
-        }
-        Hud.elapsedTime = Hud.elapsedTime || 0
-        Hud.elapsedTime += dt/1000
-        if (Hud.dayText && Hud.monthText){
-            var days = Math.floor((Hud.elapsedTime/240) * 365)
-            var res = Hud.getDate(days)
-            var day = res[0]
-            var month = res[1]
-            Hud.dayText.text = day.toString()
-            Hud.monthText.text = Hud.monthNames[month]
+    },
+
+    setUpdate: function(){
+        Hud.updateRevenueBar= function(dt){
+            if (Hud.fill){
+                Hud.fill.width = (Math.min(Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240), 1) * (Hud.bar.width - 43) * 5)
+            }
+            Hud.elapsedTime = Hud.elapsedTime || 0
+            Hud.elapsedTime += dt/1000
+            if (Hud.dayText && Hud.monthText){
+                var days = Math.floor((Hud.elapsedTime/gameConfig.gameConfigs.gameTime) * 365)
+                var res = Hud.getDate(days)
+                var day = res[0]
+                var month = res[1]
+                Hud.dayText.text = day.toString()
+                Hud.monthText.text = Hud.monthNames[month]
+            }
         }
     },
 }
