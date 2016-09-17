@@ -7,9 +7,6 @@ Game.newGame = function newGame() {
     Game.background = background
     stage.addChild(background);
 
-    var popup = newPopup()
-    popup.showPopup()
-
     loader.load();
 
     Revenue.createText()

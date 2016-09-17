@@ -10,7 +10,6 @@ function onAssetsLoaded(evt)
 	gameConfig = gameData.resources.config.data;
 
 	///start the game here, all files are loaded
-	showPlayerOptions(0);
 }
 
 //unique instance
