@@ -17,7 +17,6 @@ Revenue.createText = function(){
 Revenue.update = function(dt){
     Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
     if (Revenue.revText){
-        // console.log(Revenue.revenue)
         Revenue.revText.text = Math.floor(Revenue.revenue).toString()
     }
 }
