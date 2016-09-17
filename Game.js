@@ -18,12 +18,15 @@ function setupPosLoad() {
     text.position.x = centerX
     text.position.y = centerY + 100
     stage.addChild(text)
+
+    Revenue.createText()
 }
 
 
 
 function update(dt){
     TimerManager.update()
+    Revenue.update(dt)
 }
 
 
@@ -55,10 +58,13 @@ function setupPreLoad() {
 
         dt = currentUpdateTime - lastUpdateTime;
         lag += dt;
+
         while (lag > logicDt){
             update(logicDt);
             lag -= logicDt;
         }
+
+        lastUpdateTime = currentUpdateTime
 
         // render the stage
         renderer.render(stage);
