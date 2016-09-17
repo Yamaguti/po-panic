@@ -1,14 +1,9 @@
 
 
 function showPopup(popup) {
-    function animatePopup() {
-        popup.position.y -= 10
-
-        if (popup.position.y > centerY) {
-            requestAnimationFrame(animatePopup);
-        }
-    }
-    requestAnimationFrame(animatePopup);
+    TransitionManager.startTransition(popup.position, 1000, {
+        "y" : centerY,
+    })
 }
 
 
