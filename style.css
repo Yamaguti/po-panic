@@ -1,3 +1,13 @@
+
+@font-face {
+    font-family: gameFont;
+    src: url(fonts/Mecha_Condensed.woff);
+}
+
+div {
+    font-family: gameFont;
+}
+
 body {
     margin: 0;
     padding: 0;
