@@ -32,9 +32,7 @@ function setupPosLoad() {
 
 
 function update(dt){
-    // console.log(dt)
-    // just for fun, lets rotate mr rabbit a little
-    // bunny.rotation += (0.1 * dt/1000);
+    TimerManager.update()
 }
 
 
@@ -76,16 +74,14 @@ function setupPreLoad() {
     var lag = 0;
 
     function animate(currentUpdateTime) {
-        requestAnimationFrame( animate );
-        // console.log(testStuff)
+        requestAnimationFrame(animate);
+
         dt = currentUpdateTime - lastUpdateTime;
         lag += dt;
         while (lag > logicDt){
-            // gambs
-            update(logicDt, bunny);
+            update(logicDt);
             lag -= logicDt;
         }
-        bunny.rotation += 0.1
 
         // render the stage
         renderer.render(stage);

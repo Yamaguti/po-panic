@@ -14,17 +14,10 @@ function compareTimers(a,b) {
 }
 
 
-function registerEnterFrame() {
-    requestAnimationFrame(processTimers);
-}
-
-
-function processTimers() {
-    var now          = getTime()
-    var timersToFire = []
-    var newRegister  = []
-
-    // console.log(now)
+function TimerManager_update() {
+    var now          = getTime();
+    var timersToFire = [];
+    var newRegister  = [];
 
     // Find Timers To Fire
     for (i = 0; i < TimerManager.registeredTimers.length; i++) {
@@ -40,15 +33,11 @@ function processTimers() {
     }
     TimerManager.registeredTimers = newRegister
 
+
     // Fire Timers
     for (i = 0; i < timersToFire.length; i++) {
         var timer = timersToFire[i]
         timer.callback()
-    }
-
-    // Decide if task shoul run again
-    if(TimerManager.registeredTimers.length > 0) {
-        requestAnimationFrame(processTimers);
     }
 }
 
@@ -73,20 +62,14 @@ function startTimer(timeToFire, callback) {
 
     //sort timers by time
     TimerManager.registeredTimers.sort(compareTimers);
-
-    // may turn enterframe on
-    if (!TimerManager.isEnterFrameOn){
-        registerEnterFrame()
-    }
 }
 
 
 
 // Initialization
 TimerManager.registeredTimers = []
-TimerManager.isEnterFrameOn   = false
-
 
 // Exposed Functions
 TimerManager.getTime          = getTime
 TimerManager.startTimer       = startTimer
+TimerManager.update           = TimerManager_update
