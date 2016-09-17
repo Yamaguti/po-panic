@@ -26,28 +26,23 @@ HomeScreen.showHome = function() {
 
 HomeScreen.finish = function(callback){
     TransitionManager.startTransition(HomeScreen.playButton.scale, {
-        "x" : 2,
-        "y" : 2,
+        "x" : 0.001,
+        "y" : 0.001,
         "time" : 500,
-        "easing" : "outBack"
+        "easing" : "inBack",
+        "onComplete" : callback,
     })
 
-    HomeScreen.background
-    HomeScreen.playButton
-
-    if (callback) {
-        callback()
-    }
+    // HomeScreen.background
+    // HomeScreen.playButton
 }
 
 
 
 HomeScreen.setGameAvailable = function() {
     var button = Button.newButton("assets/Home/bt_play.png", {
-        "onRelease" : function(){
-            HomeScreen.finish(function() {
-                Game.gameStart()
-            })
+        "onRelease" : function() {
+            HomeScreen.finish(Game.gameStart)
         }
     })
 
