@@ -33,8 +33,6 @@ function setupPosLoad() {
 
 function update(dt){
     TimerManager.update()
-    Hud.updateRevenueBar()
-
     Revenue.update(dt)
     Hud.updateRevenueBar(dt)
 }
