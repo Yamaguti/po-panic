@@ -34,3 +34,8 @@ Game.update = function(dt){
         update = function(){}
     }
 }
+
+
+Game.pause = function (pauseStatus) {
+    Game.paused = pauseStatus
+}

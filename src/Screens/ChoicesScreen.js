@@ -143,6 +143,8 @@ ChoicesScreen.animateIn = function() {
         "time": 400,
         "alpha": 0.5,
     })
+
+    Game.pause(true)
 }
 
 
@@ -163,5 +165,7 @@ ChoicesScreen.animateOut = function() {
         "time": 400,
         "alpha": 0,
     })
+
+    Game.pause(false)
 }
 

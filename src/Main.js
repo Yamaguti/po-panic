@@ -33,9 +33,11 @@ function setupPosLoad() {
 
 function update(dt){
     TimerManager.update()
-    Revenue.update(dt)
-    Hud.updateRevenueBar(dt)
-    Game.update(dt)
+    if (!Game.paused){
+        Revenue.update(dt)
+        Hud.updateRevenueBar(dt)
+        Game.update(dt)
+    }
 }
 
 
