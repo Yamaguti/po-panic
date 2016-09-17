@@ -1,7 +1,7 @@
 {
 	"gameConfigs" : {
-		"initialRevenue" : "1",
-		"revenueGoal" : "1000000",
-		"gameTime" : "240"
+		"initialRevenue" : 1,
+		"revenueGoal" : 1000000,
+		"gameTime" : 24
 	}
 }

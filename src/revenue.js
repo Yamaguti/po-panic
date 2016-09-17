@@ -14,9 +14,14 @@ Revenue.createText = function(){
 
 
 
-Revenue.update = function(dt){
-    Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
-    if (Revenue.revText){
-        Revenue.revText.text = Math.floor(Revenue.revenue).toString()
+Revenue.update = function(dt){}
+
+
+Revenue.setUpdate = function(){
+    Revenue.update = function(dt){
+        Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
+        if (Revenue.revText){
+            Revenue.revText.text = Math.floor(Revenue.revenue).toString()
+        }
     }
 }

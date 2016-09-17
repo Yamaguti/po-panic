@@ -35,6 +35,7 @@ function update(dt){
     TimerManager.update()
     Revenue.update(dt)
     Hud.updateRevenueBar(dt)
+    Game.update(dt)
 }
 
 
