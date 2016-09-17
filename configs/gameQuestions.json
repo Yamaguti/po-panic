@@ -62,31 +62,61 @@
 		},
 
 		{
-			"question" : "The new Corona update has broken all of the games! What do we do?",
+			"question" : "The new Engine update has broken all of the games! What do we do?",
 			"options" : [
 				{
 					"text" : "Get Devs to fix it",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
-					"resultGood" : "The devs decided to wait before doing the fixes and started working on features as if the error hadn't hapened. Corona issued a fix later that solved the problems.",
-					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Corona issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
+					"resultGood" : "The devs decided to wait before doing the fixes and started working on features as if the error hadn't hapened. Engine issued a fix later that solved the problems.",
+					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Engine issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
 				},
 				{
 					"text" : "Ask Pizza for a fix!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "5",
-					"resultGood" : "It took a lot of work, but Pizza triumphed against Corona. The studio bought pizza for everyone.",
-					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week Corona fixed the problem."
+					"resultGood" : "It took a lot of work, but Pizza triumphed against Engine. The studio bought pizza for everyone.",
+					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week Engine fixed the problem."
 				},
 				{
 					"text" : "Let's change to Unity!",
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners! Corona was fixed later, so half of the teams went back to Corona.",
-					"resultBad" : "There were some problems and Corona issued a fix a week later, so everyone just went back to Corona."
+					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners! Engine was fixed later, so half of the teams went back to Engine.",
+					"resultBad" : "There were some problems and Engine issued a fix a week later, so everyone just went back to Engine."
+				}
+			]
+		},
+
+		{
+			"question" : "You have received an e-mail from an angry player that says your App notifications have traumatized their family.",
+			"options" : [
+				{
+					"text" : "Ignore",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "Fortunately, nothing bad happened. The tale of the Fox, the Boo and the Ghost soon becomes a legend told from the seniors to the juniors.",
+					"resultBad" : "The customer cannot live with the trauma and commits suicide. It doesn't generate bad publicity but it gives you trouble sleeping at night."
+				},
+				{
+					"text" : "Apologize",
+					"risk" : "30",
+					"reward" : "20",
+					"time" : "5",
+					"resultGood" : "You send a heartwarming apology and a free HC pack. The internet notices your act of kindness and the company gets free publicity.",
+					"resultBad" : "You send a mild apology that isn't good enough for their trouble. Oh well."
+				},
+				{
+					"text" : "Answer with 'Boo, Boo!'",
+					"risk" : "70",
+					"reward" : "30",
+					"time" : "5",
+					"resultGood" : "Your answer quickly grows into an internet Meme, driving further publicity to your game studio.",
+					"resultBad" : "You get sued big. What, did you think making fun of a customer was a good idea?"
 				}
 			]
 		}
