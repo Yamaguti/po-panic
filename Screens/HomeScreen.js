@@ -34,6 +34,10 @@ HomeScreen.finish = function(callback){
 
     HomeScreen.background
     HomeScreen.playButton
+
+    if (callback) {
+        callback()
+    }
 }
 
 
@@ -41,7 +45,7 @@ HomeScreen.finish = function(callback){
 HomeScreen.setGameAvailable = function() {
     var button = Button.newButton("assets/Home/bt_play.png", {
         "onRelease" : function(){
-            HomeScreen.finish(function(){
+            HomeScreen.finish(function() {
                 Game.gameStart()
             })
         }
