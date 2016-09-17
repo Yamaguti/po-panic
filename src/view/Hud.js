@@ -61,8 +61,6 @@ var Hud = {
         var day = res[0]
         var month = res[1]
 
-        console.log(day, month)
-
         var monthText = new PIXI.Text(Hud.monthNames[month],{fontFamily : 'gameFont', fontSize: 12, align : 'center', });
         Hud.monthText = monthText
         monthText.position = {x:12, y: 10}
@@ -88,7 +86,6 @@ var Hud = {
             var res = Hud.getDate(days)
             var day = res[0]
             var month = res[1]
-            console.log(Hud.elapsedTime, dt, day, month, days)
             Hud.dayText.text = day.toString()
             Hud.monthText.text = Hud.monthNames[month]
         }
