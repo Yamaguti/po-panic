@@ -28,7 +28,3 @@ loader.add('events',"configs/gameEvents.json");
 
 //complete callback
 loader.on('complete',onAssetsLoaded);
-
-//start loading
-loader.load();
-
