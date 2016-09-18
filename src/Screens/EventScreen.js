@@ -97,6 +97,7 @@ EventScreen.autoCloseEvent = function()
 EventScreen.closeEvent = function()
 {
 	Game.pause(false);
+    NotificationManager.deregister("newMonth", EventScreen.showEvent)
 	TransitionManager.startTransition(ChoicesScreen.background, {
         "time": 800,
         "alpha": 0,
@@ -107,4 +108,4 @@ EventScreen.closeEvent = function()
 }
 
 
-NotificationManager.register("newMonth", EventScreen.showEvent)
+//NotificationManager.register("newMonth", EventScreen.showEvent)
