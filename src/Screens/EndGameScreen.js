@@ -6,6 +6,31 @@ var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSiz
 
 EndGameScreen.showEnding = function(good) {
 
+    ////create boat textures
+    var whatever = []
+    if(good){
+        for (i = 1; i < 9; i++){
+            whatever[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
+        }
+    }else{
+        for (i = 1; i < 46; i++){
+            whatever[i] = 'assets/boat_fail/boat_fail_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
+        }
+    }
+
+    var textureArray = [];
+
+    // console.log(event)
+
+    for (var i=1; i < whatever.length; i++)
+    {
+         var texture = PIXI.Texture.fromImage(whatever[i]);
+         textureArray.push(texture);
+    };
+
+    EndGameScreen.boatTextureArray = textureArray;
+
+
     var content = new PIXI.Container();
     EndGameScreen.content = content;
 
@@ -13,7 +38,7 @@ EndGameScreen.showEnding = function(good) {
         "color": 0x000000,
     })
     content.addChild(background)
-    background.alpha = 0
+    background.alpha = 0.75
     EndGameScreen.background = background
 
     var holder = Utils.newImage({
@@ -62,6 +87,15 @@ EndGameScreen.showEnding = function(good) {
     EndGameScreen.button.position.y = holder.position.y + 103
     content.addChild(EndGameScreen.button)
 
+    var boat = new PIXI.extras.MovieClip(EndGameScreen.boatTextureArray);
+    boat.animationSpeed = 0.3
+    boat.scale.x = 2;
+    boat.scale.y = 2;
+    boat.x = centerX - 120;
+    boat.y = 10;
+    boat.play()
+
+    content.addChild(boat);
 
     stage.addChild(content)
 }

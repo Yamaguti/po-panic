@@ -23,7 +23,7 @@ EventScreen.showEvent = function(index) {
 
 
     // Title
-    var title = new PIXI.Text(Hud.getMontName(index) + " - MONTHLY REPORT", eventTitleTextStyle);
+    var title = new PIXI.Text(Hud.getMontName(index - 2) + " - MONTHLY REPORT", eventTitleTextStyle);
     content.addChild(title)
     title.position.x = - title.width/2;
     title.position.y = - 120;

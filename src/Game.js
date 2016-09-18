@@ -90,11 +90,14 @@ Game.update = function(dt){
     }
 }
 
-Game.finish = function()
+Game.finish = function(goal)
 {
     NotificationManager.deregister("endGame", Game.finish)
     Game.status = GAME_FINISHED;
-    EndGameScreen.showEnding(true);
+    if(goal >=1)
+        EndGameScreen.showEnding(true);
+    else
+       EndGameScreen.showEnding(false); 
 }
 
 
