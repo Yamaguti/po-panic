@@ -55,6 +55,9 @@ ChoiceResult.newFooter = function(msgText) {
         NotificationManager.notify("ChoiceResultScreensClosed")
     }
 
+    header.interactive = true
+    header.on('mousedown', group.animateOut);
+
     return group
 }
 
@@ -64,10 +67,6 @@ ChoiceResult.showGoodResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultGood)
     stage.addChild(header)
     header.animateIn()
-
-    TimerManager.startTimer(3000, function(){
-        header.animateOut()
-    })
 }
 
 
@@ -75,10 +74,6 @@ ChoiceResult.showBadResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultBad)
     stage.addChild(header)
     header.animateIn()
-
-    TimerManager.startTimer(5000, function(){
-        header.animateOut()
-    })
 }
 
 

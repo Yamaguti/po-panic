@@ -29,7 +29,7 @@ TutorialScreen.showTutorial = function(index) {
     content.addChild(TutorialScreen.question)
     TutorialScreen.question.position.x = holder.position.x - TutorialScreen.question.width/2;
     TutorialScreen.question.position.y = holder.position.y - TutorialScreen.question.height/2;
-    
+
     stage.addChild(content)
 
     TutorialScreen.question.interactive = true;
@@ -38,7 +38,6 @@ TutorialScreen.showTutorial = function(index) {
 
 TutorialScreen.nextTutorial = function()
 {
-    console.log("next tutorial");
     TutorialScreen.index++;
     if(gameTutorials.tutorials[TutorialScreen.index])
     {
