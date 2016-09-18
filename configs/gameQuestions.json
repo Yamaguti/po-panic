@@ -31,14 +31,14 @@
 		},
 
 		{
-			"question" : "Oops, Your Game Designer, suddenly left work to go get a tatoo!\nWhat do you want to do?",
+			"question" : "Your Game Designer suddenly left work to go get a tatoo!\nWhat do you want to do?",
 			"options" : [
 				{
 					"text" : "Leave him be",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
-					"resultGood" : "Oops arrives just in time to help the team with the new features and the Sprint is a success!",
+					"resultGood" : "He arrives just in time to help the team with the new features and the Sprint is a success!",
 					"resultBad" : "The team had nobody to ask how the new features should work and, somehow, your Cooking Game is now a War FPS."
 				},
 				{
@@ -54,7 +54,7 @@
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "Oops yells 'Se me atacar, eu vou atacar!', yet, decides to attack first. You fall on your back and raise your feet in the air. Oops sould have some trouble sitting for about a week, but your PO pride is intact.",
+					"resultGood" : "He yells 'Se me atacar, eu vou atacar!', yet, decides to attack first. You fall on your back and raise your feet in the air. He sould have some trouble sitting for about a week, but your PO pride is intact.",
 					"resultBad" : "The last words you got to hear were 'Se me atacar, eu vou atacar!'. By the time you're awake, you've already become a Slack emoji."
 				}
 			]
