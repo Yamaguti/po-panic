@@ -149,6 +149,36 @@
 					"resultBad" : "Before selling the Snooker Table, the workers gathered to play a few last game on it. Then, suddenly, a biriba went wrong and ended up tearing aparte the table's cloth, which led to the buyer not wanting it any longer... At least we got to keep the table."
 				}
 			]
+		},
+
+		{
+			"question" : "The company needs a new hit game to generate some profits. How do you want to do it?",
+			"options" : [
+				{
+					"text" : "Make many new games",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "Making a lot of games was a success! You identified a theme that work really well and invested on it!",
+					"resultBad" : "Making lots of games failed. You shot arrows everywhere, but unfortunately none hit any targets."
+				},
+				{
+					"text" : "Make a sequel",
+					"risk" : "30",
+					"reward" : "25",
+					"time" : "5",
+					"resultGood" : "You took a game that was popular and added new features to make a profitable sequel!",
+					"resultBad" : "Making a sequel didn't work out. Sadly, less people hang around for sequels rather than new games."
+				},
+				{
+					"text" : "Make a new game",
+					"risk" : "60",
+					"reward" : "40",
+					"time" : "5",
+					"resultGood" : "Your new game was a success! It caused an uproar in the Free-To-Play market and is beng analyzed by Gamasutra! You hit a Gold Mine!",
+					"resultBad" : "Making a fully-fledged new game did not work out. Sometimes, it's just better to hold back on investing in a project before making sure that it will work."
+				}
+			]
 		}
 	]
 }

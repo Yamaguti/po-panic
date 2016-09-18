@@ -20,6 +20,10 @@ Game.newGame = function newGame() {
 
     Game.elapsedTime = 0
 
+    for(i = 1; i < 5; i++) {
+        Devguy.new(i)   
+    }
+
     // Game.background.fadeOut()
 }
 

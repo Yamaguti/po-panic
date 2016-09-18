@@ -1,7 +1,7 @@
 
 var Revenue = {
     revenue: 0,
-    revenuePerSecond: 10,
+    revenuePerSecond: 15,
 }
 
 Revenue.createText = function(){
