@@ -2,11 +2,11 @@
 var ChoicesScreen = {}
 
 
-var titleTextStyle       = {fontFamily : 'gameFontBold', fill: Colors.orange,fontSize: 38, align : 'center', }
-var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 80}
-var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
-var riskTextStyle = {fontFamily : 'gameFont',     fill: Colors.red,fontSize: 30, align : 'center', }
-var rewardTextStyle = {fontFamily : 'gameFont',     fill: Colors.yellow,fontSize: 30, align : 'center', }
+var titleTextStyle       = {fontFamily : 'gameFontBold', fill: Colors.orange, fontSize: 38, align : 'center', }
+var headerTextStyle      = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 80}
+var descriptionTextStyle = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'center', }
+var riskTextStyle        = {fontFamily : 'gameFont',     fill: Colors.red,    fontSize: 30, align : 'center', }
+var rewardTextStyle      = {fontFamily : 'gameFont',     fill: Colors.yellow, fontSize: 30, align : 'center', }
 
 //
 // Private Methods
