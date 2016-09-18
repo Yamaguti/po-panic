@@ -3,7 +3,7 @@
 //
 // Stylesheet :)
 //
-var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 24, align : 'center', stroke : Colors.black, strokeThickness : 5,}
+var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 11, align : 'center', stroke : Colors.black, strokeThickness : 5,}
 
 
 //
@@ -27,10 +27,11 @@ var Revenue = {
 Revenue.createText = function() {
     var text = new PIXI.Text('0$ PER SECOND', revenueTextStyle);
 
-    text.position.x = screenLeft + 95
-    text.position.y = screenTop  + 80
-
-    Game.content.addChild(text)
+    text.position.x = 68
+    text.position.y = 38
+    TimerManager.startTimer(200, function(){
+        Hud.hudContainer.addChild(text)
+    })
     text.anchor.x = 0
     text.anchor.y = 0
 
