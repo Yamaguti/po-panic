@@ -27,7 +27,8 @@ Game.newGame = function newGame() {
     }
 
     // Game.background.fadeOut()
-    ChoiceManager.start()
+    // ChoiceManager.start()
+    TutorialScreen.showTutorial(0);
 }
 
 Game.update = function(dt){
