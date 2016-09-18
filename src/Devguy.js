@@ -39,7 +39,7 @@ Devguy = {
 
         dev.scale = {x:2, y:2}
         dev.position = Devguy.pos[index]
-        stage.addChild(dev)
+        Game.content.addChild(dev)
         if (Devguy.devs[index]){
             Devguy.devs[index].destroy()
         }
@@ -64,7 +64,7 @@ Devguy = {
         //     var dev = new PIXI.Sprite(PIXI.Texture.fromImage('assets/' + index + '/dev_'+ index +'.png'));
         //     dev.scale = {x:2, y:2}
         //     dev.position = Devguy.pos[index]
-        //     stage.addChild(dev)
+        //     Game.content.addChild(dev)
         //     Devguy.devs[index] = dev
         // }
         // else{
@@ -90,7 +90,7 @@ Devguy = {
 
         // dev.scale = {x:2, y:2}
         // dev.position = Devguy.pos[index]
-        // stage.addChild(dev)
+        // Game.content.addChild(dev)
         // Devguy.devs[index] = dev
         // }
         Devguy.setAnimation(index, "idle")

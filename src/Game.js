@@ -3,9 +3,13 @@ var Game = {}
 
 
 Game.newGame = function newGame() {
+    var content = new PIXI.Container()
+    Game.content = content
+    lowerStage.addChild(content)
+
     var background  = newBackground()
     Game.background = background
-    stage.addChild(background);
+    Game.content.addChild(background);
 
     loader.load();
 
