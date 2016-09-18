@@ -3,7 +3,7 @@ var ChoicesScreen = {}
 
 
 var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 38, align : 'center', }
-var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 40}
+var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 80}
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
 var riskTextStyle = {fontFamily : 'gameFont',     fill: '#ff3d58',fontSize: 30, align : 'center', }
 var rewardTextStyle = {fontFamily : 'gameFont',     fill: '#ffcf4f',fontSize: 30, align : 'center', }
