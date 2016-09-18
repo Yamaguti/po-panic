@@ -236,6 +236,35 @@
 					"resultBad" : "There is a flood of negative reviews due to save corruption!"
 				}
 			]
-		}
+		},
+		{
+			"question" : "Time for some new features in our amazing cooking game!",
+			"options" : [
+				{
+					"text" : "Add a\nGacha!",
+					"risk" : "30",
+					"reward" : "50",
+					"time" : "5",
+					"resultGood" : "Everyone loves our new gacha! Congratz!",
+					"resultBad" : "Gacha was costly, and very buggy. It didn't even make it to production."
+				},
+				{
+					"text" : "Add Secondary\nLoop!",
+					"risk" : "20",
+					"reward" : "20",
+					"time" : "5",
+					"resultGood" : "Everyone loves this new feature, and players are buying lots of IAPs!",
+					"resultBad" : "Customization was a poorly executed reskin, and players are very angry :("
+				},
+				{
+					"text" : "Customize\nRating!",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "This new rating is an extreme success! Players are upvoting our game 300% more!",
+					"resultBad" : "Aparently, customized rating popups are against the policy of one the major app stores worldwide, and we had to remove it :/"
+				}
+			]
+		},
 	]
 }
