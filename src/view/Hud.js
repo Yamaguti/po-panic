@@ -98,6 +98,7 @@ var Hud = {
                 if (day == 1 && month != 0 && Hud.monthCheck[month] == null) {
                     Hud.monthCheck[month] = true
                     NotificationManager.notify("newMonth", month)
+                    Devguy.setAllRandomAnimations()
                 }
             }
         }

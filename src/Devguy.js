@@ -10,11 +10,11 @@ Devguy = {
     devs: [],
 
     animations: {
-        "desperate" : {minSpeed:0.1, maxSpeed:0.3},
-        "happy" : {minSpeed:0.1, maxSpeed:0.3},
+        "desperate" : {minSpeed:0.05, maxSpeed:0.25},
+        "happy" : {minSpeed:0.15, maxSpeed:0.3},
         "idle" : {minSpeed:0.1, maxSpeed:0.3},
-        "onfire" : {minSpeed:0.1, maxSpeed:0.3},
-        "sad" : {minSpeed:0.1, maxSpeed:0.3},
+        "onfire" : {minSpeed:0.3, maxSpeed:0.5},
+        "sad" : {minSpeed:0.05, maxSpeed:0.1},
     },
 
     setAnimation: function(index, animation){
@@ -40,7 +40,23 @@ Devguy = {
         dev.scale = {x:2, y:2}
         dev.position = Devguy.pos[index]
         stage.addChild(dev)
+        if (Devguy.devs[index]){
+            Devguy.devs[index].destroy()
+        }
         Devguy.devs[index] = dev
+    },
+
+    setRandomAnimation: function(index){
+        myArray = ["desperate", "happy", "idle", "onfire", "sad"]
+        //Stolen from: http://stackoverflow.com/questions/4550505/getting-random-value-from-an-array#4550514
+        var rand = myArray[Math.floor(Math.random() * myArray.length)];
+        Devguy.setAnimation(index, rand)
+    },
+
+    setAllRandomAnimations: function(){
+        for (i = 1; i < 5; i++){
+            Devguy.setRandomAnimation(i)
+        }
     },
 
     new: function(index){
