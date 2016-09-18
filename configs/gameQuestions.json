@@ -12,7 +12,7 @@
 					"resultBad" : "You game is being played by chinese bots, and your mechanic is already being copied"
 				},
 				{
-					"text" : "Windows Phone\nexclusive",
+					"text" : "Windows Phone exclusive",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "10",
@@ -20,7 +20,7 @@
 					"resultBad" : "Who the hell has a windows phone Mr. PO?"
 				},
 				{
-					"text" : "International\nRelease",
+					"text" : "International Release",
 					"risk" : "60",
 					"reward" : "50",
 					"time" : "10",
@@ -31,7 +31,7 @@
 		},
 
 		{
-			"question" : "Your Game Designer suddenly left work to go get a tatoo!\nWhat do you want to do?",
+			"question" : "Your Game Designer suddenly left work to go get a tatoo! What do you want to do?",
 			"options" : [
 				{
 					"text" : "Leave him be",
@@ -42,7 +42,7 @@
 					"resultBad" : "The team had nobody to ask how the new features should work and, somehow, your Cooking Game is now a War FPS."
 				},
 				{
-					"text" : "Let's all\nget tatoos!",
+					"text" : "Let's all get tatoos!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "10",
@@ -121,10 +121,10 @@
 		},
 
 		{
-			"question" : "The new Engine update has broken all of the games!\nWhat do we do?",
+			"question" : "The new Engine update has broken all of the games! What do we do?",
 			"options" : [
 				{
-					"text" : "Get Devs to\nfix it",
+					"text" : "Get Devs to fix it",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "10",
@@ -132,7 +132,7 @@
 					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Engine issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
 				},
 				{
-					"text" : "Ask Pizza\nfor a fix!",
+					"text" : "Ask Pizza for a fix!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "10",
@@ -140,18 +140,18 @@
 					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week another update fixed the problem."
 				},
 				{
-					"text" : "Let's change\nto Unity!",
+					"text" : "Let's change to Unity!",
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "10",
-					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners!\n The engine was fixed later, so half of the teams went back to your old engine.",
+					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners!  The engine was fixed later, so half of the teams went back to your old engine.",
 					"resultBad" : "There were some problems and the Engine Company issued a fix a week later, so everyone just went back to it."
 				}
 			]
 		},
 
 		{
-			"question" : "You have received an e-mail from an angry player\nsaying your App notifications have traumatized their family.",
+			"question" : "You have received an e-mail from an angry player saying your App notifications have traumatized their family.",
 			"options" : [
 				{
 					"text" : "Ignore",
@@ -170,7 +170,7 @@
 					"resultBad" : "You send a mild apology that isn't good enough for their trouble. Oh well."
 				},
 				{
-					"text" : "Answer with\n'Boo, Boo!'",
+					"text" : "Answer with 'Boo, Boo!'",
 					"risk" : "70",
 					"reward" : "50",
 					"time" : "10",
@@ -181,7 +181,7 @@
 		},
 
 		{
-			"question" : "The company's finances haven't been doing well.\nWhat should we sell to make up for it?",
+			"question" : "The company's finances haven't been doing well. What should we sell to make up for it?",
 			"options" : [
 				{
 					"text" : "The Ouya",
@@ -200,7 +200,7 @@
 					"resultBad" : "You told the company that the karaoke was going to be sold. You went to the kitchen later that night and found a group of workers singing sad karaoke songs, bidding it farewell, and decided not to sell it. "
 				},
 				{
-					"text" : "The Snooker\nTable",
+					"text" : "The Snooker Table",
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "10",
@@ -211,10 +211,10 @@
 		},
 
 		{
-			"question" : "The company needs a new hit game to generate some profits.\nHow do you want to do it?",
+			"question" : "The company needs a new hit game to generate some profits. How do you want to do it?",
 			"options" : [
 				{
-					"text" : "Make lots\nof reskins",
+					"text" : "Make lots of reskins",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "10",
@@ -230,7 +230,7 @@
 					"resultBad" : "Making a sequel didn't work out. Sadly, less people hang around for sequels rather than new games."
 				},
 				{
-					"text" : "Make a single\nnew game",
+					"text" : "Make a single new game",
 					"risk" : "60",
 					"reward" : "50",
 					"time" : "10",
@@ -272,7 +272,7 @@
 			"question" : "A major bug was found one hour before release!",
 			"options" : [
 				{
-					"text" : "Wait for\nnext release",
+					"text" : "Wait for next release",
 					"risk" : "20",
 					"reward" : "10",
 					"time" : "10",
@@ -301,7 +301,7 @@
 			"question" : "Time for some new features in our amazing cooking game!",
 			"options" : [
 				{
-					"text" : "Customize\nRating!",
+					"text" : "Customize Rating!",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "10",
@@ -309,7 +309,7 @@
 					"resultBad" : "Aparently, customized rating popups are against the policy of one the major app stores worldwide, and we had to remove it :/"
 				},
 				{
-					"text" : "Add Secondary\nLoop!",
+					"text" : "Add Secondary Loop!",
 					"risk" : "50",
 					"reward" : "30",
 					"time" : "10",
@@ -317,7 +317,7 @@
 					"resultBad" : "The feature was a poorly executed reskin, and players are very angry."
 				},
 				{
-					"text" : "Add a\nGacha!",
+					"text" : "Add a Gacha!",
 					"risk" : "70",
 					"reward" : "50",
 					"time" : "10",
@@ -330,7 +330,7 @@
 			"question" : "After adding sugar in your coffee, what do you do with the communal spoon?",
 			"options" : [
 				{
-					"text" : "I put\nit back",
+					"text" : "I put it back",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "10",
@@ -338,15 +338,15 @@
 					"resultBad" : "Hum, it appears the spoon was so dirty you ruined all coffee from the office."
 				},
 				{
-					"text" : "I\nwash it",
+					"text" : "I wash it",
 					"risk" : "20",
 					"reward" : "20",
 					"time" : "10",
-					"resultGood" : "How nice of you!\n:)",
+					"resultGood" : "How nice of you! :)",
 					"resultBad" : "We're facing a water shortage. Please exert more caution on how you spend our water."
 				},
 				{
-					"text" : "I\nLick it",
+					"text" : "I Lick it",
 					"risk" : "101",
 					"reward" : "50",
 					"time" : "10",
@@ -359,7 +359,7 @@
 			"question" : "It appears there's a an Ad networks displaying inadequate content on advertisement towards our public",
 			"options" : [
 				{
-					"text" : "Warn someone\nfrom BI",
+					"text" : "Warn someone from BI",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "10",
@@ -375,7 +375,7 @@
 					"resultBad" : "Removing the Ad Network has impacted negatively our revenue."
 				},
 				{
-					"text" : "Warn\nDevelopers",
+					"text" : "Warn Developers",
 					"risk" : "70",
 					"reward" : "50",
 					"time" : "10",
