@@ -11,23 +11,22 @@ ChoiceManager.lastChoiceMade     = 0
 //
 
 ChoiceManager.promptUser = function(index) {
-    ChoicesScreen.currentChoiceIndex = index
+    ChoiceManager.currentChoiceIndex = index
     ChoicesScreen.showPlayerOptions(index)
 }
 
 
 ChoiceManager.startTimer = function() {
-    var config = gameQuestions.playerOptions[ChoicesScreen.currentChoiceIndex]
-    var selectedOption = config.options[ChoicesScreen.currentChoiceIndex]
-
-    console.log(selectedOption.time)
+    var config = gameQuestions.playerOptions[ChoiceManager.currentChoiceIndex]
+    var selectedOption = config.options[ChoiceManager.lastChoiceMade]
 
     // Settings default to prevent unespected crashes
     var time = selectedOption.time
     if (time === undefined) { time = 100 }
 
-    TimerManager.startTimer(time*1000, function() {
-        ChoiceManager.promptUser(ChoicesScreen.currentChoiceIndex + 1)
+
+    TimerManager.startTimer(1000, function(){
+        ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
     })
 }
 
