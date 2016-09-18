@@ -31,7 +31,7 @@
 		},
 
 		{
-			"question" : "Oops, Your Game Designer, suddenly left work to go get a tatoo! What do you want to do?",
+			"question" : "Oops, Your Game Designer, suddenly left work to go get a tatoo!\nWhat do you want to do?",
 			"options" : [
 				{
 					"text" : "Leave him be",
@@ -42,7 +42,7 @@
 					"resultBad" : "The team had nobody to ask how the new features should work and, somehow, your Cooking Game is now a War FPS."
 				},
 				{
-					"text" : "Let's all get tatoos!",
+					"text" : "Let's all\nget tatoos!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "5",
@@ -61,7 +61,7 @@
 		},
 
 		{
-			"question" : "The new Engine update has broken all of the games! What do we do?",
+			"question" : "The new Engine update has broken all of the games!\nWhat do we do?",
 			"options" : [
 				{
 					"text" : "Get Devs to fix it",
@@ -91,7 +91,7 @@
 		},
 
 		{
-			"question" : "You have received an e-mail from an angry player that says your App notifications have traumatized their family.",
+			"question" : "You have received an e-mail from an angry player\nsaying your App notifications have traumatized their family.",
 			"options" : [
 				{
 					"text" : "Ignore",
@@ -110,7 +110,7 @@
 					"resultBad" : "You send a mild apology that isn't good enough for their trouble. Oh well."
 				},
 				{
-					"text" : "Answer with 'Boo, Boo!'",
+					"text" : "Answer with\n'Boo, Boo!'",
 					"risk" : "70",
 					"reward" : "30",
 					"time" : "5",
