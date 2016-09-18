@@ -39,7 +39,8 @@ Game.update = function(dt){
     if (gameConfig && gameConfig.gameConfigs.gameTime <= Game.elapsedTime){
         // such gambs, very broken, refresh plz
         console.log("stahp")
-        update = function(){}
+        // update = function(){}
+        Game.pause(true)
     }
 }
 
