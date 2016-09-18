@@ -36,6 +36,10 @@ var Hud = {
     day:0,
     rotationSpeed: 0.5,
 
+    getMontName: function(index) {
+        return Hud.monthNames[index]
+    },
+
 
     //This is so stupid
     getDate: function(days){

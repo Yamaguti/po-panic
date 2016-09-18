@@ -3,7 +3,7 @@
 //
 // Stylesheet :)
 //
-var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 11, align : 'center', stroke : Colors.black, strokeThickness : 5,}
+var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 13, align : 'center', stroke : Colors.black, strokeThickness : 1,}
 
 
 //
@@ -25,17 +25,19 @@ var Revenue = {
 // Methods
 //
 Revenue.createText = function() {
-    var text = new PIXI.Text('0$ PER SECOND', revenueTextStyle);
+    if (!Revenue.revText) {
+        var text = new PIXI.Text('0$ PER SECOND', revenueTextStyle);
 
-    text.position.x = 68
-    text.position.y = 38
-    TimerManager.startTimer(200, function(){
-        Hud.hudContainer.addChild(text)
-    })
-    text.anchor.x = 0
-    text.anchor.y = 0
+        text.position.x = 88
+        text.position.y = 38
+        TimerManager.startTimer(200, function(){
+            Hud.hudContainer.addChild(text)
+        })
+        text.anchor.x = 0.5
+        text.anchor.y = 0
 
-    Revenue.revText = text
+        Revenue.revText = text
+    }
 }
 
 
