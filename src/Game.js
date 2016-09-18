@@ -11,8 +11,7 @@ Game.newGame = function newGame() {
 
     Revenue.createText()
 
-    var background  = newBackground()
-    Game.background = background
+    var background  = GameBackground.newBackground()
     Game.content.addChild(background);
 
     loader.load();
@@ -38,7 +37,6 @@ Game.newGame = function newGame() {
         Devguy.new(i)
     }
 
-    // Game.background.fadeOut()
     // ChoiceManager.start()
     TutorialScreen.showTutorial(0);
     Game.status = GAME_STARTED;

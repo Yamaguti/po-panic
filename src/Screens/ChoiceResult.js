@@ -92,7 +92,7 @@ ChoiceResult.showGoodResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultGood, optionConfig.text, true, optionConfig.reward)
     stage.addChild(header)
     Devguy.setAnimationAll("happy")
-    TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
+    TimerManager.startTimer(3000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
 }
 
@@ -101,7 +101,7 @@ ChoiceResult.showBadResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultBad, optionConfig.text, false)
     stage.addChild(header)
     Devguy.setAnimationAll("sad")
-    TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
+    TimerManager.startTimer(3000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
 }
 

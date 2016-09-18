@@ -1,6 +1,14 @@
 
 
-function newBackground() {
+var GameBackground = {}
+
+
+// GameBackground. = function() {
+
+// }
+
+
+GameBackground.newBackground = function () {
     var texture = PIXI.Texture.fromImage('assets/Background/background.png');
     var background = new PIXI.Sprite(texture);
 
