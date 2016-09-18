@@ -28,18 +28,22 @@ Revenue.setMicromanage = function(mode){
         if (mode){
             window.addEventListener("click", Revenue.addRevenue)
             var textures = []
-            var dummyText = new PIXI.Text("MICROMANAGE MODE!!!",{fontFamily : 'gameFont', fontSize: 30, align : 'center', fill: "0x000000"});
-            textures.push(dummyText.texture)
-            dummyText.style.fill("0xFFFFFF")
-            textures.push(dummyText.texture)
-            var text = new PIXI.extras.MovieClip(textureArray);
+            var dummyText = new PIXI.Text("MICROMANAGE MODE!!!",{fontFamily : 'gameFontBold', fontSize: 45, align : 'center', fill: 0x000000});
+            textures.push(renderer.generateTexture(dummyText))
+            dummyText.style.fill=0xFFFFFF
+            textures.push(renderer.generateTexture(dummyText))
+            var text = new PIXI.extras.MovieClip(textures);
             stage.addChild(text)
             text.play()
-            text.animationSpeed(0.2)
+            text.animationSpeed=0.1
+            text.x = 450
+            text.y = 30
             Revenue.text = text
         }
         else{
-            Revenue.text.destroy()
+            if(Revenue.text){
+                Revenue.text.destroy()
+            }
             window.removeEventListener("click", Revenue.addRevenue)
         }
     }
@@ -55,4 +59,5 @@ Revenue.setUpdate = function(){
             Revenue.revText.text = (Math.floor(Revenue.revenuePerSecond).toString()) + '$ PER SECOND'
         }
     }
+    NotificationManager.register("newMonth", function(month){ Revenue.setMicromanage(month == 0)})
 }
