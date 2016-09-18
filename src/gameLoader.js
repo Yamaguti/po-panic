@@ -2,8 +2,7 @@
 function onAssetsLoaded(evt)
 {
 	gameData = evt;
-	
-	gameEvents = gameData.resources.events.data;
+
 	gameQuestions = gameData.resources.questions.data;
 	gameConfig = gameData.resources.config.data;
 	gameTutorials = gameData.resources.tutorials.data;
@@ -22,7 +21,6 @@ var gameTutorials;
 //load all JSONS
 loader.add('questions',"configs/gameQuestions.json");
 loader.add('config',"configs/gameConfig.json");
-loader.add('events',"configs/gameEvents.json");
 loader.add('tutorials',"configs/tutorial.json");
 
 //complete callback

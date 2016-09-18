@@ -1,111 +1,96 @@
 
 var EventScreen = {}
 
-var eventTitleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
-var eventDescriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
-EventScreen.eventPlayerAnswered = false;
+var eventTitleTextStyle       = {fontFamily : 'gameFontBold', fill: Colors.orange, fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+var eventDescriptionTextStyle = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+var revenueTextStyle          = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 11, align : 'center', stroke : Colors.black, strokeThickness : 5,}
+
 
 
 EventScreen.showEvent = function(index) {
 	Game.pause(true);
 
     var content = new PIXI.Container();
-    EventScreen.content = content;
+    content.position.x = centerX
+    content.position.y = centerY
 
-    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
-        "color": 0x000000,
-    })
-    content.addChild(background)
-    background.alpha = 0
-    EventScreen.background = background
+    EventScreen.content = content;
 
     var holder = Utils.newImage({
         "name": "assets/EventScreen/event_holder.png",
     })
-    holder.x = centerX;
-    holder.y = centerY;
     content.addChild(holder)
 
+
     // Title
-    var title = new PIXI.Text("OH OH!", eventTitleTextStyle);
+    var title = new PIXI.Text("MONTHLY REPORT", eventTitleTextStyle);
     content.addChild(title)
-    title.position.x = holder.position.x - title.width/2;
-    title.position.y = holder.position.y - 120;
+    title.position.x = - title.width/2;
+    title.position.y = - 120;
+
 
     // Description
-    EventScreen.question = new PIXI.Text(gameEvents.gameEvents[index].label, eventDescriptionTextStyle);
-    content.addChild(EventScreen.question)
-    EventScreen.question.position.x = holder.position.x - EventScreen.question.width/2;
-    EventScreen.question.position.y = holder.position.y;
+    var expectedDescriptionText = new PIXI.Text("Expected Revenue: " + Revenue.getExpectedCPSRightNow() + "$", eventDescriptionTextStyle);
+    content.addChild(expectedDescriptionText)
+    expectedDescriptionText.anchor.x = 0.5
+    expectedDescriptionText.position.y = holder.position.y - 20;
 
 
-    ///confirm button
-    EventScreen.button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
+    var currentRevenueDescriptionText = new PIXI.Text("Current Revenue: " + Revenue.revenuePerSecond + "$", eventDescriptionTextStyle);
+    content.addChild(currentRevenueDescriptionText)
+    currentRevenueDescriptionText.anchor.x = 0.5
+    currentRevenueDescriptionText.position.y = expectedDescriptionText.position.y + 30
+
+
+    // button
+    button = Button.newButton("assets/EventScreen/bt_ok.png", {
         "onRelease": function() {
-            EventScreen.confirmChoice(index)
+            EventScreen.closeEvent()
         },
     })
-
-    EventScreen.button.position.x = centerX + EventScreen.button.width;
-    EventScreen.button.position.y = holder.position.y + 103
-    content.addChild(EventScreen.button)
-
-    ///deny button
-    EventScreen.denybutton = Button.newButton("assets/EventScreen/bt_nah.png", {
-        "onRelease": function() {
-            EventScreen.denyChoice(index)
-        },
-    })
-
-    EventScreen.denybutton.position.x = centerX - EventScreen.denybutton.width
-    EventScreen.denybutton.position.y = holder.position.y + 103
-    content.addChild(EventScreen.denybutton)
-
+    button.position.y = 100
+    content.addChild(button)
 
     stage.addChild(content)
 
+    content.scale.x = 0.001
+    content.scale.y = 0.001
+
+    content.animateIn = function() {
+        TransitionManager.startTransition(content.scale, {
+            "time": 400,
+            "x" : 1,
+            "y" : 1,
+            "easing" : "outBack",
+        })
+    }
+
+    content.animateOut = function(callback) {
+        if (!content.animating) {
+            content.animating = true
+            TransitionManager.startTransition(content.scale, {
+                "time": 400,
+                "x" : 0.001,
+                "y" : 0.001,
+                "easing" : "inBack",
+                "onComplete" : callback,
+            })
+        }
+    }
+
+    content.animateIn()
 }
 
-EventScreen.confirmChoice = function(index)
-{
-	EventScreen.eventPlayerAnswered = true;
-	EventScreen.button.alpha = 0;
-	EventScreen.denybutton.alpha = 0;
-	EventScreen.question.text = gameEvents.gameEvents[index].confirmResult;
-
-	TimerManager.startTimer(2000, EventScreen.closeEvent);
-}
-
-EventScreen.denyChoice = function(index)
-{
-	EventScreen.eventPlayerAnswered = true;
-	EventScreen.button.alpha = 0;
-	EventScreen.denybutton.alpha = 0;
-	EventScreen.question.text = gameEvents.gameEvents[index].denyResult;
-
-	TimerManager.startTimer(2000, EventScreen.closeEvent);
-}
-
-EventScreen.autoCloseEvent = function()
-{
-	if(!EventScreen.eventPlayerAnswered)
-	{
-		EventScreen.closeEvent();
-	}
-}
 
 EventScreen.closeEvent = function()
 {
-	Game.pause(false);
-    NotificationManager.deregister("newMonth", EventScreen.showEvent)
-	TransitionManager.startTransition(ChoicesScreen.background, {
-        "time": 800,
-        "alpha": 0,
-        "onComplete" : function(){
-            EventScreen.content.destroy()
-        }
+    EventScreen.content.animateOut(function() {
+    	Game.pause(false);
     })
 }
 
 
-//NotificationManager.register("newMonth", EventScreen.showEvent)
+NotificationManager.register("newMonth", EventScreen.showEvent)
+TimerManager.startTimer(3000, function() {
+    NotificationManager.notify("newMonth", 3)
+})

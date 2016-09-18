@@ -5,7 +5,7 @@ var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSiz
 
 
 EndGameScreen.showEnding = function(good) {
-	
+
     var content = new PIXI.Container();
     EndGameScreen.content = content;
 
@@ -70,5 +70,3 @@ EndGameScreen.restart = function(index)
 {
 	location.reload();
 }
-
-//NotificationManager.register("newMonth", EventScreen.showEvent)
