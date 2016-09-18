@@ -7,23 +7,23 @@
 					"text" : "Soft Launch",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Only canadians are playing your game, but you managed to fix a few bugs before international release!",
 					"resultBad" : "You game is being played by chinese bots, and your mechanic is already being copied"
 				},
 				{
 					"text" : "Windows Phone\nexclusive",
 					"risk" : "30",
-					"reward" : "15",
-					"time" : "5",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "Microsoft loved your game and decided to invest money on it!",
 					"resultBad" : "Who the hell has a windows phone Mr. PO?"
 				},
 				{
 					"text" : "International\nRelease",
 					"risk" : "60",
-					"reward" : "30",
-					"time" : "5",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "A celebrity played your game and tweeted about it! Revenue is incresing fast worldwide!",
 					"resultBad" : "You just discovered that your game has debug texts like 'Your mom'. WORLDWIDE."
 				}
@@ -37,7 +37,7 @@
 					"text" : "Leave him be",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "He arrives just in time to help the team with the new features and the Sprint is a success!",
 					"resultBad" : "The team had nobody to ask how the new features should work and, somehow, your Cooking Game is now a War FPS."
 				},
@@ -45,7 +45,7 @@
 					"text" : "Let's all\nget tatoos!",
 					"risk" : "30",
 					"reward" : "30",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "The whole team now has awesome tatoos! Everyone gets fired up by it and finishes the Sprint in half the time!",
 					"resultBad" : "The team can't shut up about how they wanna make a Tatoo Game next time."
 				},
@@ -53,9 +53,69 @@
 					"text" : "Fight him!",
 					"risk" : "50",
 					"reward" : "50",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "He yells 'Se me atacar, eu vou atacar!', yet, decides to attack first. You fall on your back and raise your feet in the air. He sould have some trouble sitting for about a week, but your PO pride is intact.",
 					"resultBad" : "The last words you got to hear were 'Se me atacar, eu vou atacar!'. By the time you're awake, you've already become a Slack emoji."
+				}
+			]
+		},
+
+		{
+			"question" : "Your revenue is not doing well, we need more quick content at our games",
+			"options" : [
+				{
+					"text" : "Ask the team a deadline",
+					"risk" : "30",
+					"reward" : "10",
+					"time" : "10",
+					"resultGood" : "The new content is a success and your team is really proud of!",
+					"resultBad" : "Players were tired of waiting and deleted your game form their devices."
+				},
+				{
+					"text" : "Force a 1 week sprint",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "10",
+					"resultGood" : "Apart the lack of mental health of the team, your quick content delivery was a success!",
+					"resultBad" : "Your team is dead inside. Bad, bad PO."
+				},
+				{
+					"text" : "Reskin your last feature",
+					"risk" : "50",
+					"reward" : "30",
+					"time" : "10",
+					"resultGood" : "Somehow your players didn't notice the total reskin and are happy with content!",
+					"resultBad" : "You're suffering of a reviews massacre. Your players are not stupid!"
+				}
+			]
+		},
+
+		{
+			"question" : "Time to pay a lunch for your team. Where do you take them?",
+			"options" : [
+				{
+					"text" : "Grandmother's",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "10",
+					"resultGood" : "You payed a small bill and your team was kind of satisfied. Win win!",
+					"resultBad" : "It`s been two days since anyone of your team came back to work after a general diarrea problem."
+				},
+				{
+					"text" : "Salsa",
+					"risk" : "50",
+					"reward" : "30",
+					"time" : "10",
+					"resultGood" : "a 25% discount for good food? LEGEN...wait for it...DARY!",
+					"resultBad" : "You missed the date and actually there was no discount today. You're screwed."
+				},
+				{
+					"text" : "Gigio",
+					"risk" : "20",
+					"reward" : "10",
+					"time" : "10",
+					"resultGood" : "Big plates, perfect to share between the members of the team, and save money!",
+					"resultBad" : "Nobody likes the same kind of plate and now you have an incredibly expensive bill to pay."
 				}
 			]
 		},
@@ -67,7 +127,7 @@
 					"text" : "Get Devs to\nfix it",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "The devs decided to wait before doing the fixes and started working on features as if the error hadn't hapened. Engine issued a fix later that solved the problems.",
 					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Engine issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
 				},
@@ -75,7 +135,7 @@
 					"text" : "Ask Pizza\nfor a fix!",
 					"risk" : "30",
 					"reward" : "30",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "It took a lot of work, but Pizza triumphed against Engine. The studio bought pizza for everyone.",
 					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week another update fixed the problem."
 				},
@@ -83,7 +143,7 @@
 					"text" : "Let's change\nto Unity!",
 					"risk" : "50",
 					"reward" : "50",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners!\n The engine was fixed later, so half of the teams went back to your old engine.",
 					"resultBad" : "There were some problems and the Engine Company issued a fix a week later, so everyone just went back to it."
 				}
@@ -97,23 +157,23 @@
 					"text" : "Ignore",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Fortunately, nothing bad happened. The tale of the Fox, the Boo and the Ghost soon becomes a legend told from the seniors to the juniors.",
 					"resultBad" : "The customer cannot live with the trauma and commits suicide. It doesn't generate bad publicity but it gives you trouble sleeping at night."
 				},
 				{
 					"text" : "Apologize",
 					"risk" : "30",
-					"reward" : "20",
-					"time" : "5",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "You send a heartwarming apology and a free HC pack. The internet notices your act of kindness and the company gets free publicity.",
 					"resultBad" : "You send a mild apology that isn't good enough for their trouble. Oh well."
 				},
 				{
 					"text" : "Answer with\n'Boo, Boo!'",
 					"risk" : "70",
-					"reward" : "30",
-					"time" : "5",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Your answer quickly grows into an internet Meme, driving further publicity to your game studio.",
 					"resultBad" : "You get sued big. What, did you think making fun of a customer was a good idea?"
 				}
@@ -126,24 +186,24 @@
 				{
 					"text" : "The Ouya",
 					"risk" : "10",
-					"reward" : "30",
-					"time" : "5",
+					"reward" : "10",
+					"time" : "10",
 					"resultGood" : "Selling the Ouya made some good money for the company. 'Did we have an Ouya?', was the worker's answers when they heard about the negotiation.",
 					"resultBad" : "While trying to sell the Ouya, you stumbled upon the secret Brotherhood of Towerfall. You gave up on selling the Ouya when they started screaming to the sky and pointing their bow and arrows at you."
 				},
 				{
 					"text" : "The Karaoke",
 					"risk" : "30",
-					"reward" : "40",
-					"time" : "5",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "You were successful in selling all of the Karaoke equipment, but you felt kinda bad for a few workers, who kept clutching the mike and singing until the very last second, tears flowing from their eyes.",
 					"resultBad" : "You told the company that the karaoke was going to be sold. You went to the kitchen later that night and found a group of workers singing sad karaoke songs, bidding it farewell, and decided not to sell it. "
 				},
 				{
 					"text" : "The Snooker\nTable",
-					"risk" : "70",
+					"risk" : "50",
 					"reward" : "50",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Everyone was saddened to see the Snooker Table go, but they agreed it was for the best. During the Table's last day, legendary games were played and lots of biribas happened. A funeral was held for it the following day.",
 					"resultBad" : "Before selling the Snooker Table, the workers gathered to play a few last game on it. Then, suddenly, a biriba went wrong and ended up tearing aparte the table's cloth, which led to the buyer not wanting it any longer... At least we got to keep the table."
 				}
@@ -157,23 +217,23 @@
 					"text" : "Make lots\nof reskins",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Making a lot of games was a success! You identified a theme that work really well and invested on it!",
 					"resultBad" : "Making lots of games failed. You shot arrows everywhere, but unfortunately none hit any targets."
 				},
 				{
 					"text" : "Make a sequel",
 					"risk" : "30",
-					"reward" : "25",
-					"time" : "5",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "You took a game that was popular and added new features to make a profitable sequel!",
 					"resultBad" : "Making a sequel didn't work out. Sadly, less people hang around for sequels rather than new games."
 				},
 				{
 					"text" : "Make a single\nnew game",
 					"risk" : "60",
-					"reward" : "40",
-					"time" : "5",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Your new game was a success! It caused an uproar in the Free-To-Play market and is beng analyzed by Gamasutra! You hit a Gold Mine!",
 					"resultBad" : "Making a fully-fledged new game did not work out. Sometimes, it's just better to hold back on investing in a project before making sure that it will work."
 				}
@@ -184,9 +244,9 @@
 			"options" : [
 				{
 					"text" : "20C",
-					"risk" : "10",
-					"reward" : "10",
-					"time" : "5",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Everyone loves the cold temperature! There is a boost in productivity!",
 					"resultBad" : "Icicles prevent some devs from working!"
 				},
@@ -194,15 +254,15 @@
 					"text" : "24C",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Everyone agrees this temperature is ideal. There is a boost in productivity, since the team is in sync!",
 					"resultBad" : "There is a civil war betwenn devs who want lower and higher temperatures."
 				},
 				{
 					"text" : "28C",
-					"risk" : "10",
-					"reward" : "10",
-					"time" : "5",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Everyone agrees this temperature this volcanic weather is exactly what the team needs. There is a boost in productivity",
 					"resultBad" : "Devs are tired from the extreme heat! :("
 				}
@@ -213,25 +273,25 @@
 			"options" : [
 				{
 					"text" : "Wait for\nnext release",
-					"risk" : "10",
+					"risk" : "20",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "The fix goes live before too many players even notice it.",
-					"resultBad" : "The game was unplayable before the fix! Negative reviews flood in."
+					"resultBad" : "Player complain about no updates and start giving 1 star reviews."
 				},
 				{
 					"text" : "Fix it NOW!",
-					"risk" : "40",
-					"reward" : "15",
-					"time" : "5",
+					"risk" : "50",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "Nobody will ever know how close their phones were to exploding.",
 					"resultBad" : "The fix broke even more stuff. Delays and sadness await."
 				},
 				{
 					"text" : "Let it slide",
 					"risk" : "70",
-					"reward" : "20",
-					"time" : "5",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Turns out the bug allows some stuff the players enjoy. Success!",
 					"resultBad" : "There is a flood of negative reviews due to save corruption!"
 				}
@@ -244,25 +304,25 @@
 					"text" : "Customize\nRating!",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "This new rating is an extreme success! Players are upvoting our game 300% more!",
 					"resultBad" : "Aparently, customized rating popups are against the policy of one the major app stores worldwide, and we had to remove it :/"
 				},
 				{
 					"text" : "Add Secondary\nLoop!",
-					"risk" : "20",
-					"reward" : "20",
-					"time" : "5",
+					"risk" : "50",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "Everyone loves this new feature, and players are buying lots of IAPs!",
-					"resultBad" : "Customization was a poorly executed reskin, and players are very angry :("
+					"resultBad" : "The feature was a poorly executed reskin, and players are very angry."
 				},
 				{
 					"text" : "Add a\nGacha!",
-					"risk" : "30",
+					"risk" : "70",
 					"reward" : "50",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Everyone loves our new gacha! Congratz!",
-					"resultBad" : "Gacha was costly, and very buggy. It didn't even make it to production."
+					"resultBad" : "Gacha was costly, and very buggy. Players are also calling us thieves."
 				}
 			]
 		},
@@ -273,7 +333,7 @@
 					"text" : "I put\nit back",
 					"risk" : "10",
 					"reward" : "10",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "Ok",
 					"resultBad" : "Hum, it appears the spoon was so dirty you ruined all coffee from the office."
 				},
@@ -281,7 +341,7 @@
 					"text" : "I\nwash it",
 					"risk" : "20",
 					"reward" : "20",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "How nice of you!\n:)",
 					"resultBad" : "We're facing a water shortage. Please exert more caution on how you spend our water."
 				},
@@ -289,7 +349,7 @@
 					"text" : "I\nLick it",
 					"risk" : "101",
 					"reward" : "50",
-					"time" : "5",
+					"time" : "10",
 					"resultGood" : "I don't belive it! It was you all along!",
 					"resultBad" : "Please, don't lick the spoon."
 				}
@@ -300,27 +360,57 @@
 			"options" : [
 				{
 					"text" : "Warn someone\nfrom BI",
-					"risk" : "30",
-					"reward" : "30",
-					"time" : "5",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "10",
 					"resultGood" : "Luckly for you, Business Development is a department physically close to Business Intel. They overheader your complain, and took care of the situation.",
 					"resultBad" :  "Well, the more you know. It appears that BI and BD are two entirelly different departments. Haha"
 				},
 				{
 					"text" : "Remove it",
 					"risk" : "50",
-					"reward" : "50",
-					"time" : "5",
+					"reward" : "30",
+					"time" : "10",
 					"resultGood" : "You did well removing the bugged Ad Network.",
 					"resultBad" : "Removing the Ad Network has impacted negatively our revenue."
 				},
 				{
 					"text" : "Warn\nDevelopers",
-					"risk" : "80",
-					"reward" : "10",
-					"time" : "5",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "10",
 					"resultGood" : "Luckly for you, our developers warned someone from BD department, which took care of the situation.",
 					"resultBad" : "You choose to warn developers, and they did nothing, as this is not their expertise and there was little they could do about it."
+				}
+			]
+		},
+
+		{
+			"question" : "It's one of your game dev's birthday! What do you give as a gift?",
+			"options" : [
+				{
+					"text" : "I don't give gifts",
+					"risk" : "80",
+					"reward" : "50",
+					"time" : "10",
+					"resultGood" : "Actually your dev doesn't believe in friendship with po's. You're fine and saved a few bucks.",
+					"resultBad" : "Suddenly your name appears as one of the villains of the last game. Funny."
+				},
+				{
+					"text" : "A hug",
+					"risk" : "20",
+					"reward" : "10",
+					"time" : "10",
+					"resultGood" : "Who doesn't like hugs, right dude?",
+					"resultBad" : "C'MON, REALLY? THAT'S ALL WE REPRESENT TO YOU?"
+				},
+				{
+					"text" : "Homemade Twix",
+					"risk" : "80",
+					"reward" : "50",
+					"time" : "10",
+					"resultGood" : "You found the secret of the homemade twix, and belongs to the hall of heroes.",
+					"resultBad" : "What did you expect? Santa Claus to bring you a homemade twix? IT DOESN'T EXIST."
 				}
 			]
 		}
