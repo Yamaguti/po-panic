@@ -13,7 +13,7 @@ ChoiceManager.lastChoiceMade     = 0
 ChoiceManager.processLastChoiceResult = function() {
     if(Game.status == GAME_FINISHED)
         return;
-    
+
     var config = gameQuestions.playerOptions[ChoiceManager.currentChoiceIndex]
     var selectedOption = config.options[ChoiceManager.lastChoiceMade]
 
@@ -61,17 +61,17 @@ ChoiceManager.selectChoice = function(index) {
 
 
 ChoiceManager.start = function() {
-    if (! ChoiceManager.active) {
-        ChoiceManager.active = true
+    // if (! ChoiceManager.active) {
+    //     ChoiceManager.active = true
 
-        NotificationManager.register("ChoiceResultScreensClosed", function() {
-            TimerManager.startTimer(1000, function() {
-                ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
-            })
-        })
+    //     NotificationManager.register("ChoiceResultScreensClosed", function() {
+    //         TimerManager.startTimer(1000, function() {
+    //             ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
+    //         })
+    //     })
 
-        TimerManager.startTimer(1000, function(){
-            ChoiceManager.promptUser(0)
-        })
-    }
+    //     TimerManager.startTimer(1000, function(){
+    //         ChoiceManager.promptUser(0)
+    //     })
+    // }
 }
