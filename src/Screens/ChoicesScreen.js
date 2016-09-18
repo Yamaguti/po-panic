@@ -87,6 +87,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
     group.scale.x = 0.001
     group.scale.y = 0.001
     group.animateIn = function() {
+        AudioLib.playSFX("assets/Sounds/sfx/menu_in.wav")
         TransitionManager.startTransition(group.scale, {
             "time": 400,
             "x" : 1,

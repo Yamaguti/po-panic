@@ -14,8 +14,17 @@ AudioLib.playOnLoop = function(audioPath) {
     return audioHandler
 }
 
-AudioLib.play = function(audioPath) {
+AudioLib.play = function(audioPath, onComplete) {
     var audioHandler = new Audio(audioPath);
     audioHandler.play();
+
+    if (onComplete) {
+        audioHandler.addEventListener('ended', onComplete, false);
+    }
+
     return audioHandler
+}
+
+AudioLib.playSFX = function(audioPath, onComplete) {
+    return AudioLib.play(audioPath, onComplete)
 }

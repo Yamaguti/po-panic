@@ -47,6 +47,7 @@ ChoiceResult.newFooter = function(msgText) {
 
     group.animateOut = function() {
         if (!group.leaving) {
+            AudioLib.playSFX("assets/Sounds/sfx/button.wav")
             group.leaving = true
             Game.pause(false);
             TransitionManager.startTransition(group.scale, {
