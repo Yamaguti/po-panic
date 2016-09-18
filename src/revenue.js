@@ -51,24 +51,34 @@ Revenue.setMicromanage = function(mode) {
         Revenue.micromanageMode = mode
         if (mode) {
             window.addEventListener("click", Revenue.addRevenue)
-            var textures = []
 
             var dummyText1 = new PIXI.Text("MICROMANAGE MODE!!!",{fontFamily : 'gameFontBold', fontSize: 45, align : 'center', fill: 0x000000});
             dummyText1.anchor.x = 0.5
-            textures.push(renderer.generateTexture(dummyText1))
+            stage.addChild(dummyText1)
+            Revenue.dummyText1 = dummyText1
 
             var dummyText2 = new PIXI.Text("MICROMANAGE MODE!!!",{fontFamily : 'gameFontBold', fontSize: 45, align : 'center', fill: 0xFFFFFF});
+            stage.addChild(dummyText2)
             dummyText2.anchor.x = 0.5
-            textures.push(renderer.generateTexture(dummyText2))
+            Revenue.dummyText2 = dummyText2
 
-            var micromanagerSprite = new PIXI.extras.MovieClip(textures);
-            Game.content.addChild(micromanagerSprite)
 
-            micromanagerSprite.play()
-            micromanagerSprite.animationSpeed=0.07
-            micromanagerSprite.x = 450
-            micromanagerSprite.y = 30
-            Revenue.micromanagerSprite = micromanagerSprite
+            window.requestAnimationFrame(function(){
+                var textures = []
+                textures.push(renderer.generateTexture(dummyText1))
+                textures.push(renderer.generateTexture(dummyText2, resolution=2))
+                var micromanagerSprite = new PIXI.extras.MovieClip(textures);
+                Game.content.addChild(micromanagerSprite)
+                micromanagerSprite.play()
+                micromanagerSprite.animationSpeed=0.07
+                micromanagerSprite.x = 450
+                micromanagerSprite.y = 80
+                Revenue.micromanagerSprite = micromanagerSprite
+
+                Revenue.dummyText2.destroy()
+                Revenue.dummyText1.destroy()   
+            })
+
             Devguy.setAnimationAll("onfire")
         }
         else{
@@ -90,6 +100,6 @@ Revenue.setUpdate = function(){
         }
     }
     NotificationManager.register("newMonth", function(month){
-        Revenue.setMicromanage(month == 0)
+        Revenue.setMicromanage(month == 2)
     })
 }

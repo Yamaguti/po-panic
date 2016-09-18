@@ -117,8 +117,8 @@ var Hud = {
                 // Displatch Notification
                 if (day == 1 && month != 0 && Hud.monthCheck[month] == null) {
                     Hud.monthCheck[month] = true
-                    NotificationManager.notify("newMonth", month-1)
                     Devguy.setAllRandomAnimations()
+                    NotificationManager.notify("newMonth", month+1)
                 }
 
                 // End Game

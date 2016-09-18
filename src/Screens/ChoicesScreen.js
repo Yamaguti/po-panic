@@ -215,39 +215,39 @@ ChoicesScreen.newHeader = function(question) {
 //
 
 ChoicesScreen.showPlayerOptions = function(index) {
-    var content = new PIXI.Container();
-    ChoicesScreen.content = content;
-
     var config = gameQuestions.playerOptions[index]
-
-    // Background for fade
-    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
-        "color": 0x000000,
-    })
-    content.addChild(background)
-    background.alpha = 0
-    ChoicesScreen.background = background
-
-    // Header
-    var header = ChoicesScreen.newHeader(config.question)
-    content.addChild(header)
-    ChoicesScreen.header = header
-
-    // Actual choices for fade
-    ChoicesScreen.buttons = []
-    for (i = 0; i < 3; i++) {
-        var option = config.options[i];
-        var group = ChoicesScreen.newAnswerButton({
-            "option" : option,
-        }, i)
-        content.addChild(group)
-
-        group.position.x = centerX - (i - 1) * 240
-        group.position.y = centerY + 50
-
-        ChoicesScreen.buttons[i] = group
+    if (config){
+        var content = new PIXI.Container();
+        ChoicesScreen.content = content;
+        // Background for fade
+        var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
+            "color": 0x000000,
+        })
+        content.addChild(background)
+        background.alpha = 0
+        ChoicesScreen.background = background
+    
+        // Header
+        var header = ChoicesScreen.newHeader(config.question)
+        content.addChild(header)
+        ChoicesScreen.header = header
+    
+        // Actual choices for fade
+        ChoicesScreen.buttons = []
+        for (i = 0; i < 3; i++) {
+            var option = config.options[i];
+            var group = ChoicesScreen.newAnswerButton({
+                "option" : option,
+            }, i)
+            content.addChild(group)
+    
+            group.position.x = centerX - (i - 1) * 240
+            group.position.y = centerY + 50
+    
+            ChoicesScreen.buttons[i] = group
+        }
+    
+        ChoicesScreen.animateIn()
+        stage.addChild(content)
     }
-
-    ChoicesScreen.animateIn()
-    stage.addChild(content)
 }
