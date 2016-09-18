@@ -11,6 +11,9 @@ ChoiceManager.lastChoiceMade     = 0
 //
 
 ChoiceManager.processLastChoiceResult = function() {
+    if(Game.status == GAME_FINISHED)
+        return;
+    
     var config = gameQuestions.playerOptions[ChoiceManager.currentChoiceIndex]
     var selectedOption = config.options[ChoiceManager.lastChoiceMade]
 

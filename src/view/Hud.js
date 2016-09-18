@@ -81,6 +81,10 @@ var Hud = {
 
     setUpdate: function(){
         Hud.updateRevenueBar = function(dt){
+            console.log(Game.status);
+            if(Game.status == GAME_FINISHED)
+                return;
+
             if (Hud.fill){
                 Hud.fill.width = (Math.min(Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240), 1) * (Hud.bar.width - 43) * 5)
             }
@@ -99,6 +103,13 @@ var Hud = {
                     Hud.monthCheck[month] = true
                     NotificationManager.notify("newMonth", month-1)
                     Devguy.setAllRandomAnimations()
+                }
+
+                // End Game
+                if(day == 31 && month == 11) {
+                    console.log("END GAME " + Revenue.revenue/gameConfig.gameConfigs.revenueGoal);
+                    Game.pause(true);
+                    NotificationManager.notify("endGame", Revenue.revenue/gameConfig.gameConfigs.revenueGoal);
                 }
             }
         }

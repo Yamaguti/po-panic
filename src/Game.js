@@ -1,6 +1,8 @@
 
 var Game = {}
 
+var GAME_FINISHED = "finished";
+var GAME_STARTED = "started";
 
 Game.newGame = function newGame() {
     var content = new PIXI.Container()
@@ -31,9 +33,14 @@ Game.newGame = function newGame() {
     // Game.background.fadeOut()
     // ChoiceManager.start()
     TutorialScreen.showTutorial(0);
+    Game.status = GAME_STARTED;
+    NotificationManager.register("endGame", Game.finish)
 }
 
 Game.update = function(dt){
+    if(Game.status == GAME_FINISHED)
+        return;
+
     Game.elapsedTime += dt/1000
     if (gameConfig && gameConfig.gameConfigs.gameTime <= Game.elapsedTime){
         // such gambs, very broken, refresh plz
@@ -41,6 +48,12 @@ Game.update = function(dt){
         // update = function(){}
         Game.pause(true)
     }
+}
+
+Game.finish = function()
+{
+    NotificationManager.deregister("endGame", Game.finish)
+    Game.status = GAME_FINISHED;
 }
 
 
