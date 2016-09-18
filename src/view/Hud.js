@@ -65,7 +65,7 @@ var Hud = {
         monthText.position = {x:12, y: 10}
         hudContainer.addChild(monthText)
 
-        var dayText = new PIXI.Text(day.toString,{fontFamily : 'gameFont', fontSize: 15, align : 'center', });
+        var dayText = new PIXI.Text(day.toString(),{fontFamily : 'gameFont', fontSize: 15, align : 'center', });
         dayText.y = 12
         Hud.dayText = dayText
         dayText.position = {x:12, y:27}
