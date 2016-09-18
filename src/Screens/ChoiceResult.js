@@ -44,13 +44,14 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
     group.addChild(result)
     result.position.y = -50;
-    result.position.x = -result.width/2; 
+    result.position.x = -result.width/2;
 
     // Text
     var text = new PIXI.Text(msgText, footerTextStyle);
     group.addChild(text)
-    text.position.y = 0;
+    text.position.y = 40;
     text.position.x = -text.width/2;
+    text.anchor.y = 0.5
 
 
     // Animation
@@ -65,8 +66,8 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
     group.animateOut = function() {
         if (!group.leaving) {
-            AudioLib.playSFX("assets/Sounds/sfx/button.wav")
             group.leaving = true
+            AudioLib.playSFX("assets/Sounds/sfx/button.wav")
             Game.pause(false);
             TransitionManager.startTransition(group.scale, {
                 "time": 400,
