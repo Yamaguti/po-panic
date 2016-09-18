@@ -29,8 +29,6 @@ function TimerManager_update() {
         var timer = TimerManager.registeredTimers[timerId]
         delete TimerManager.registeredTimers[timerId];
         timer.callback()
-
-        console.log("amountTimers", timer, timer.callback)
     }
 }
 
