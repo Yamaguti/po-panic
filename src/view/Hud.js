@@ -85,7 +85,8 @@ var Hud = {
                 return;
 
             if (Hud.fill){
-                Hud.fill.width = (Math.min(Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240), 1) * (Hud.bar.width - 43) * 5)
+                var elapsedRevenueFraction = Math.min(1, Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240))
+                Hud.fill.width = elapsedRevenueFraction * (Hud.bar.width - 43) * 5
             }
             Hud.elapsedTime = Hud.elapsedTime || 0
             Hud.elapsedTime += dt/1000
