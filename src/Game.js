@@ -66,6 +66,8 @@ Game.newGame = function newGame() {
     soundButton.position.x = screenRight  - 50
     soundButton.position.y = screenBottom - 50
     content.addChild(soundButton)
+
+    GameBackground.startAnimation()
 }
 
 Game.update = function(dt){
