@@ -91,6 +91,6 @@ EventScreen.closeEvent = function()
 
 
 NotificationManager.register("newMonth", EventScreen.showEvent)
-TimerManager.startTimer(3000, function() {
-    NotificationManager.notify("newMonth", 3)
-})
+// TimerManager.startTimer(3000, function() {
+//     NotificationManager.notify("newMonth", 3)
+// })
