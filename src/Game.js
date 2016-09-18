@@ -66,6 +66,7 @@ Game.finish = function()
 {
     NotificationManager.deregister("endGame", Game.finish)
     Game.status = GAME_FINISHED;
+    EndGameScreen.showEnding(true);
 }
 
 
