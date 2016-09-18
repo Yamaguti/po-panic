@@ -140,8 +140,11 @@ ChoicesScreen.animateOut = function() {
     }
 
     TransitionManager.startTransition(ChoicesScreen.background, {
-        "time": 400,
+        "time": 800,
         "alpha": 0,
+        "onComplete" : function(){
+            ChoicesScreen.content.destroy()
+        }
     })
 }
 
@@ -152,6 +155,7 @@ ChoicesScreen.animateOut = function() {
 
 ChoicesScreen.showPlayerOptions = function(index) {
     var content = new PIXI.Container();
+    ChoicesScreen.content = content;
 
     var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
         "color": 0x000000,
