@@ -295,5 +295,34 @@
 				}
 			]
 		},
+		{
+			"question" : "It appears there's a major security breach on one of our Ad networks",
+			"options" : [
+				{
+					"text" : "Remove it",
+					"risk" : "101",
+					"reward" : "50",
+					"time" : "5",
+					"resultGood" : "",
+					"resultBad" : ""
+				},
+				{
+					"text" : "Warn\nDevelopers",
+					"risk" : "20",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "",
+					"resultBad" : ""
+				},
+				{
+					"text" : "Talk to\nPatners",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "",
+					"resultBad" :  ""
+				}
+			]
+		},
 	]
 }
