@@ -99,7 +99,6 @@ var Hud = {
                     Hud.monthCheck[month] = true
                     NotificationManager.notify("newMonth", month)
                 }
-
             }
         }
     },
