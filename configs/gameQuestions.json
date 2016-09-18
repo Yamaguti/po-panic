@@ -1,7 +1,7 @@
 {
 	"playerOptions" : [
 		{
-			"question" : "It's time to launch the game!\nYou have a few options to do that:",
+			"question" : "It's time to launch the game! You have a few options to do that:",
 			"options" : [
 				{
 					"text" : "Soft Launch",
@@ -121,7 +121,7 @@
 		},
 
 		{
-			"question" : "The company's finances haven't been doing well. What should we sell to make up for it?",
+			"question" : "The company's finances haven't been doing well.\nWhat should we sell to make up for it?",
 			"options" : [
 				{
 					"text" : "The Ouya",
@@ -140,7 +140,7 @@
 					"resultBad" : "You told the company that the karaoke was going to be sold. You went to the kitchen later that night and found a group of workers singing sad karaoke songs, bidding it farewell, and decided not to sell it. "
 				},
 				{
-					"text" : "The Snooker Table",
+					"text" : "The Snooker\nTable",
 					"risk" : "70",
 					"reward" : "50",
 					"time" : "5",
@@ -151,10 +151,10 @@
 		},
 
 		{
-			"question" : "The company needs a new hit game to generate some profits. How do you want to do it?",
+			"question" : "The company needs a new hit game to generate some profits.\nHow do you want to do it?",
 			"options" : [
 				{
-					"text" : "Make many new games",
+					"text" : "Make lots\nof reskins",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
@@ -170,7 +170,7 @@
 					"resultBad" : "Making a sequel didn't work out. Sadly, less people hang around for sequels rather than new games."
 				},
 				{
-					"text" : "Make a new game",
+					"text" : "Make a single\nnew game",
 					"risk" : "60",
 					"reward" : "40",
 					"time" : "5",
