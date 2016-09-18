@@ -87,7 +87,7 @@ var Hud = {
             if (Hud.dayText && Hud.monthText){
                 var days = Math.floor((Hud.elapsedTime/gameConfig.gameConfigs.gameTime) * 365)
                 var res = Hud.getDate(days)
-                var day = res[0]
+                var day = Math.min(res[0], 31)
                 var month = res[1]
                 Hud.dayText.text = day.toString()
                 Hud.monthText.text = Hud.monthNames[month]
