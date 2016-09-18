@@ -43,6 +43,8 @@ Game.newGame = function newGame() {
     TutorialScreen.showTutorial(0);
     Game.status = GAME_STARTED;
     NotificationManager.register("endGame", Game.finish)
+
+    var bgm = AudioLib.playOnLoop('assets/Sounds/bgm/jump higher run faster.ogg')
 }
 
 Game.update = function(dt){
