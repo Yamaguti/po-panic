@@ -1,4 +1,6 @@
 
+var DEBUGMODE = true
+
 PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
 var stage = new PIXI.Container();
