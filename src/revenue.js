@@ -100,6 +100,6 @@ Revenue.setUpdate = function(){
         }
     }
     NotificationManager.register("newMonth", function(month){
-        Revenue.setMicromanage(month == 2)
+        Revenue.setMicromanage(month == 12)
     })
 }
