@@ -42,5 +42,7 @@ ChoiceManager.selectChoice = function(index) {
 
 
 ChoiceManager.start = function() {
-    ChoiceManager.promptUser(0)
+    TimerManager.startTimer(1000, function(){
+        ChoiceManager.promptUser(0)
+    })
 }
