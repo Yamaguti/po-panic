@@ -12,3 +12,5 @@ We would like to thank everyone in our team for the effort and hard work. We als
 
 http://opengameart.org/content/jump-higher-run-faster-jump-run-miniboss-mix
 http://www.bfxr.net/
+
+Thank you to Cleyton R. Xavier, and the music provided in the following link: http://opengameart.org/content/game-over-theme
