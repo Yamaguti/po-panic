@@ -68,8 +68,8 @@ Game.newGame = function newGame() {
             NotificationManager.notify("BGMButtonPressed")
         },
     })
-    soundButton.position.x = screenRight - 50
-    soundButton.position.y = screenTop   + 150
+    soundButton.position.x = screenRight  - 50
+    soundButton.position.y = screenBottom - 50
     content.addChild(soundButton)
 }
 
@@ -97,7 +97,7 @@ Game.finish = function(goal)
     if(goal >=1)
         EndGameScreen.showEnding(true);
     else
-       EndGameScreen.showEnding(false); 
+       EndGameScreen.showEnding(false);
 }
 
 
