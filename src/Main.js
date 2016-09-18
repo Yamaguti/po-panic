@@ -1,7 +1,7 @@
 
 
 // Constants
-var timeToStart = 300
+var timeToStart = 500
 
 
 // Initialization

@@ -13,16 +13,24 @@ GameBackground.startAnimation = function() {
         background_fire.alpha = 1 - background_fire.alpha
     }
 
-    function changeRecurvise(amount) {
-        if (amount > 0) {
-            changeBackgroundAlpha()
-            TimerManager.startTimer(amount, function() {
-                changeRecurvise((Math.random()-0.4)*300)
-            })
-        }
-    }
 
-    changeRecurvise(300)
+    var current = 0
+    var listTimes = [
+        20,
+        50,
+        50,
+        200,
+        200,
+        300,
+        300,
+        500,
+        5000,
+    ]
+
+    for (i = 0; i < listTimes.length; i ++) {
+        current += listTimes[i]
+        TimerManager.startTimer(current, changeBackgroundAlpha)
+    }
 }
 
 
