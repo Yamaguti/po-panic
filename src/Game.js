@@ -45,6 +45,16 @@ Game.newGame = function newGame() {
     NotificationManager.register("endGame", Game.finish)
 
     var bgm = AudioLib.playOnLoop('assets/Sounds/bgm/jump higher run faster.ogg')
+
+    NotificationManager.register("newMonth", function(month) {
+        if (month == 12) {
+            TimerManager.startTimer(3000, function(){
+                AudioLib.playSFX("assets/Sounds/sfx/Mario World - Hurry Up!.mp3", function() {
+                    bgm.playbackRate = 1.5;
+                })
+            })
+        }
+    })
 }
 
 Game.update = function(dt){
