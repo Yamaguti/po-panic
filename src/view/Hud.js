@@ -86,6 +86,7 @@ var Hud = {
             }
             Hud.elapsedTime = Hud.elapsedTime || 0
             Hud.elapsedTime += dt/1000
+
             if (Hud.dayText && Hud.monthText) {
                 var days = Math.floor((Hud.elapsedTime/gameConfig.gameConfigs.gameTime) * 365)
                 var res = Hud.getDate(days)
