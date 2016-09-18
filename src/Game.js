@@ -24,14 +24,6 @@ Game.newGame = function newGame() {
 
     // Game.background.fadeOut()
     ChoicesScreen.showPlayerOptions(0)
-
-
-
-    var func1 = function(param){
-        console.log("recebi newMonth", param)
-    }
-
-    NotificationManager.register("newMonth", func1)
 }
 
 Game.update = function(dt){
