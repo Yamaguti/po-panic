@@ -72,7 +72,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
 
 
     // Description
-    var time = new PIXI.Text("time: " + params.option.time, descriptionTextStyle);
+    var time = new PIXI.Text("time: " + params.option.time + " s", descriptionTextStyle);
     group.addChild(time)
     time.position.x = holder.position.x - 83;
     time.position.y = descriptionY;
