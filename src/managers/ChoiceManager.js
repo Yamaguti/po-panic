@@ -25,7 +25,7 @@ ChoiceManager.startTimer = function() {
     if (time === undefined) { time = 100 }
 
 
-    TimerManager.startTimer(1000, function(){
+    TimerManager.startTimer(time*1000, function(){
         ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
     })
 }

@@ -179,5 +179,36 @@
 				}
 			]
 		}
+
+
+		{
+			"question" : "What is the perfect air conditioning temperature for the office?",
+			"options" : [
+				{
+					"text" : "20C",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "Everyone loves the cold temperature! There is a boost in productivity!",
+					"resultBad" : "There are some who dislike this new temperature."
+				},
+				{
+					"text" : "24C",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "Everyone agrees this temperature is ideal. There is a boost in productivity, since the team is in sync!",
+					"resultBad" : "There are some who dislike this new temperature."
+				},
+				{
+					"text" : "28",
+					"risk" : "10",
+					"reward" : "10",
+					"time" : "5",
+					"resultGood" : "Everyone agrees this temperature this volcanic weather is exactly what the team needs. There is a boost in productivity",
+					"resultBad" : "Devs are tired from the extreme heat! :("
+				}
+			]
+		}
 	]
 }
