@@ -2,7 +2,8 @@
 var ChoicesScreen = {}
 
 
-var optionTextStyle = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 40, align : 'left', }
+var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 38, align : 'center', }
+var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
 
 
 ChoicesScreen.newAnswerButton = function(params) {
@@ -25,17 +26,49 @@ ChoicesScreen.newAnswerButton = function(params) {
     button.position.y = holder.position.y + 103
     stage.addChild(button)
 
-    // Description
-
 
     // Title
-    var title = new PIXI.Text(params.option.text, optionTextStyle);
+    var title = new PIXI.Text(params.option.text, titleTextStyle);
     stage.addChild(title)
-    title.position.x = holder.position.x - 100;
-    title.position.y = holder.position.y;
+    title.position.x = holder.position.x;
+    title.position.y = holder.position.y - 105;
 
-    // title.anchor.x = 0
-    // title.anchor.y = 0
+    title.anchor.x = 0.5
+    title.anchor.y = 0.5
+
+    var descriptionY       = holder.position.y - 30
+    var descriptionYOffset = 28
+
+    // Descriptions
+    var risk = new PIXI.Text("risk: " + params.option.risk + " %", descriptionTextStyle);
+    stage.addChild(risk)
+    risk.position.x = holder.position.x - 83;
+    risk.position.y = descriptionY;
+
+    risk.anchor.x = 0
+    risk.anchor.y = 0.5
+    descriptionY  = descriptionY + descriptionYOffset;
+
+
+    var reward = new PIXI.Text("reward: " + params.option.reward + " %", descriptionTextStyle);
+    stage.addChild(reward)
+    reward.position.x = holder.position.x - 83;
+    reward.position.y = descriptionY;
+
+    reward.anchor.x = 0
+    reward.anchor.y = 0.5
+    descriptionY    = descriptionY + descriptionYOffset;
+
+
+    // Description
+    var time = new PIXI.Text("time: " + params.option.time + " %", descriptionTextStyle);
+    stage.addChild(time)
+    time.position.x = holder.position.x - 83;
+    time.position.y = descriptionY;
+
+    time.anchor.x = 0
+    time.anchor.y = 0.5
+
 
     return button
 }
