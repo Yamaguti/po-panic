@@ -36,7 +36,8 @@ Devguy = {
 
         var dev = new PIXI.extras.MovieClip(textureArray);
         dev.play()
-        dev.animationSpeed = 0.2
+        dev.animationSpeed = Math.random() * 0.3
+
         dev.scale = {x:2, y:2}
         dev.position = Devguy.pos[index]
         stage.addChild(dev)
