@@ -20,6 +20,7 @@ ChoiceManager.processLastChoiceResult = function() {
     var risk = Number(selectedOption.risk)/100
 
     ChoiceManager.lastStartTime = null
+    ChoiceManager.nextEndTime   = null
 
     if (Math.random() > risk) { // success :)
         Revenue.revenuePerSecond += Number(selectedOption.reward)
@@ -44,21 +45,27 @@ ChoiceManager.startTimer = function() {
     // Settings default to prevent unespected crashes
     var time = selectedOption.time
     if (time === undefined) { time = 100 }
-    var taskAmountTime = time*1000
+    var taskAmountTime = Number(time)
 
-    ChoiceManager.lastStartTime = TimerManager.getTime()
-    ChoiceManager.nextEndTime = ChoiceManager.lastStartTime + taskAmountTime
+    ChoiceManager.lastStartTime = Game.elapsedTime
+    ChoiceManager.nextEndTime   = ChoiceManager.lastStartTime + taskAmountTime
 
-    // Wait time from choice
-    TimerManager.startTimer(taskAmountTime, function() {
-        ChoiceManager.processLastChoiceResult()
-    })
+    console.log(ChoiceManager.lastStartTime, taskAmountTime)
 }
 
 
 //
 // Methods
 //
+
+ChoiceManager.update = function() {
+    var currentTime = Game.elapsedTime
+
+    if (ChoiceManager.nextEndTime && currentTime >= ChoiceManager.nextEndTime) {
+        ChoiceManager.processLastChoiceResult()
+    }
+}
+
 
 ChoiceManager.selectChoice = function(index) {
     ChoiceManager.lastChoiceMade = index
@@ -85,7 +92,8 @@ ChoiceManager.start = function() {
 ChoiceManager.getElapsedFraction = function() {
     if (ChoiceManager.lastStartTime && ChoiceManager.nextEndTime) {
         var total = ChoiceManager.nextEndTime - ChoiceManager.lastStartTime
-        var current = ChoiceManager.nextEndTime - TimerManager.getTime()
+        var current = ChoiceManager.nextEndTime - Game.elapsedTime
+
         return 1-(current/total)
     } else {
         return 0

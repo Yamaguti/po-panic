@@ -26,6 +26,7 @@ function update(dt){
         Revenue.update(dt)
         Hud.updateRevenueBar(dt)
         Game.update(dt)
+        ChoiceManager.update()
     }
 }
 
