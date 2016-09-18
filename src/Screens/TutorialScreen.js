@@ -1,5 +1,5 @@
 
-var DEBUGSKIP = true
+var DEBUGSKIP = false
 var TutorialScreen = {}
 
 var descriptionTextStyle = {fontFamily : 'gameFont', fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : screenWidth - 80, }
