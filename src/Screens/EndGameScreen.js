@@ -10,6 +10,7 @@ EndGameScreen.showEnding = function(good) {
     var whatever = []
     if(good){
         for (i = 1; i < 9; i++){
+            AudioLib.playSFX("assets/Sounds/sfx/game-win-vignette.mp3")
             whatever[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }else{
