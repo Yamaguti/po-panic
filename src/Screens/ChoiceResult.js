@@ -76,7 +76,7 @@ ChoiceResult.showBadResult = function(optionConfig) {
     stage.addChild(header)
     header.animateIn()
 
-    TimerManager.startTimer(3000, function(){
+    TimerManager.startTimer(5000, function(){
         header.animateOut()
     })
 }
