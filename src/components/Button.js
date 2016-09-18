@@ -22,6 +22,10 @@ Button.newButton = function(spritePath, buttonParams) {
     sprite.mouseup = function(mouseData) {
         sprite.scale.x = 2
         sprite.scale.y = 2
+
+        // WARNING: because of this dirty little fix, any button can only be pressed once
+        sprite.interactive = false
+
         if (buttonParams.onRelease)
             buttonParams.onRelease()
     }
