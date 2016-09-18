@@ -420,7 +420,7 @@
 			"options" : [
 				{
 					"text" : "Game Localization Expert",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "You hired a guy specialized into localizing games to bugolavian. The game receives features in Bugolavia and is now a super hit!",
@@ -436,7 +436,7 @@
 				},
 				{
 					"text" : "Use an online dictionary",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "Who could imagine your game designer was a master of bugolavian using only a translation tool? The update is a success!",
@@ -450,7 +450,7 @@
 			"options" : [
 				{
 					"text" : "A play about your game",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "The play might have been the funniest thing that was ever made. Your team is very motivated and a video of the play becomes viral on internet!",
@@ -466,7 +466,7 @@
 				},
 				{
 					"text" : "A circus number",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "One of your team members has the surprising talent to pass a condom through his nose into his mouth. The crowd is delighted and your team is motivated!",
@@ -480,7 +480,7 @@
 			"options" : [
 				{
 					"text" : "Eliminate the feature",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "That was a risky choice, but a bullseye! Turns out players hated the old feature and are now leaving 5 star reviews for the change!",
@@ -496,7 +496,7 @@
 				},
 				{
 					"text" : "Revamp feature",
-					"risk" : "80",
+					"risk" : "70",
 					"reward" : "50",
 					"time" : "7",
 					"resultGood" : "Your team worked on highlighting the feature and what's good in it for the player. A lot more players are adhering and good reviews are popping up!",
