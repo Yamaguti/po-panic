@@ -74,7 +74,7 @@ ChoicesScreen.newAnswerButton = function(params) {
     group.scale.y = 0.001
     group.animateIn = function() {
         TransitionManager.startTransition(group.scale, {
-            "time": 200,
+            "time": 400,
             "x" : 1,
             "y" : 1,
             "easing" : "outBack",
