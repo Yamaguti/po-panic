@@ -14,6 +14,7 @@ EndGameScreen.showEnding = function(good) {
         }
     }else{
         for (i = 1; i < 46; i++){
+            AudioLib.playSFX("assets/Sounds/sfx/game-lose-vignette.mp3")
             whatever[i] = 'assets/boat_fail/boat_fail_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }
