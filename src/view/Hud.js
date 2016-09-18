@@ -152,7 +152,7 @@ var Hud = {
                 }
             }
 
-            if (month >= 1){
+            if (month >= 11){
                 Hud.rotate(dt)
             }
         }

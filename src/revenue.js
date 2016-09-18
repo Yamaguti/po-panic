@@ -44,8 +44,44 @@ Revenue.createText = function() {
 Revenue.update = function(dt){}
 
 
-Revenue.addRevenue = function(){
+Revenue.addRevenue = function(event){
     Revenue.revenue += Revenue.revenuePerSecond * 0.2
+    var feedbackGroup = new PIXI.Container()
+    var text = new PIXI.Text("+ " + Math.floor(Revenue.revenuePerSecond * 0.2) + "$",{fontFamily : 'gameFontBold', fontSize: 12, align : 'center', fill: 0x000000});
+
+    var coin = new PIXI.extras.MovieClip(Revenue.coinTextureArray);
+    coin.animationSpeed = 0.3
+    coin.play()
+
+    feedbackGroup.addChild(coin)
+    feedbackGroup.addChild(text)
+    text.x = 20
+
+    feedbackGroup.position.x = event.clientX - ((window.innerWidth - renderer.width) >> 1 )
+    feedbackGroup.position.y = event.clientY - ((window.innerHeight - renderer.height) >> 1)
+
+    feedbackGroup.scale = {x:2, y:2}
+
+    stage.addChild(feedbackGroup)
+
+    TimerManager.startTimer(1000, function(){
+        feedbackGroup.destroy()
+    })
+
+    TransitionManager.startTransition(feedbackGroup.position, {
+        "time": 400,
+        "y" : feedbackGroup.y - 10,
+        "easing" : "outBack",
+    })
+
+    TimerManager.startTimer(420, function(){
+        TransitionManager.startTransition(feedbackGroup.position, {
+            "time": 400,
+            "y" : feedbackGroup.y + 10,
+            "easing" : "inBack",
+        })
+    })
+
 }
 
 
@@ -103,9 +139,23 @@ Revenue.setUpdate = function(){
         }
     }
 
-    NotificationManager.register("newMonth", function(month){
-        Revenue.setMicromanage(month == 12)
-    })
+    var whatever = []
+    for (i = 1; i < 11; i++){
+        whatever[i] = 'assets/coin/coin_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
+    }
+
+    var textureArray = [];
+
+    // console.log(event)
+
+    for (var i=1; i < 11; i++)
+    {
+         var texture = PIXI.Texture.fromImage(whatever[i]);
+         textureArray.push(texture);
+    };
+
+    Revenue.coinTextureArray = textureArray
+    // Revenue.setMicromanage(true)
 }
 
 
