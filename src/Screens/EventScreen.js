@@ -6,7 +6,6 @@ var playerAnswered = false;
 
 
 EventScreen.showEvent = function(index) {
-	console.log("event month is " + index)
 	Game.pause(true);
 
     var content = new PIXI.Container();
@@ -63,7 +62,7 @@ EventScreen.showEvent = function(index) {
     EventScreen.denybutton.position.y = holder.position.y + 103
     content.addChild(EventScreen.denybutton)
 
-    
+
     stage.addChild(content)
 
 }
