@@ -224,7 +224,7 @@
 					"risk" : "40",
 					"reward" : "15",
 					"time" : "5",
-					"resultGood" : "Nobody will ever know how close their phones were close to exploding.",
+					"resultGood" : "Nobody will ever know how close their phones were to exploding.",
 					"resultBad" : "The fix broke even more stuff. Delays and sadness await."
 				},
 				{
@@ -241,12 +241,12 @@
 			"question" : "Time for some new features in our amazing cooking game!",
 			"options" : [
 				{
-					"text" : "Add a\nGacha!",
-					"risk" : "30",
-					"reward" : "50",
+					"text" : "Customize\nRating!",
+					"risk" : "10",
+					"reward" : "10",
 					"time" : "5",
-					"resultGood" : "Everyone loves our new gacha! Congratz!",
-					"resultBad" : "Gacha was costly, and very buggy. It didn't even make it to production."
+					"resultGood" : "This new rating is an extreme success! Players are upvoting our game 300% more!",
+					"resultBad" : "Aparently, customized rating popups are against the policy of one the major app stores worldwide, and we had to remove it :/"
 				},
 				{
 					"text" : "Add Secondary\nLoop!",
@@ -257,12 +257,12 @@
 					"resultBad" : "Customization was a poorly executed reskin, and players are very angry :("
 				},
 				{
-					"text" : "Customize\nRating!",
-					"risk" : "10",
-					"reward" : "10",
+					"text" : "Add a\nGacha!",
+					"risk" : "30",
+					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "This new rating is an extreme success! Players are upvoting our game 300% more!",
-					"resultBad" : "Aparently, customized rating popups are against the policy of one the major app stores worldwide, and we had to remove it :/"
+					"resultGood" : "Everyone loves our new gacha! Congratz!",
+					"resultBad" : "Gacha was costly, and very buggy. It didn't even make it to production."
 				}
 			]
 		},
@@ -270,34 +270,42 @@
 			"question" : "After adding sugar in your coffee, what do you do with the communal spoon?",
 			"options" : [
 				{
-					"text" : "I\nLick it",
-					"risk" : "101",
-					"reward" : "50",
-					"time" : "5",
-					"resultGood" : "I don't belive it! It was you all along!",
-					"resultBad" : "Please, don't lick the spoon."
-				},
-				{
-					"text" : "I\nwash it",
-					"risk" : "20",
-					"reward" : "10",
-					"time" : "5",
-					"resultGood" : "How nice of you!\n:)",
-					"resultBad" : "We're facing a water shortage. Please exert more caution on how you spend our water."
-				},
-				{
 					"text" : "I put\nit back",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
 					"resultGood" : "Ok",
 					"resultBad" : "Hum, it appears the spoon was so dirty you ruined all coffee from the office."
+				},
+				{
+					"text" : "I\nwash it",
+					"risk" : "20",
+					"reward" : "20",
+					"time" : "5",
+					"resultGood" : "How nice of you!\n:)",
+					"resultBad" : "We're facing a water shortage. Please exert more caution on how you spend our water."
+				},
+				{
+					"text" : "I\nLick it",
+					"risk" : "101",
+					"reward" : "50",
+					"time" : "5",
+					"resultGood" : "I don't belive it! It was you all along!",
+					"resultBad" : "Please, don't lick the spoon."
 				}
 			]
 		},
 		{
 			"question" : "It appears there's a an Ad networks displaying inadequate content on advertisement towards our public",
 			"options" : [
+				{
+					"text" : "Warn someone\nfrom BI",
+					"risk" : "30",
+					"reward" : "30",
+					"time" : "5",
+					"resultGood" : "Luckly for you, Business Development is a department physically close to Business Intel. They overheader your complain, and took care of the situation.",
+					"resultBad" :  "Well, the more you know. It appears that BI and BD are two entirelly different departments. Haha"
+				},
 				{
 					"text" : "Remove it",
 					"risk" : "50",
@@ -313,14 +321,6 @@
 					"time" : "5",
 					"resultGood" : "Luckly for you, our developers warned someone from BD department, which took care of the situation.",
 					"resultBad" : "You choose to warn developers, and they did nothing, as this is not their expertise and there was little they could do about it."
-				},
-				{
-					"text" : "Warn someone\nfrom BI",
-					"risk" : "30",
-					"reward" : "30",
-					"time" : "5",
-					"resultGood" : "Luckly for you, Business Development is a department physically close to Business Intel. They overheader your complain, and took care of the situation.",
-					"resultBad" :  "Well, the more you know. It appears that BI and BD are two entirelly different departments. Haha"
 				}
 			]
 		}
