@@ -30,6 +30,8 @@ var Hud = {
         "DEC",
     ],
 
+    monthCheck:{},
+
     month:0,
     day:0,
 
@@ -93,9 +95,11 @@ var Hud = {
                 Hud.monthText.text = Hud.monthNames[month]
 
                 // Displatch Notification
-                if (day == 0 && month != 0) {
+                if (day == 1 && month != 0 && Hud.monthCheck[month] == null) {
+                    Hud.monthCheck[month] = true
                     NotificationManager.notify("newMonth", month)
                 }
+
             }
         }
     },
