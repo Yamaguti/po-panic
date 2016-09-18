@@ -43,7 +43,7 @@ Revenue.update = function(dt){}
 
 
 Revenue.addRevenue = function(){
-    Revenue.revenue += Revenue.revenuePerSecond
+    Revenue.revenue += Revenue.revenuePerSecond * 0.2
 }
 
 
