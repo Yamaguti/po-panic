@@ -26,5 +26,7 @@ AudioLib.play = function(audioPath, onComplete) {
 }
 
 AudioLib.playSFX = function(audioPath, onComplete) {
-    return AudioLib.play(audioPath, onComplete)
+    var sfx = AudioLib.play(audioPath, onComplete)
+    sfx.volume = 0.4
+    return sfx
 }
