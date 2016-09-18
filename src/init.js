@@ -1,4 +1,5 @@
 
+PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
 var stage = new PIXI.Container();
 
@@ -19,4 +20,3 @@ var projectPath = "http://localhost:8000/"
 // create a renderer instance.
 var renderer = PIXI.autoDetectRenderer(screenWidth, screenHeight, {backgroundColor : 0x1099bb});
 
-PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;

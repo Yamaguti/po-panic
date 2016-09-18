@@ -16,28 +16,21 @@ function compareTimers(a,b) {
 
 function TimerManager_update() {
     var now          = getTime();
-    var timersToFire = [];
-    var newRegister  = [];
+    var timersToFire = {};
 
-    // Find Timers To Fire
-    for (i = 0; i < TimerManager.registeredTimers.length; i++) {
-        timer = TimerManager.registeredTimers[i]
+    for (var timerId in TimerManager.registeredTimers) {
+        var timer = TimerManager.registeredTimers[timerId]
         if (now >= timer.time) {
-            timersToFire[timersToFire.length] = timer
+            timersToFire[timerId] = true
         }
     }
 
-    // Remove Timers From Registry
-    for (i = timersToFire.length; i < TimerManager.registeredTimers.length; i ++) {
-        newRegister[i - timersToFire.length] = TimerManager.registeredTimers[i]
-    }
-    TimerManager.registeredTimers = newRegister
-
-
-    // Fire Timers
-    for (i = 0; i < timersToFire.length; i++) {
-        var timer = timersToFire[i]
+    for (var timerId in timersToFire) {
+        var timer = TimerManager.registeredTimers[timerId]
+        delete TimerManager.registeredTimers[timerId];
         timer.callback()
+
+        console.log("amountTimers", timer, timer.callback)
     }
 }
 
@@ -52,22 +45,16 @@ function getTime() {
 
 
 function startTimer(timeToFire, callback) {
-    var lenght = TimerManager.registeredTimers.length
-
-    // register new timer
-    TimerManager.registeredTimers[lenght] = {
+    TimerManager.registeredTimers[Utils.newRandomString()] = {
         "callback" : callback,
         "time"     : getTime() + timeToFire,
     }
-
-    //sort timers by time
-    TimerManager.registeredTimers.sort(compareTimers);
 }
 
 
 
 // Initialization
-TimerManager.registeredTimers = []
+TimerManager.registeredTimers = {}
 
 // Exposed Functions
 TimerManager.getTime          = getTime

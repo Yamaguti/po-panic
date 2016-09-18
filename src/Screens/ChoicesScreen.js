@@ -113,12 +113,20 @@ ChoicesScreen.showPlayerOptions = function(index) {
     ChoicesScreen.animatePlayerOptions()
 }
 
+
 ChoicesScreen.animatePlayerOptions = function() {
     for (i = 0; i < 3; i++) {
-        var button = ChoicesScreen.buttons[i]
-        // TimerManager.startTimer(100*i, function(){
-            button.animateIn()
-        // })
+        console.log(i, "out")
+
+        var getCallback = function(index) {
+            return function() {
+                var button = ChoicesScreen.buttons[index]
+                console.log(index, "in")
+                button.animateIn()
+            }
+        }
+
+        TimerManager.startTimer(200*i, getCallback(i))
     }
 }
 

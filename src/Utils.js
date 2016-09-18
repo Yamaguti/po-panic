@@ -15,3 +15,7 @@ Utils.newImage = function newImage(params) {
 
     return sprite
 }
+
+Utils.newRandomString = function() {
+    return Math.random().toString(36).substring(7);
+}
