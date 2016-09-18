@@ -1,21 +1,20 @@
+
+var DEBUGSKIP = true
 var TutorialScreen = {}
 
-var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : screenWidth - 80, }
+var descriptionTextStyle = {fontFamily : 'gameFont', fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : screenWidth - 80, }
 
 
 TutorialScreen.showTutorial = function(index) {
-	Game.pause(true);
-    TutorialScreen.index = index;
-
     var content = new PIXI.Container();
     TutorialScreen.content = content;
+    TutorialScreen.index = index;
+    Game.pause(true);
 
-    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
-        "color": 0x000000,
-    })
-    content.addChild(background)
-    background.alpha = 0
-    TutorialScreen.background = background
+    if (DEBUGSKIP) {
+        TutorialScreen.closeTutorial();
+        return;
+    }
 
     var holder = Utils.newImage({
         "name": "assets/ChoicesScreen/txt_holder.png",
@@ -52,12 +51,8 @@ TutorialScreen.nextTutorial = function()
 TutorialScreen.closeTutorial = function()
 {
 	Game.pause(false);
-	TransitionManager.startTransition(TutorialScreen.background, {
-        "time": 100,
-        "alpha": 0,
-        "onComplete" : function(){
-            TutorialScreen.content.destroy()
-        }
+	TimerManager.startTimer(100, function() {
+        TutorialScreen.content.destroy()
     })
     ChoiceManager.start();
 }
