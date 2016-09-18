@@ -43,7 +43,7 @@ Revenue.update = function(dt){}
 
 
 Revenue.addRevenue = function(){
-    Revenue.revenue += Revenue.revenuePerSecond
+    Revenue.revenue += Revenue.revenuePerSecond * 0.2
 }
 
 
@@ -100,7 +100,4 @@ Revenue.setUpdate = function(){
             Revenue.revText.text = (Math.floor(Revenue.revenuePerSecond).toString()) + '$ PER SECOND'
         }
     }
-    NotificationManager.register("newMonth", function(month){
-        Revenue.setMicromanage(month == 12)
-    })
 }
