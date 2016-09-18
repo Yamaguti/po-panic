@@ -62,6 +62,17 @@ var Hud = {
         var day = res[0]
         var month = res[1]
 
+
+        var goalImage = Utils.newImage({
+            "name" : "assets/Hud/goal_icon.png"
+        })
+        hudContainer.addChild(goalImage)
+        goalImage.position.x = centerX-20
+        goalImage.position.y = 30
+        goalImage.scale.x = 1
+        goalImage.scale.y = 1
+
+
         var monthText = new PIXI.Text(Hud.monthNames[month],{fontFamily : 'gameFont', fontSize: 12, align : 'center', });
         Hud.monthText = monthText
         monthText.position = {x:12, y: 10}
