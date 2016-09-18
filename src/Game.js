@@ -22,9 +22,11 @@ Game.newGame = function newGame() {
 
     var bar = TaskBar.new()
     Game.content.addChild(bar)
+    Game.taskbar = bar
 
     bar.position.x = centerX
-    bar.position.y = screenBottom - 40
+    bar.position.y = screenBottom - 80
+
 
     // very gambs
     Hud.setUpdate()
@@ -48,6 +50,10 @@ Game.update = function(dt){
         return;
 
     Game.elapsedTime += dt/1000
+    if (Game.taskbar) {
+        Game.taskbar.update()
+    }
+
     if (gameConfig && gameConfig.gameConfigs.gameTime <= Game.elapsedTime){
         // such gambs, very broken, refresh plz
         console.log("stahp")

@@ -19,6 +19,8 @@ ChoiceManager.processLastChoiceResult = function() {
 
     var risk = Number(selectedOption.risk)/100
 
+    ChoiceManager.lastStartTime = null
+
     if (Math.random() > risk) { // success :)
         Revenue.revenuePerSecond += Number(selectedOption.reward)
         ChoiceResult.showGoodResult(selectedOption)
@@ -42,9 +44,13 @@ ChoiceManager.startTimer = function() {
     // Settings default to prevent unespected crashes
     var time = selectedOption.time
     if (time === undefined) { time = 100 }
+    var taskAmountTime = time*1000
+
+    ChoiceManager.lastStartTime = TimerManager.getTime()
+    ChoiceManager.nextEndTime = ChoiceManager.lastStartTime + taskAmountTime
 
     // Wait time from choice
-    TimerManager.startTimer(time*1000, function() {
+    TimerManager.startTimer(taskAmountTime, function() {
         ChoiceManager.processLastChoiceResult()
     })
 }
@@ -61,17 +67,27 @@ ChoiceManager.selectChoice = function(index) {
 
 
 ChoiceManager.start = function() {
-    // if (! ChoiceManager.active) {
-    //     ChoiceManager.active = true
+    if (! ChoiceManager.active) {
+        ChoiceManager.active = true
 
-    //     NotificationManager.register("ChoiceResultScreensClosed", function() {
-    //         TimerManager.startTimer(1000, function() {
-    //             ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
-    //         })
-    //     })
+        NotificationManager.register("ChoiceResultScreensClosed", function() {
+            TimerManager.startTimer(1000, function() {
+                ChoiceManager.promptUser(ChoiceManager.currentChoiceIndex + 1)
+            })
+        })
 
-    //     TimerManager.startTimer(1000, function(){
-    //         ChoiceManager.promptUser(0)
-    //     })
-    // }
+        TimerManager.startTimer(1000, function(){
+            ChoiceManager.promptUser(0)
+        })
+    }
+}
+
+ChoiceManager.getElapsedFraction = function() {
+    if (ChoiceManager.lastStartTime && ChoiceManager.nextEndTime) {
+        var total = ChoiceManager.nextEndTime - ChoiceManager.lastStartTime
+        var current = ChoiceManager.nextEndTime - TimerManager.getTime()
+        return 1-(current/total)
+    } else {
+        return 0
+    }
 }
