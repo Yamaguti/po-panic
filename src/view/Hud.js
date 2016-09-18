@@ -92,7 +92,10 @@ var Hud = {
                 Hud.dayText.text = day.toString()
                 Hud.monthText.text = Hud.monthNames[month]
 
-
+                // Displatch Notification
+                if (day == 0 && month != 0) {
+                    NotificationManager.notify("newMonth", month)
+                }
             }
         }
     },
