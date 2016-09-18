@@ -4,7 +4,7 @@ var ChoicesScreen = {}
 
 var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 38, align : 'center', }
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
-
+var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', }
 
 //
 // Private Methods
@@ -61,7 +61,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
     descriptionY  = descriptionY + descriptionYOffset;
 
 
-    var reward = new PIXI.Text("reward: " + params.option.reward + " %", descriptionTextStyle);
+    var reward = new PIXI.Text("reward: " + params.option.reward, descriptionTextStyle);
     group.addChild(reward)
     reward.position.x = holder.position.x - 83;
     reward.position.y = descriptionY;
@@ -72,7 +72,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
 
 
     // Description
-    var time = new PIXI.Text("time: " + params.option.time + " %", descriptionTextStyle);
+    var time = new PIXI.Text("time: " + params.option.time, descriptionTextStyle);
     group.addChild(time)
     time.position.x = holder.position.x - 83;
     time.position.y = descriptionY;
@@ -124,6 +124,8 @@ ChoicesScreen.animateIn = function() {
         "alpha": 0.5,
     })
 
+    ChoicesScreen.header.animateIn()
+
     Game.pause(true)
 }
 
@@ -149,8 +151,61 @@ ChoicesScreen.animateOut = function() {
         }
     })
 
+    ChoicesScreen.header.animateOut()
+
     Game.pause(false)
 }
+
+
+
+ChoicesScreen.newHeader = function(question) {
+    var group = new PIXI.Container()
+
+    var header = Utils.newImage({
+        "name": "assets/ChoicesScreen/txt_holder.png"
+    })
+    group.addChild(header)
+
+    group.position.x = centerX
+    group.position.y = screenTop + 80
+
+    group.scale.x  = 0.001
+    group.scale.y  = 0.001
+
+
+    //
+    // Text
+    var text = new PIXI.Text(question, headerTextStyle);
+    group.addChild(text)
+    text.position.x = -centerX + 50;
+    text.position.y = header.position.y;
+
+    text.anchor.x = 0
+    text.anchor.y = 0.5
+
+
+    // Animation
+    group.animateIn = function() {
+        TransitionManager.startTransition(group.scale, {
+            "time": 400,
+            "x" : 1,
+            "y" : 1,
+            "easing" : "outBack",
+        })
+    }
+
+    group.animateOut = function() {
+        TransitionManager.startTransition(group.scale, {
+            "time": 400,
+            "x" : 0.001,
+            "y" : 0.001,
+            "easing" : "inBack",
+        })
+    }
+
+    return group
+}
+
 
 
 //
@@ -161,6 +216,9 @@ ChoicesScreen.showPlayerOptions = function(index) {
     var content = new PIXI.Container();
     ChoicesScreen.content = content;
 
+    var config = gameQuestions.playerOptions[index]
+
+    // Background for fade
     var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
         "color": 0x000000,
     })
@@ -168,16 +226,22 @@ ChoicesScreen.showPlayerOptions = function(index) {
     background.alpha = 0
     ChoicesScreen.background = background
 
+    // Header
+    var header = ChoicesScreen.newHeader(config.question)
+    content.addChild(header)
+    ChoicesScreen.header = header
+
+    // Actual choices for fade
     ChoicesScreen.buttons = []
     for (i = 0; i < 3; i++) {
-        var option = gameQuestions.playerOptions[index].options[i];
+        var option = config.options[i];
         var group = ChoicesScreen.newAnswerButton({
             "option" : option,
         })
         content.addChild(group)
 
         group.position.x = centerX - (i - 1) * 240
-        group.position.y = centerY
+        group.position.y = centerY + 50
 
         ChoicesScreen.buttons[i] = group
     }
