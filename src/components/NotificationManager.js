@@ -37,8 +37,8 @@ NotificationManager.notify = function(notification) {
     var listenerArray = NotificationManager.registerTable[notification]
     var results = []
 
-    for (i = 0; i < listenerArray.length; i++) {
-        var callback = listenerArray[i]
+    for (notificationIndex = listenerArray.length-1; notificationIndex >= 0; notificationIndex--) {
+        var callback = listenerArray[notificationIndex]
         results.push(callback(arguments[1]))
     }
 
