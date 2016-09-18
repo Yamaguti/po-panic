@@ -1,16 +1,21 @@
 
+var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 24, align : 'center', stroke : Colors.black, strokeThickness : 5,}
+
 var Revenue = {
     revenue: 0,
     revenuePerSecond: 15,
 }
 
 Revenue.createText = function() {
-    var text = new PIXI.Text('0$ PER SECOND',{fontFamily : 'gameFontBold', fontSize: 24, align : 'center', });
-    text.position.x = centerX
-    text.position.y = centerY + 180
+    var text = new PIXI.Text('0$ PER SECOND', revenueTextStyle);
+
+    text.position.x = screenLeft + 95
+    text.position.y = screenTop  + 80
+
     Game.content.addChild(text)
-    text.anchor.x = 0.5
-    text.anchor.y = 0.5
+    text.anchor.x = 0
+    text.anchor.y = 0
+
     Revenue.revText = text
 }
 
