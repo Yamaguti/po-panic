@@ -2,9 +2,11 @@
 var ChoicesScreen = {}
 
 
-var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 38, align : 'center', }
+var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 38, align : 'center', }
 var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 40}
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
+var riskTextStyle = {fontFamily : 'gameFont',     fill: '#ff3d58',fontSize: 30, align : 'center', }
+var rewardTextStyle = {fontFamily : 'gameFont',     fill: '#ffcf4f',fontSize: 30, align : 'center', }
 
 //
 // Private Methods
@@ -51,7 +53,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
     var descriptionYOffset = 28
 
     // Descriptions
-    var risk = new PIXI.Text("risk: " + params.option.risk + " %", descriptionTextStyle);
+    var risk = new PIXI.Text("risk: " + params.option.risk + " %", riskTextStyle);
     group.addChild(risk)
     risk.position.x = holder.position.x - 83;
     risk.position.y = descriptionY;
@@ -61,7 +63,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
     descriptionY  = descriptionY + descriptionYOffset;
 
 
-    var reward = new PIXI.Text("reward: " + params.option.reward, descriptionTextStyle);
+    var reward = new PIXI.Text("reward: +" + params.option.reward + " $", rewardTextStyle);
     group.addChild(reward)
     reward.position.x = holder.position.x - 83;
     reward.position.y = descriptionY;

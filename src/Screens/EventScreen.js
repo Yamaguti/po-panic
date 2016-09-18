@@ -1,6 +1,6 @@
 var EventScreen = {}
 
-var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
 var playerAnswered = false;
 
