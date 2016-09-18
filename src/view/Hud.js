@@ -34,6 +34,7 @@ var Hud = {
 
     month:0,
     day:0,
+    rotationSpeed: 0.5,
 
 
     //This is so stupid
@@ -47,11 +48,11 @@ var Hud = {
 
     createRevenueBar : function(){
         var hudContainer = new PIXI.Container()
+        Hud.hudContainer = hudContainer
         var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/hud_bar.png'));
         Hud.bar = bar
         hudContainer.addChild(bar)
 
-        hudContainer.position.x = 10
 
         var fill = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/bar_fill.png'));
         fill.anchor.x = 0.4
@@ -87,11 +88,22 @@ var Hud = {
         Hud.dayText = dayText
         dayText.position = {x:12, y:27}
         hudContainer.addChild(dayText)
+        hudContainer.pivot = new PIXI.Point(hudContainer.width/4, hudContainer.height/4)
+
+        hudContainer.position.x = 450
+        hudContainer.position.y = 40
 
         stage.addChild(hudContainer)
     },
 
     updateRevenueBar: function(dt){
+    },
+
+    rotate: function(dt){
+        Hud.hudContainer.rotation += 0.1 *dt/1000 * Hud.rotationSpeed
+        if (Math.abs(Hud.hudContainer.rotation) >= 0.1){
+            Hud.rotationSpeed *= -1
+        }
     },
 
     setUpdate: function(){
@@ -127,6 +139,10 @@ var Hud = {
                     Game.pause(true);
                     NotificationManager.notify("endGame", Revenue.revenue/gameConfig.gameConfigs.revenueGoal);
                 }
+            }
+
+            if (month >= 1){
+                Hud.rotate(dt)
             }
         }
     },
