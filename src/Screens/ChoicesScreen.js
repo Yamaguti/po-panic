@@ -2,8 +2,8 @@
 var ChoicesScreen = {}
 
 
-var titleTextStyle       = {fontFamily : 'gameFontBold', fill: Colors.orange, fontSize: 38, align : 'center', }
-var headerTextStyle      = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 80}
+var titleTextStyle       = {fontFamily : 'gameFontBold', fill: Colors.orange, fontSize: 38, align : 'center',  wordWrap:true, wordWrapWidth: 190}
+var headerTextStyle      = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'left',    wordWrap:true, wordWrapWidth: screenWidth - 80}
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: Colors.white,  fontSize: 30, align : 'center', }
 var riskTextStyle        = {fontFamily : 'gameFont',     fill: Colors.red,    fontSize: 30, align : 'center', }
 var rewardTextStyle      = {fontFamily : 'gameFont',     fill: Colors.yellow, fontSize: 30, align : 'center', }
@@ -227,12 +227,12 @@ ChoicesScreen.showPlayerOptions = function(index) {
         content.addChild(background)
         background.alpha = 0
         ChoicesScreen.background = background
-    
+
         // Header
         var header = ChoicesScreen.newHeader(config.question)
         content.addChild(header)
         ChoicesScreen.header = header
-    
+
         // Actual choices for fade
         ChoicesScreen.buttons = []
         for (i = 0; i < 3; i++) {
@@ -241,13 +241,13 @@ ChoicesScreen.showPlayerOptions = function(index) {
                 "option" : option,
             }, i)
             content.addChild(group)
-    
+
             group.position.x = centerX - (i - 1) * 240
             group.position.y = centerY + 50
-    
+
             ChoicesScreen.buttons[i] = group
         }
-    
+
         ChoicesScreen.animateIn()
         stage.addChild(content)
     }
