@@ -9,6 +9,7 @@ var footerTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30
 //
 
 ChoiceResult.newFooter = function(msgText) {
+    Game.pause(true);
     var group = new PIXI.Container()
 
     var header = Utils.newImage({
@@ -45,14 +46,18 @@ ChoiceResult.newFooter = function(msgText) {
     }
 
     group.animateOut = function() {
-        TransitionManager.startTransition(group.scale, {
-            "time": 400,
-            "x" : 0.001,
-            "y" : 0.001,
-            "easing" : "inBack",
-        })
+        if (!group.leaving) {
+            group.leaving = true
+            Game.pause(false);
+            TransitionManager.startTransition(group.scale, {
+                "time": 400,
+                "x" : 0.001,
+                "y" : 0.001,
+                "easing" : "inBack",
+            })
 
-        NotificationManager.notify("ChoiceResultScreensClosed")
+            NotificationManager.notify("ChoiceResultScreensClosed")
+        }
     }
 
     header.interactive = true
