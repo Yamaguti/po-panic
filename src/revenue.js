@@ -46,9 +46,9 @@ Revenue.update = function(dt){}
 
 Revenue.addRevenue = function(event){
     if(Game.paused){return}
-    Revenue.revenue += Revenue.revenuePerSecond * 0.2
+    Revenue.revenue += Revenue.revenuePerSecond * 0.3
     var feedbackGroup = new PIXI.Container()
-    var text = new PIXI.Text("+ " + Math.floor(Revenue.revenuePerSecond * 0.2) + "$",{fontFamily : 'gameFontBold', fontSize: 12, align : 'center', fill: 0x000000});
+    var text = new PIXI.Text("+ " + Math.floor(Revenue.revenuePerSecond * 0.3) + "$",{fontFamily : 'gameFontBold', fontSize: 12, align : 'center', fill: 0x000000});
 
     var coin = new PIXI.extras.MovieClip(Revenue.coinTextureArray);
     coin.animationSpeed = 0.3
