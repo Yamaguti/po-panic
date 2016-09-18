@@ -82,6 +82,15 @@ Game.finish = function()
 }
 
 
+var mutex = 0
 Game.pause = function (pauseStatus) {
-    Game.paused = pauseStatus
+    if (pauseStatus) {
+        mutex += 1
+    } else {
+        mutex -= 1
+    }
+
+    if (Game.paused != pauseStatus) {
+        Game.paused = mutex > 0
+    }
 }
