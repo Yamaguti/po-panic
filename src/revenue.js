@@ -3,7 +3,7 @@ var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSi
 
 var Revenue = {
     revenue: 0,
-    revenuePerSecond: 15,
+    revenuePerSecond: 1,
 }
 
 Revenue.createText = function() {
