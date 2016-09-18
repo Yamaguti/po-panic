@@ -81,7 +81,6 @@ var Hud = {
 
     setUpdate: function(){
         Hud.updateRevenueBar = function(dt){
-            console.log(Game.status);
             if(Game.status == GAME_FINISHED)
                 return;
 
