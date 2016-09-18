@@ -11,8 +11,7 @@ Game.newGame = function newGame() {
 
     Revenue.createText()
 
-    var background  = GameBackground.newBackground()
-    Game.content.addChild(background);
+    GameBackground.newBackground()
 
     loader.load();
 

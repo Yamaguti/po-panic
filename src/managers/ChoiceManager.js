@@ -49,8 +49,6 @@ ChoiceManager.startTimer = function() {
 
     ChoiceManager.lastStartTime = Game.elapsedTime
     ChoiceManager.nextEndTime   = ChoiceManager.lastStartTime + taskAmountTime
-
-    console.log(ChoiceManager.lastStartTime, taskAmountTime)
 }
 
 

@@ -150,7 +150,6 @@ var Hud = {
 
                 // End Game
                 if(day == 31 && month == 11) {
-                    console.log("END GAME " + Revenue.revenue/gameConfig.gameConfigs.revenueGoal);
                     Game.pause(true);
                     NotificationManager.notify("endGame", Revenue.revenue/gameConfig.gameConfigs.revenueGoal);
                 }
