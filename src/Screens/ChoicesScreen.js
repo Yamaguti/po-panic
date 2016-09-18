@@ -7,15 +7,14 @@ var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSiz
 
 
 ChoicesScreen.newAnswerButton = function(params) {
+    var group = new PIXI.Container();
     params = params || {}
 
     // Holder
     var holder = Utils.newImage({
         "name": "assets/ChoicesScreen/action_cell.png",
-        "x" : (params.x || centerX),
-        "y" : (params.y || centerY),
     })
-    stage.addChild(holder)
+    group.addChild(holder)
 
     // Button
     var button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
@@ -24,12 +23,12 @@ ChoicesScreen.newAnswerButton = function(params) {
 
     button.position.x = holder.position.x
     button.position.y = holder.position.y + 103
-    stage.addChild(button)
+    group.addChild(button)
 
 
     // Title
     var title = new PIXI.Text(params.option.text, titleTextStyle);
-    stage.addChild(title)
+    group.addChild(title)
     title.position.x = holder.position.x;
     title.position.y = holder.position.y - 105;
 
@@ -41,7 +40,7 @@ ChoicesScreen.newAnswerButton = function(params) {
 
     // Descriptions
     var risk = new PIXI.Text("risk: " + params.option.risk + " %", descriptionTextStyle);
-    stage.addChild(risk)
+    group.addChild(risk)
     risk.position.x = holder.position.x - 83;
     risk.position.y = descriptionY;
 
@@ -51,7 +50,7 @@ ChoicesScreen.newAnswerButton = function(params) {
 
 
     var reward = new PIXI.Text("reward: " + params.option.reward + " %", descriptionTextStyle);
-    stage.addChild(reward)
+    group.addChild(reward)
     reward.position.x = holder.position.x - 83;
     reward.position.y = descriptionY;
 
@@ -62,7 +61,7 @@ ChoicesScreen.newAnswerButton = function(params) {
 
     // Description
     var time = new PIXI.Text("time: " + params.option.time + " %", descriptionTextStyle);
-    stage.addChild(time)
+    group.addChild(time)
     time.position.x = holder.position.x - 83;
     time.position.y = descriptionY;
 
@@ -70,16 +69,28 @@ ChoicesScreen.newAnswerButton = function(params) {
     time.anchor.y = 0.5
 
 
-    return button
+    return group
 }
 
 
 ChoicesScreen.showPlayerOptions = function(index) {
     for (i = 0; i < 3; i++) {
         var option = gameQuestions.playerOptions[index].options[i];
-        ChoicesScreen.newAnswerButton({
-            "x" : centerX - (i - 1) * 240,
+        var group = ChoicesScreen.newAnswerButton({
             "option" : option,
+        })
+        stage.addChild(group)
+
+        group.position.x = centerX - (i - 1) * 240
+        group.position.y = centerY
+
+        group.scale.x = 0.001
+        group.scale.y = 0.001
+        TransitionManager.startTransition(group.scale, {
+            "time": 500,
+            "x" : 1,
+            "y" : 1,
+            "easing" : "outBack",
         })
     }
 
