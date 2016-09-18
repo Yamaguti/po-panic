@@ -52,9 +52,7 @@ Revenue.setMicromanage = function(mode){
 
 Revenue.setUpdate = function(){
     Revenue.update = function(dt){
-        if (!Revenue.micromanageMode){
-            Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
-        }
+        Revenue.revenue += Revenue.revenuePerSecond * (dt/1000)
         if (Revenue.revText){
             Revenue.revText.text = (Math.floor(Revenue.revenuePerSecond).toString()) + '$ PER SECOND'
         }
