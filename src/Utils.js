@@ -19,3 +19,23 @@ Utils.newImage = function newImage(params) {
 Utils.newRandomString = function() {
     return Math.random().toString(36).substring(7);
 }
+
+
+// Thanks to http://stackoverflow.com/questions/22073350/draw-a-rectangle-with-pixi-js
+Utils.newRectangle = function(x, y, width, height, params) {
+    params = params || {}
+
+    var graphics = new PIXI.Graphics();
+
+    if (params.color != null) {
+        graphics.beginFill(params.color);
+    }
+
+    // set the line style to have a width of 5 and set the color to red
+    graphics.lineStyle(params.strokeWidth || 2, params.strokeColor || 0x000000);
+
+    // draw a rectangle
+    graphics.drawRect(x, y, width, height);
+
+    return graphics;
+}

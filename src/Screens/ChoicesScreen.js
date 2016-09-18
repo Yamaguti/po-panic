@@ -83,10 +83,10 @@ ChoicesScreen.newAnswerButton = function(params) {
 
     group.animateOut = function() {
         TransitionManager.startTransition(group.scale, {
-            "time": 200,
+            "time": 400,
             "x" : 0.001,
             "y" : 0.001,
-            "easing" : "outBack",
+            "easing" : "inBack",
         })
     }
 
@@ -95,14 +95,22 @@ ChoicesScreen.newAnswerButton = function(params) {
 
 
 ChoicesScreen.showPlayerOptions = function(index) {
-    ChoicesScreen.buttons = []
+    var content = new PIXI.Container();
 
+    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
+        "color": 0x000000,
+    })
+    content.addChild(background)
+    background.alpha = 0
+    ChoicesScreen.background = background
+
+    ChoicesScreen.buttons = []
     for (i = 0; i < 3; i++) {
         var option = gameQuestions.playerOptions[index].options[i];
         var group = ChoicesScreen.newAnswerButton({
             "option" : option,
         })
-        stage.addChild(group)
+        content.addChild(group)
 
         group.position.x = centerX - (i - 1) * 240
         group.position.y = centerY
@@ -110,11 +118,15 @@ ChoicesScreen.showPlayerOptions = function(index) {
         ChoicesScreen.buttons[i] = group
     }
 
-    ChoicesScreen.animatePlayerOptions()
+    ChoicesScreen.animateIn()
+    TimerManager.startTimer(2000, function(){
+        ChoicesScreen.animateOut()
+    })
+    stage.addChild(content)
 }
 
 
-ChoicesScreen.animatePlayerOptions = function() {
+ChoicesScreen.animateIn = function() {
     for (i = 0; i < 3; i++) {
 
         var getCallback = function(index) {
@@ -126,5 +138,30 @@ ChoicesScreen.animatePlayerOptions = function() {
 
         TimerManager.startTimer(200*i, getCallback(i))
     }
+
+    TransitionManager.startTransition(ChoicesScreen.background, {
+        "time": 400,
+        "alpha": 0.5,
+    })
+}
+
+
+ChoicesScreen.animateOut = function() {
+    for (i = 0; i < 3; i++) {
+
+        var getCallback = function(index) {
+            return function() {
+                var button = ChoicesScreen.buttons[index]
+                button.animateOut()
+            }
+        }
+
+        TimerManager.startTimer(200*i, getCallback(i))
+    }
+
+    TransitionManager.startTransition(ChoicesScreen.background, {
+        "time": 400,
+        "alpha": 0,
+    })
 }
 

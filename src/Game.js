@@ -7,13 +7,11 @@ Game.newGame = function newGame() {
     Game.background = background
     stage.addChild(background);
 
-    ChoicesScreen.showPlayerOptions(0)
-
     loader.load();
 
     Revenue.createText()
     Hud.createRevenueBar()
-    
+
     // very gambs
     Hud.setUpdate()
     Revenue.setUpdate()
@@ -21,10 +19,11 @@ Game.newGame = function newGame() {
     Game.elapsedTime = 0
 
     for(i = 1; i < 5; i++) {
-        Devguy.new(i)   
+        Devguy.new(i)
     }
 
     // Game.background.fadeOut()
+    ChoicesScreen.showPlayerOptions(0)
 }
 
 Game.update = function(dt){
