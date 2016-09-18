@@ -77,7 +77,7 @@ Revenue.setMicromanage = function(mode) {
                 Revenue.micromanagerSprite = micromanagerSprite
 
                 Revenue.dummyText2.destroy()
-                Revenue.dummyText1.destroy()   
+                Revenue.dummyText1.destroy()
             })
 
             Devguy.setAnimationAll("onfire")
@@ -100,7 +100,24 @@ Revenue.setUpdate = function(){
             Revenue.revText.text = (Math.floor(Revenue.revenuePerSecond).toString()) + '$ PER SECOND'
         }
     }
+
     NotificationManager.register("newMonth", function(month){
         Revenue.setMicromanage(month == 12)
     })
 }
+
+
+// Formula assumes a linear progression on cps over time
+Revenue.getExpectedCPSAtEndGame = function() {
+    var total = gameConfig.gameConfigs.revenueGoal
+    var time  = gameConfig.gameConfigs.gameTime
+
+    return 2*total/time -1
+}
+
+
+Revenue.getExpectedCPSRightNow = function() {
+    var elapsedTimeFraction = Game.elapsedTime/gameConfig.gameConfigs.gameTime
+    return Math.floor(Revenue.getExpectedCPSAtEndGame()*elapsedTimeFraction)
+}
+
