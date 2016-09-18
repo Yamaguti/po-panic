@@ -116,12 +116,10 @@ ChoicesScreen.showPlayerOptions = function(index) {
 
 ChoicesScreen.animatePlayerOptions = function() {
     for (i = 0; i < 3; i++) {
-        console.log(i, "out")
 
         var getCallback = function(index) {
             return function() {
                 var button = ChoicesScreen.buttons[index]
-                console.log(index, "in")
                 button.animateIn()
             }
         }
