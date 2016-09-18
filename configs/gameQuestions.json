@@ -296,31 +296,31 @@
 			]
 		},
 		{
-			"question" : "It appears there's a major security breach on one of our Ad networks",
+			"question" : "It appears there's a an Ad networks displaying inadequate content on advertisement towards our public",
 			"options" : [
 				{
 					"text" : "Remove it",
-					"risk" : "101",
+					"risk" : "50",
 					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" : ""
+					"resultGood" : "You did well removing the bugged Ad Network.",
+					"resultBad" : "Removing the Ad Network has impacted negatively our revenue."
 				},
 				{
 					"text" : "Warn\nDevelopers",
-					"risk" : "20",
+					"risk" : "80",
 					"reward" : "10",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" : ""
+					"resultGood" : "Luckly for you, our developers warned someone from BD department, which took care of the situation.",
+					"resultBad" : "You choose to warn developers, and they did nothing, as this is not their expertise and there was little they could do about it."
 				},
 				{
-					"text" : "Talk to\nPatners",
-					"risk" : "10",
-					"reward" : "10",
+					"text" : "Warn someone\nfrom BI",
+					"risk" : "30",
+					"reward" : "30",
 					"time" : "5",
-					"resultGood" : "",
-					"resultBad" :  ""
+					"resultGood" : "Luckly for you, Business Development is a department physically close to Business Intel. They overheader your complain, and took care of the situation.",
+					"resultBad" :  "Well, the more you know. It appears that BI and BD are two entirelly different departments. Haha"
 				}
 			]
 		}
