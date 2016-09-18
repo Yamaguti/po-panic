@@ -119,6 +119,36 @@
 					"resultBad" : "You get sued big. What, did you think making fun of a customer was a good idea?"
 				}
 			]
+		},
+
+		{
+			"question" : "The company's finances haven't been doing well. What should we sell to make up for it?",
+			"options" : [
+				{
+					"text" : "The Ouya",
+					"risk" : "10",
+					"reward" : "30",
+					"time" : "5",
+					"resultGood" : "Selling the Ouya made some good money for the company. 'Did we have an Ouya?', was the worker's answers when they heard about the negotiation.",
+					"resultBad" : "While trying to sell the Ouya, you stumbled upon the secret Brotherhood of Towerfall. You gave up on selling the Ouya when they started screaming to the sky and pointing their bow and arrows at you."
+				},
+				{
+					"text" : "The Karaoke",
+					"risk" : "30",
+					"reward" : "40",
+					"time" : "5",
+					"resultGood" : "You were successful in selling all of the Karaoke equipment, but you felt kinda bad for a few workers, who kept clutching the mike and singing until the very last second, tears flowing from their eyes.",
+					"resultBad" : "You told the company that the karaoke was going to be sold. You went to the kitchen later that night and found a group of workers singing sad karaoke songs, bidding it farewell, and decided not to sell it. "
+				},
+				{
+					"text" : "The Snooker Table",
+					"risk" : "70",
+					"reward" : "50",
+					"time" : "5",
+					"resultGood" : "Everyone was saddened to see the Snooker Table go, but they agreed it was for the best. During the Table's last day, legendary games were played and lots of biribas happened. A funeral was held for it the following day.",
+					"resultBad" : "Before selling the Snooker Table, the workers gathered to play a few last game on it. Then, suddenly, a biriba went wrong and ended up tearing aparte the table's cloth, which led to the buyer not wanting it any longer... At least we got to keep the table."
+				}
+			]
 		}
 	]
 }
