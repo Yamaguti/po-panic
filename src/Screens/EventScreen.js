@@ -71,6 +71,7 @@ EventScreen.showEvent = function(index) {
     content.scale.y = 0.001
 
     content.animateIn = function() {
+        AudioLib.playSFX("assets/Sounds/sfx/menu_in.wav")
         TransitionManager.startTransition(content.scale, {
             "time": 400,
             "x" : 1,

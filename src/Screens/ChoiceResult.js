@@ -56,6 +56,7 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
     // Animation
     group.animateIn = function() {
+        AudioLib.playSFX("assets/Sounds/sfx/menu_in.wav")
         TransitionManager.startTransition(group.scale, {
             "time": 400,
             "x" : 1,
