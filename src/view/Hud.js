@@ -50,11 +50,15 @@ var Hud = {
         var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/hud_bar.png'));
         Hud.bar = bar
         hudContainer.addChild(bar)
+
+        hudContainer.position.x = 10
+
         var fill = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/bar_fill.png'));
         fill.anchor.x = 0.4
         fill.position.x = 35
         fill.position.y = 11
         hudContainer.addChild(fill)
+
         Hud.fill = fill
         Hud.maxWidth = bar.width
         hudContainer.scale.x = hudContainer.scale.y = 2
@@ -67,7 +71,7 @@ var Hud = {
             "name" : "assets/Hud/goal_icon.png"
         })
         hudContainer.addChild(goalImage)
-        goalImage.position.x = centerX-20
+        goalImage.position.x = centerX-25
         goalImage.position.y = 30
         goalImage.scale.x = 1
         goalImage.scale.y = 1
