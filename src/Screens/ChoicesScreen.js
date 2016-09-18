@@ -3,8 +3,8 @@ var ChoicesScreen = {}
 
 
 var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSize: 38, align : 'center', }
+var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 40}
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
-var headerTextStyle      = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', }
 
 //
 // Private Methods
@@ -30,7 +30,7 @@ ChoicesScreen.newAnswerButton = function(params, index) {
     var button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
         "onRelease": function() {
             ChoicesScreen.selectChoice(index)
-        },
+        }
     })
 
     button.position.x = holder.position.x
@@ -237,7 +237,7 @@ ChoicesScreen.showPlayerOptions = function(index) {
         var option = config.options[i];
         var group = ChoicesScreen.newAnswerButton({
             "option" : option,
-        })
+        }, i)
         content.addChild(group)
 
         group.position.x = centerX - (i - 1) * 240
