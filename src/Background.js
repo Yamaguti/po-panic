@@ -1,7 +1,7 @@
 
 
 function newBackground() {
-    var texture = PIXI.Texture.fromImage('assets/background.png');
+    var texture = PIXI.Texture.fromImage('assets/Background/background.png');
     // create a new Sprite using the texture
     var background = new PIXI.Sprite(texture);
 

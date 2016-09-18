@@ -47,10 +47,10 @@ var Hud = {
 
     createRevenueBar : function(){
         var hudContainer = new PIXI.Container()
-        var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/hud_bar.png'));
+        var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/hud_bar.png'));
         Hud.bar = bar
         hudContainer.addChild(bar)
-        var fill = new PIXI.Sprite(PIXI.Texture.fromImage('assets/bar_fill.png'));
+        var fill = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/bar_fill.png'));
         fill.anchor.x = 0.4
         fill.position.x = 35
         fill.position.y = 11
@@ -98,6 +98,7 @@ var Hud = {
                 if (day == 1 && month != 0 && Hud.monthCheck[month] == null) {
                     Hud.monthCheck[month] = true
                     NotificationManager.notify("newMonth", month-1)
+                    Devguy.setAllRandomAnimations()
                 }
             }
         }
