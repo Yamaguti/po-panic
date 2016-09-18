@@ -1,11 +1,29 @@
 
+
+//
+// Stylesheet :)
+//
 var revenueTextStyle = {fontFamily : 'gameFontBold', fill: Colors.yellow, fontSize: 24, align : 'center', stroke : Colors.black, strokeThickness : 5,}
 
+
+//
+// Constants
+//
+var initialRevenue = 1
+
+
+//
+// Class
+//
 var Revenue = {
     revenue: 0,
-    revenuePerSecond: 1,
+    revenuePerSecond: initialRevenue,
 }
 
+
+//
+// Methods
+//
 Revenue.createText = function() {
     var text = new PIXI.Text('0$ PER SECOND', revenueTextStyle);
 
@@ -20,12 +38,13 @@ Revenue.createText = function() {
 }
 
 
-
 Revenue.update = function(dt){}
+
 
 Revenue.addRevenue = function(){
     Revenue.revenue += Revenue.revenuePerSecond
 }
+
 
 Revenue.setMicromanage = function(mode) {
     if (mode != Revenue.micromanageMode){
