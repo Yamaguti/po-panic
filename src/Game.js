@@ -20,6 +20,12 @@ Game.newGame = function newGame() {
     Revenue.createText()
     Hud.createRevenueBar()
 
+    var bar = TaskBar.new()
+    Game.content.addChild(bar)
+
+    bar.position.x = centerX
+    bar.position.y = screenBottom - 40
+
     // very gambs
     Hud.setUpdate()
     Revenue.setUpdate()

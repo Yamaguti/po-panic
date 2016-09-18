@@ -1,8 +1,9 @@
+
 var EventScreen = {}
 
-var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
-var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
-var playerAnswered = false;
+var eventTitleTextStyle       = {fontFamily : 'gameFontBold', fill: '#ff983d',fontSize: 40, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+var eventDescriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+EventScreen.eventPlayerAnswered = false;
 
 
 EventScreen.showEvent = function(index) {
@@ -26,15 +27,13 @@ EventScreen.showEvent = function(index) {
     content.addChild(holder)
 
     // Title
-    console.dir(gameEvents);
-    var title = new PIXI.Text("OH OH!", titleTextStyle);
+    var title = new PIXI.Text("OH OH!", eventTitleTextStyle);
     content.addChild(title)
     title.position.x = holder.position.x - title.width/2;
     title.position.y = holder.position.y - 120;
 
-    // Title
-    console.dir(gameEvents);
-    EventScreen.question = new PIXI.Text(gameEvents.gameEvents[index].label, descriptionTextStyle);
+    // Description
+    EventScreen.question = new PIXI.Text(gameEvents.gameEvents[index].label, eventDescriptionTextStyle);
     content.addChild(EventScreen.question)
     EventScreen.question.position.x = holder.position.x - EventScreen.question.width/2;
     EventScreen.question.position.y = holder.position.y;
@@ -69,7 +68,7 @@ EventScreen.showEvent = function(index) {
 
 EventScreen.confirmChoice = function(index)
 {
-	playerAnswered = true;
+	EventScreen.eventPlayerAnswered = true;
 	EventScreen.button.alpha = 0;
 	EventScreen.denybutton.alpha = 0;
 	EventScreen.question.text = gameEvents.gameEvents[index].confirmResult;
@@ -79,7 +78,7 @@ EventScreen.confirmChoice = function(index)
 
 EventScreen.denyChoice = function(index)
 {
-	playerAnswered = true;
+	EventScreen.eventPlayerAnswered = true;
 	EventScreen.button.alpha = 0;
 	EventScreen.denybutton.alpha = 0;
 	EventScreen.question.text = gameEvents.gameEvents[index].denyResult;
@@ -89,7 +88,7 @@ EventScreen.denyChoice = function(index)
 
 EventScreen.autoCloseEvent = function()
 {
-	if(!playerAnswered)
+	if(!EventScreen.eventPlayerAnswered)
 	{
 		EventScreen.closeEvent();
 	}
