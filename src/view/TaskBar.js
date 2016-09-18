@@ -13,7 +13,7 @@ TaskBar.new = function() {
     barContainer.addChild(fill)
     barContainer.fill = fill
 
-
+    // Magic values, found by trial and error.
     fill.anchor.x = 0
     fill.position.x = 6
     fill.position.y = 8
