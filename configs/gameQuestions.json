@@ -64,7 +64,7 @@
 			"question" : "The new Engine update has broken all of the games!\nWhat do we do?",
 			"options" : [
 				{
-					"text" : "Get Devs to fix it",
+					"text" : "Get Devs to\nfix it",
 					"risk" : "10",
 					"reward" : "10",
 					"time" : "5",
@@ -72,20 +72,20 @@
 					"resultBad" : "The devs fixed the problems with lots of workarounds. The problem is that Engine issued a fix shrotly afterwards. Now they've gotta undo the workarounds."
 				},
 				{
-					"text" : "Ask Pizza for a fix!",
+					"text" : "Ask Pizza\nfor a fix!",
 					"risk" : "30",
 					"reward" : "30",
 					"time" : "5",
 					"resultGood" : "It took a lot of work, but Pizza triumphed against Engine. The studio bought pizza for everyone.",
-					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week Engine fixed the problem."
+					"resultBad" : "Rose says she last saw Pizza repeating 'T-ERROR! Nothing can fix the T-ERROR!' over and over. Pizza hasn't been seen since. Later that week another update fixed the problem."
 				},
 				{
-					"text" : "Let's change to Unity!",
+					"text" : "Let's change\nto Unity!",
 					"risk" : "50",
 					"reward" : "50",
 					"time" : "5",
-					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners! Engine was fixed later, so half of the teams went back to Engine.",
-					"resultBad" : "There were some problems and Engine issued a fix a week later, so everyone just went back to Engine."
+					"resultGood" : "The transition to Unity went smoothly and you're now big Unity partners!\n The engine was fixed later, so half of the teams went back to your old engine.",
+					"resultBad" : "There were some problems and the Engine Company issued a fix a week later, so everyone just went back to it."
 				}
 			]
 		},
