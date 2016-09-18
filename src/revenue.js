@@ -45,11 +45,13 @@ Revenue.setMicromanage = function(mode) {
             micromanagerSprite.x = 450
             micromanagerSprite.y = 30
             Revenue.micromanagerSprite = micromanagerSprite
+            Devguy.setAnimationAll("onfire")
         }
         else{
             if(Revenue.micromanagerSprite){
                 Revenue.micromanagerSprite.destroy()
             }
+            Devguy.setAllRandomAnimations()
             window.removeEventListener("click", Revenue.addRevenue)
         }
     }
