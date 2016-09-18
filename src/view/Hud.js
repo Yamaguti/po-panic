@@ -47,7 +47,7 @@ var Hud = {
 
     createRevenueBar : function(){
         var hudContainer = new PIXI.Container()
-        var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/hud_bar.png'));
+        var bar = new PIXI.Sprite(PIXI.Texture.fromImage('assets/Hud/hud_bar.png'));
         Hud.bar = bar
         hudContainer.addChild(bar)
         var fill = new PIXI.Sprite(PIXI.Texture.fromImage('assets/bar_fill.png'));
