@@ -55,6 +55,22 @@ Game.newGame = function newGame() {
             })
         }
     })
+
+    console.log(bgm.volume)
+
+    NotificationManager.register("BGMButtonPressed", function(month) {
+        bgm.volume = 1-bgm.volume
+    })
+
+
+    var soundButton = MultipressButton.new("assets/Hud/bt_sound_on.png", {
+        "onRelease": function() {
+            NotificationManager.notify("BGMButtonPressed")
+        },
+    })
+    soundButton.position.x = screenRight - 50
+    soundButton.position.y = screenTop   + 150
+    content.addChild(soundButton)
 }
 
 Game.update = function(dt){
