@@ -67,7 +67,7 @@ TutorialScreen.microManageTutorial = function(index) {
     content.addChild(holder)
 
     // Text
-    TutorialScreen.question = new PIXI.Text("It's your time to shine! You have the power to micro manage your team and earn extra revenue! Click at the screen like a madman!", descriptionTextStyle);
+    TutorialScreen.question = new PIXI.Text("CLICK AT THE SCREEN LIKE A MAD MAN!\nIt's your time to shine! You have the power to micro manage your team and earn extra revenue!", descriptionTextStyle);
     content.addChild(TutorialScreen.question)
     TutorialScreen.question.position.x = holder.position.x - TutorialScreen.question.width/2;
     TutorialScreen.question.position.y = holder.position.y - TutorialScreen.question.height/2;
