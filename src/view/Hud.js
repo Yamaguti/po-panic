@@ -117,6 +117,10 @@ var Hud = {
         }
     },
 
+    sanitizeWidth: function(n){
+        return Math.floor(n*2)/2
+    },
+
     setUpdate: function(){
         Hud.updateRevenueBar = function(dt){
             if(Game.status == GAME_FINISHED)
@@ -124,7 +128,8 @@ var Hud = {
 
             if (Hud.fill){
                 var elapsedRevenueFraction = Math.min(1, Revenue.revenue/(gameConfig.gameConfigs.revenueGoal || 240))
-                Hud.fill.width = elapsedRevenueFraction * (Hud.bar.width - 43) * 5
+                Hud.fill.width = Hud.sanitizeWidth(elapsedRevenueFraction * (Hud.bar.width - 43) * 5)
+                console.log(Hud.fill.width)
             }
             Hud.elapsedTime = Hud.elapsedTime || 0
             Hud.elapsedTime += dt/1000
