@@ -23,6 +23,7 @@ Game.newGame = function newGame() {
     }
 
     // Game.background.fadeOut()
+    ChoicesScreen.showPlayerOptions(0)
     ChoiceManager.start()
 }
 
