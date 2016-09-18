@@ -1,38 +1,56 @@
 
 var ChoiceResult = {}
 
-var footerTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 80}
+var footerTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 220}
+var titleresultTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 40, align : 'left'}
+var goodTextStyle = {fontFamily : 'gameFont',     fill: '#15ee99',fontSize: 40, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 180}
+var badTextStyle = {fontFamily : 'gameFont',     fill: '#ff3d58',fontSize: 40, align : 'left', wordWrap:true, wordWrapWidth: screenWidth - 180}
 
 
 //
 // Private Methods
 //
 
-ChoiceResult.newFooter = function(msgText) {
+ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
     Game.pause(true);
     var group = new PIXI.Container()
 
     var header = Utils.newImage({
-        "name": "assets/ChoicesScreen/txt_holder.png"
+        "name": "assets/EventScreen/event_holder.png"
     })
     group.addChild(header)
 
-    group.position.x = centerX
-    group.position.y = screenBottom - 80
+    group.position.x = centerX;
+    group.position.y = centerY;
 
     group.scale.x  = 0.001
     group.scale.y  = 0.001
 
 
     //
+    // Question
+    var question = new PIXI.Text(question, titleresultTextStyle);
+    group.addChild(question)
+    question.position.y = -120;
+    question.position.x = -question.width/2;
+
+
+    var result = null;
+    if(isGood){
+        result = new PIXI.Text("GOOD! +" + reward + "$/s", goodTextStyle);
+    }else{
+        result = new PIXI.Text("TOO BAD!", badTextStyle);
+    }
+
+    group.addChild(result)
+    result.position.y = -50;
+    result.position.x = -result.width/2; 
+
     // Text
     var text = new PIXI.Text(msgText, footerTextStyle);
     group.addChild(text)
-    text.position.x = -centerX + 50;
-    text.position.y = header.position.y;
-
-    text.anchor.x = 0
-    text.anchor.y = 0.5
+    text.position.y = 0;
+    text.position.x = -text.width/2;
 
 
     // Animation
@@ -70,7 +88,7 @@ ChoiceResult.newFooter = function(msgText) {
 
 
 ChoiceResult.showGoodResult = function(optionConfig) {
-    var header = ChoiceResult.newFooter(optionConfig.resultGood)
+    var header = ChoiceResult.newFooter(optionConfig.resultGood, optionConfig.text, true, optionConfig.reward)
     stage.addChild(header)
     Devguy.setAnimationAll("happy")
     TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
@@ -79,7 +97,7 @@ ChoiceResult.showGoodResult = function(optionConfig) {
 
 
 ChoiceResult.showBadResult = function(optionConfig) {
-    var header = ChoiceResult.newFooter(optionConfig.resultBad)
+    var header = ChoiceResult.newFooter(optionConfig.resultBad, optionConfig.text, false)
     stage.addChild(header)
     Devguy.setAnimationAll("sad")
     TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
