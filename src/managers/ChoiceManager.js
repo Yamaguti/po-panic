@@ -22,7 +22,11 @@ ChoiceManager.startTimer = function() {
 
     console.log(selectedOption.time)
 
-    TimerManager.startTimer(selectedOption.time*1000, function() {
+    // Settings default to prevent unespected crashes
+    var time = selectedOption.time
+    if (time === undefined) { time = 100 }
+
+    TimerManager.startTimer(time*1000, function() {
         ChoiceManager.promptUser(ChoicesScreen.currentChoiceIndex + 1)
     })
 }
