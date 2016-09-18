@@ -7,6 +7,8 @@ Game.newGame = function newGame() {
     Game.content = content
     stage.addChild(content)
 
+    Revenue.createText()
+
     var background  = newBackground()
     Game.background = background
     Game.content.addChild(background);

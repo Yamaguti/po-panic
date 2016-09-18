@@ -15,7 +15,6 @@ function preLoadFont(fontName) {
 
 
 function setupPosLoad() {
-    Revenue.createText()
     HomeScreen.setGameAvailable()
 }
 

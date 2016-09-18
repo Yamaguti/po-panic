@@ -4,11 +4,11 @@ var Revenue = {
     revenuePerSecond: 15,
 }
 
-Revenue.createText = function(){
+Revenue.createText = function() {
     var text = new PIXI.Text('0$ PER SECOND',{fontFamily : 'gameFontBold', fontSize: 24, align : 'center', });
     text.position.x = centerX
     text.position.y = centerY + 180
-    stage.addChild(text)
+    Game.content.addChild(text)
     text.anchor.x = 0.5
     text.anchor.y = 0.5
     Revenue.revText = text
