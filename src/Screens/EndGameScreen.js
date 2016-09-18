@@ -10,12 +10,16 @@ EndGameScreen.showEnding = function(good) {
     var whatever = []
     if(good){
         for (i = 1; i < 9; i++){
-            AudioLib.playSFX("assets/Sounds/sfx/game-win-vignette.mp3")
+            var winSFX = AudioLib.playOnLoop("assets/Sounds/sfx/game-win-vignette.mp3");
+            winSFX.volume = 0.5
+            NotificationManager.notify("StopBGM")
             whatever[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }else{
         for (i = 1; i < 46; i++){
-            AudioLib.playSFX("assets/Sounds/sfx/game-lose-vignette.mp3")
+            var loseSFX = AudioLib.playSFX("assets/Sounds/sfx/game-lose-vignette.mp3");
+            loseSFX.volume = 0.3
+            NotificationManager.notify("StopBGM")
             whatever[i] = 'assets/boat_fail/boat_fail_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }

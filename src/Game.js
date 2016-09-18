@@ -41,6 +41,9 @@ Game.newGame = function newGame() {
     Game.status = GAME_STARTED;
     NotificationManager.register("endGame", Game.finish)
 
+    //
+    // BGM
+
     var bgm = AudioLib.playOnLoop('assets/Sounds/bgm/jump higher run faster.ogg')
 
     NotificationManager.register("newMonth", function(month) {
@@ -57,6 +60,13 @@ Game.newGame = function newGame() {
         bgm.volume = 1-bgm.volume
     })
 
+    NotificationManager.register("StopBGM", function() {
+        bgm.pause()
+    })
+
+
+    //
+    // Sound Button
 
     var soundButton = MultipressButton.new("assets/Hud/bt_sound_on.png", {
         "onRelease": function() {
