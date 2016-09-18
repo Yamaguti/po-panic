@@ -66,8 +66,6 @@ EventScreen.showEvent = function(index) {
     
     stage.addChild(content)
 
-    TimerManager.startTimer(5000, EventScreen.autoCloseEvent);
-
 }
 
 EventScreen.confirmChoice = function(index)
