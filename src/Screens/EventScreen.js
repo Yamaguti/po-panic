@@ -26,14 +26,12 @@ EventScreen.showEvent = function(index) {
     content.addChild(holder)
 
     // Title
-    console.dir(gameEvents);
     var title = new PIXI.Text("OH OH!", titleTextStyle);
     content.addChild(title)
     title.position.x = holder.position.x - title.width/2;
     title.position.y = holder.position.y - 120;
 
-    // Title
-    console.dir(gameEvents);
+    // Description
     EventScreen.question = new PIXI.Text(gameEvents.gameEvents[index].label, descriptionTextStyle);
     content.addChild(EventScreen.question)
     EventScreen.question.position.x = holder.position.x - EventScreen.question.width/2;
