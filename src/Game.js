@@ -56,8 +56,6 @@ Game.newGame = function newGame() {
         }
     })
 
-    console.log(bgm.volume)
-
     NotificationManager.register("BGMButtonPressed", function(month) {
         bgm.volume = 1-bgm.volume
     })
