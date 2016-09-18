@@ -5,7 +5,7 @@ var Game = {}
 Game.newGame = function newGame() {
     var content = new PIXI.Container()
     Game.content = content
-    lowerStage.addChild(content)
+    stage.addChild(content)
 
     var background  = newBackground()
     Game.background = background

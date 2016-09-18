@@ -1,11 +1,7 @@
 
 PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
-// For the game
-var lowerStage = new PIXI.Container();
-
-// For everything above the game
-var stage      = new PIXI.Container();
+var stage = new PIXI.Container();
 
 var screenWidth  = 960
 var screenHeight = 540
