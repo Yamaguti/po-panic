@@ -7,30 +7,29 @@ GameBackground.startAnimation = function() {
     var background      = GameBackground.background
     var background_fire = GameBackground.background_fire
 
-
-    function changeBackgroundAlpha() {
-        background.alpha      = 1 - background.alpha
-        background_fire.alpha = 1 - background_fire.alpha
-    }
-
-
-    var current = 0
-    var listTimes = [
-        20,
-        50,
-        50,
-        200,
-        200,
-        300,
-        300,
-        500,
-        5000,
-    ]
-
-    for (i = 0; i < listTimes.length; i ++) {
-        current += listTimes[i]
-        TimerManager.startTimer(current, changeBackgroundAlpha)
-    }
+    TransitionManager.startTransition(background_fire, {
+        "time" : 300,
+        "easing" : "outBounce",
+        "alpha" : 1,
+        "onComplete": function() {
+            TimerManager.startTimer(50, function() {
+                TransitionManager.startTransition(background_fire, {
+                    "time" : 130,
+                    "easing" : "outBounce",
+                    "alpha" : 0.5,
+                    "onComplete":function() {
+                        TimerManager.startTimer(50, function() {
+                            TransitionManager.startTransition(background_fire, {
+                                "time" : 300,
+                                "easing" : "outBounce",
+                                "alpha" : 1,
+                            })
+                        })
+                    }
+                })
+            })
+        }
+    })
 }
 
 

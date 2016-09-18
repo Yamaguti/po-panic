@@ -67,7 +67,11 @@ Game.newGame = function newGame() {
     soundButton.position.y = screenBottom - 50
     content.addChild(soundButton)
 
-    GameBackground.startAnimation()
+    NotificationManager.register("newMonth", function(month) {
+        if (month == 12) {
+            GameBackground.startAnimation()
+        }
+    })
 }
 
 Game.update = function(dt){
