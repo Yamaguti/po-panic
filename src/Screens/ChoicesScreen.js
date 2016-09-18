@@ -6,7 +6,17 @@ var titleTextStyle       = {fontFamily : 'gameFontBold', fill: '#FE8C36',fontSiz
 var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', }
 
 
-ChoicesScreen.newAnswerButton = function(params) {
+//
+// Private Methods
+//
+
+ChoicesScreen.selectChoice = function(index) {
+    ChoicesScreen.animateOut()
+    ChoiceManager.selectChoice(index)
+}
+
+
+ChoicesScreen.newAnswerButton = function(params, index) {
     var group = new PIXI.Container();
     params = params || {}
 
@@ -18,7 +28,9 @@ ChoicesScreen.newAnswerButton = function(params) {
 
     // Button
     var button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
-        "onRelease": params.onRelease,
+        "onRelease": function() {
+            ChoicesScreen.selectChoice(index)
+        },
     })
 
     button.position.x = holder.position.x
@@ -94,38 +106,6 @@ ChoicesScreen.newAnswerButton = function(params) {
 }
 
 
-ChoicesScreen.showPlayerOptions = function(index) {
-    var content = new PIXI.Container();
-
-    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
-        "color": 0x000000,
-    })
-    content.addChild(background)
-    background.alpha = 0
-    ChoicesScreen.background = background
-
-    ChoicesScreen.buttons = []
-    for (i = 0; i < 3; i++) {
-        var option = gameQuestions.playerOptions[index].options[i];
-        var group = ChoicesScreen.newAnswerButton({
-            "option" : option,
-        })
-        content.addChild(group)
-
-        group.position.x = centerX - (i - 1) * 240
-        group.position.y = centerY
-
-        ChoicesScreen.buttons[i] = group
-    }
-
-    ChoicesScreen.animateIn()
-    TimerManager.startTimer(2000, function(){
-        ChoicesScreen.animateOut()
-    })
-    stage.addChild(content)
-}
-
-
 ChoicesScreen.animateIn = function() {
     for (i = 0; i < 3; i++) {
 
@@ -165,3 +145,35 @@ ChoicesScreen.animateOut = function() {
     })
 }
 
+
+//
+// Class
+//
+
+ChoicesScreen.showPlayerOptions = function(index) {
+    var content = new PIXI.Container();
+
+    var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
+        "color": 0x000000,
+    })
+    content.addChild(background)
+    background.alpha = 0
+    ChoicesScreen.background = background
+
+    ChoicesScreen.buttons = []
+    for (i = 0; i < 3; i++) {
+        var option = gameQuestions.playerOptions[index].options[i];
+        var group = ChoicesScreen.newAnswerButton({
+            "option" : option,
+        })
+        content.addChild(group)
+
+        group.position.x = centerX - (i - 1) * 240
+        group.position.y = centerY
+
+        ChoicesScreen.buttons[i] = group
+    }
+
+    ChoicesScreen.animateIn()
+    stage.addChild(content)
+}
