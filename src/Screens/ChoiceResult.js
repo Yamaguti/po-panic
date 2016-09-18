@@ -71,6 +71,8 @@ ChoiceResult.newFooter = function(msgText) {
 ChoiceResult.showGoodResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultGood)
     stage.addChild(header)
+    Devguy.setAnimationAll("happy")
+    TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
 }
 
@@ -78,6 +80,8 @@ ChoiceResult.showGoodResult = function(optionConfig) {
 ChoiceResult.showBadResult = function(optionConfig) {
     var header = ChoiceResult.newFooter(optionConfig.resultBad)
     stage.addChild(header)
+    Devguy.setAnimationAll("sad")
+    TimerManager.startTimer(2000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
 }
 
