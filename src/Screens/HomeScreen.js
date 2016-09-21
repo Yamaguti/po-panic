@@ -19,14 +19,15 @@ HomeScreen.showHome = function() {
 }
 
 
-HomeScreen.finish = function(callback){
-    TransitionManager.startTransition(HomeScreen.content.playButton.scale, {
+HomeScreen.finish = function(callback) {
+    var content = HomeScreen.content
+    TransitionManager.startTransition(content.playButton.scale, {
         "x" : 0.001,
         "y" : 0.001,
         "time" : 500,
         "easing" : "inBack",
         "onComplete" : function() {
-            HomeScreen.content.destroy()
+            content.destroy()
             if (callback) { callback(); }
         }
     })
@@ -57,5 +58,3 @@ HomeScreen.setGameAvailable = function() {
     playButton.position.x = centerX
     playButton.position.y = screenBottom - 80
 }
-
-
