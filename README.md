@@ -8,7 +8,7 @@ Here's a link to a live version of the game:
     https://www.linux.ime.usp.br/~akio/game-jam/tappsgamejam2016/
 
 ##Running locally
-There's a python script in the root folder of the project. It sets a local server to host the game on port 8000 and starts a browser tab with the game running. To use it, simply run the script by right clicking the file `startgame.py` on windows, and on MAC and Linux by typing in the terminal python startgame.py
+There's a python script in the root folder of the project. It sets a local server to host the game on port 8000 and starts a browser tab with the game running. To use it, simply run the script by right clicking the file `startgame.py` on Windows, and on MAC and Linux by typing in the terminal `python startgame.py` on the proper folder.
 
 
 # The Team
