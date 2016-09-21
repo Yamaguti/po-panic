@@ -13,16 +13,14 @@ This is a game created for a Game Jam hosted at Tapps Headquarters. Our purpose 
 
 # Credits
 
-We would like to thank everyone in our team for the effort and hard work. We would also like to give our kudos to anyone involved in the production of this awesome game, especially the jam host, Tapps. To our playtesters, a sincere thank you.
+We would like to thank everyone in our team for the effort and hard work. We would also like to give our kudos to anyone involved in the production of this awesome game, especially the jam host, Tapps. To our playtesters, our sincere compliments.
 
 
 ###Music and SFX!
 
-http://opengameart.org/content/jump-higher-run-faster-jump-run-miniboss-mix
-
-http://www.bfxr.net/
-
-Thank you to Cleyton R. Xavier, and the music provided in the following link: http://opengameart.org/content/game-over-theme
-
-Many thanks to http://www.newgrounds.com/audio/listen/330100 for the end game win music
+* http://opengameart.org/content/jump-higher-run-faster-jump-run-miniboss-mix
+* http://www.newgrounds.com/audio/listen/330100
+* http://www.bfxr.net/
+* Cleyton R. Xavier,
+    1. http://opengameart.org/content/game-over-theme
 
