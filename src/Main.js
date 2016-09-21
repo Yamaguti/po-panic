@@ -9,8 +9,6 @@ function preLoadFont(fontName) {
     var text = new PIXI.Text('This is a dummy text, dont remove pls', {fontFamily : fontName, fontSize: 24, align : 'center', });
     stage.addChild(text)
     text.alpha = 0
-
-    HomeScreen.showHome()
 }
 
 
@@ -95,5 +93,7 @@ function setupPreLoad() {
     preLoadFont('gameFontBold')
 
     loader.load();
+
+    HomeScreen.showHome()
 }
 
