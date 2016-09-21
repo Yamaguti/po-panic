@@ -67,14 +67,21 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
     group.animateOut = function() {
         if (!group.leaving) {
-            group.leaving = true
+            group.leaving        = true
+            var content          = ChoiceResult.content
+            ChoiceResult.content = null
+
             AudioLib.playSFX("assets/Sounds/sfx/button.wav")
+
             Game.pause(false);
             TransitionManager.startTransition(group.scale, {
                 "time": 400,
                 "x" : 0.001,
                 "y" : 0.001,
                 "easing" : "inBack",
+                "onComplete" : function() {
+                    content.destroy()
+                }
             })
 
             NotificationManager.notify("ChoiceResultScreensClosed")
@@ -90,8 +97,13 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
 
 ChoiceResult.showGoodResult = function(optionConfig) {
+    var content = new PIXI Container()
+    ChoiceResult.content = content
+    stage.addChild(content)
+
     var header = ChoiceResult.newFooter(optionConfig.resultGood, optionConfig.text, true, optionConfig.reward)
-    stage.addChild(header)
+    content.addChild(header)
+
     Devguy.setAnimationAll("happy")
     TimerManager.startTimer(3000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
@@ -99,8 +111,13 @@ ChoiceResult.showGoodResult = function(optionConfig) {
 
 
 ChoiceResult.showBadResult = function(optionConfig) {
+    var content = new PIXI Container()
+    ChoiceResult.content = content
+    stage.addChild(content)
+
     var header = ChoiceResult.newFooter(optionConfig.resultBad, optionConfig.text, false)
-    stage.addChild(header)
+    content.addChild(header)
+
     Devguy.setAnimationAll("sad")
     TimerManager.startTimer(3000, function(){Devguy.setAllRandomAnimations()})
     header.animateIn()
