@@ -43,7 +43,7 @@ TutorialScreen.nextTutorial = function() {
     AudioLib.playSFX("assets/Sounds/sfx/button.wav")
     TutorialScreen.index++;
 
-    if(gameTutorials.tutorials[TutorialScreen.index]) {
+    if (gameTutorials.tutorials[TutorialScreen.index]) {
         TutorialScreen.question.text = gameTutorials.tutorials[TutorialScreen.index].label;
     } else {
         TutorialScreen.closeTutorial();
