@@ -5,22 +5,21 @@ var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSiz
 
 
 EndGameScreen.showEnding = function(good) {
-
     ////create boat textures
-    var whatever = []
+    var sprites = []
     if(good){
         for (i = 1; i < 9; i++){
             var sfx    = AudioLib.playSFX("assets/Sounds/sfx/game-win-vignette.mp3");
             sfx.volume = 0.3
             NotificationManager.notify("StopBGM")
-            whatever[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
+            sprites[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }else{
         for (i = 1; i < 46; i++){
             var loseSFX = AudioLib.playSFX("assets/Sounds/sfx/game-lose-vignette.mp3");
             loseSFX.volume = 0.5
             NotificationManager.notify("StopBGM")
-            whatever[i] = 'assets/boat_fail/boat_fail_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
+            sprites[i] = 'assets/boat_fail/boat_fail_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
     }
 
@@ -28,9 +27,9 @@ EndGameScreen.showEnding = function(good) {
 
     // console.log(event)
 
-    for (var i=1; i < whatever.length; i++)
+    for (var i=1; i < sprites.length; i++)
     {
-         var texture = PIXI.Texture.fromImage(whatever[i]);
+         var texture = PIXI.Texture.fromImage(sprites[i]);
          textureArray.push(texture);
     };
 
