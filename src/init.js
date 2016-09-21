@@ -10,3 +10,5 @@ var stage = new PIXI.Container();
 
 // create a renderer instance.
 var renderer = PIXI.autoDetectRenderer(screenWidth, screenHeight, {backgroundColor : 0x1099bb});
+
+
