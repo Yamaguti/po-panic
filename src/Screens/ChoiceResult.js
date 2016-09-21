@@ -97,7 +97,7 @@ ChoiceResult.newFooter = function(msgText, question, isGood, reward) {
 
 
 ChoiceResult.showGoodResult = function(optionConfig) {
-    var content = new PIXI Container()
+    var content = new PIXI.Container()
     ChoiceResult.content = content
     stage.addChild(content)
 
@@ -111,7 +111,7 @@ ChoiceResult.showGoodResult = function(optionConfig) {
 
 
 ChoiceResult.showBadResult = function(optionConfig) {
-    var content = new PIXI Container()
+    var content = new PIXI.Container()
     ChoiceResult.content = content
     stage.addChild(content)
 
