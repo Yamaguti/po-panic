@@ -1,4 +1,12 @@
 
+# The Game
+Here's a link to a live version of the game:
+    https://www.linux.ime.usp.br/~akio/game-jam/tappsgamejam2016/
+
+##Running locally
+    There's a python script in the root folder of the project. It sets a local server to host the game on port 8000 and starts a browser tab with the game running. To use it, simply run the script by right clicking the file `startgame.py` on windows, and on MAC and Linux by typing in the terminal python startgame.py
+
+
 #Po's Panic Simulator
 This is a game created for a Game Jam hosted at Tapps Headquarters. Our purpose with this game is to spread awarness of how hard, wonderful, and funny it is to manage a team in game development. We hope you enjoy this game.
 
