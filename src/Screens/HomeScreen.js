@@ -4,38 +4,30 @@ var HomeScreen = {}
 
 
 HomeScreen.showHome = function() {
-    var texture = PIXI.Texture.fromImage('assets/Home/home.png');
-    // create a new Sprite using the texture
-    var background = new PIXI.Sprite(texture);
+    var content = new PIXI.Container()
+    stage.addChild(content);
 
-    // center the sprite's anchor point
-    background.anchor.x = 0.5;
-    background.anchor.y = 0.5;
+    // Adding Background
+    var background = Utils.newImage({
+        "name" : 'assets/Home/home.png',
+        "x"    : centerX,
+        "y"    : centerY
+    })
+    content.addChild(background);
 
-    background.position.x = centerX
-    background.position.y = centerY
-
-    background.scale.x = 2
-    background.scale.y = 2
-
-    stage.addChild(background);
-
-    HomeScreen.background = background
+    HomeScreen.content = content
 }
 
 
 HomeScreen.finish = function(callback){
-    TransitionManager.startTransition(HomeScreen.playButton.scale, {
+    TransitionManager.startTransition(HomeScreen.content.playButton.scale, {
         "x" : 0.001,
         "y" : 0.001,
         "time" : 500,
         "easing" : "inBack",
         "onComplete" : function() {
-            HomeScreen.background.destroy()
-            HomeScreen.playButton.destroy()
-            if (callback) {
-                callback()
-            }
+            HomeScreen.content.destroy()
+            if (callback) { callback(); }
         }
     })
 }
@@ -43,26 +35,27 @@ HomeScreen.finish = function(callback){
 
 
 HomeScreen.setGameAvailable = function() {
-    var button = Button.newButton("assets/Home/bt_play.png", {
+    var playButton = Button.newButton("assets/Home/bt_play.png", {
         "onRelease" : function() {
             HomeScreen.finish(Game.newGame)
         }
     })
+    var content = HomeScreen.content
+    content.playButton = playButton
+    HomeScreen.content.addChild(playButton);
 
-    button.scale.x = 0.001
-    button.scale.y = 0.001
-    HomeScreen.playButton = button
+    playButton.scale.x = 0.001
+    playButton.scale.y = 0.001
 
-    TransitionManager.startTransition(button.scale, {
+    TransitionManager.startTransition(playButton.scale, {
         "x" : 2,
         "y" : 2,
         "time" : 500,
         "easing" : "outBack"
     })
 
-    button.position.x = centerX
-    button.position.y = screenBottom - 80
-    stage.addChild(button);
+    playButton.position.x = centerX
+    playButton.position.y = screenBottom - 80
 }
 
 
