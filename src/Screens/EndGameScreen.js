@@ -1,11 +1,15 @@
 
 var EndGameScreen = {}
 
-var descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
+EndGameScreen.descriptionTextStyle = {fontFamily : 'gameFont',     fill: '#EEEEEE',fontSize: 30, align : 'center', wordWrap : true, wordWrapWidth : 500, }
 
 
 EndGameScreen.showEnding = function(good) {
-    ////create boat textures
+    var content = new PIXI.Container();
+    EndGameScreen.content = content;
+    stage.addChild(content)
+
+    // create boat textures
     var sprites = []
     if(good){
         for (i = 1; i < 9; i++){
@@ -14,7 +18,7 @@ EndGameScreen.showEnding = function(good) {
             NotificationManager.notify("StopBGM")
             sprites[i] = 'assets/boat_win/boat_win_0' + Math.floor(i/10).toFixed(0) + (i%10) +  '.png'
         }
-    }else{
+    } else {
         for (i = 1; i < 46; i++){
             var loseSFX = AudioLib.playSFX("assets/Sounds/sfx/game-lose-vignette.mp3");
             loseSFX.volume = 0.5
@@ -24,20 +28,12 @@ EndGameScreen.showEnding = function(good) {
     }
 
     var textureArray = [];
+    EndGameScreen.boatTextureArray = textureArray;
 
-    // console.log(event)
-
-    for (var i=1; i < sprites.length; i++)
-    {
+    for (var i = 1; i < sprites.length; i++) {
          var texture = PIXI.Texture.fromImage(sprites[i]);
          textureArray.push(texture);
     };
-
-    EndGameScreen.boatTextureArray = textureArray;
-
-
-    var content = new PIXI.Container();
-    EndGameScreen.content = content;
 
     var background = Utils.newRectangle(0, 0, screenWidth, screenHeight, {
         "color": 0x000000,
@@ -65,33 +61,37 @@ EndGameScreen.showEnding = function(good) {
         })
     }
     title.x = centerX;
-    title.y = centerY - 100;
+    title.y = centerY - 80;
     content.addChild(title)
 
     var gameResult = null;
-    if(good)
+
+    if(good) {
         gameResult = "You managed to reach the revenue goal! We are all going to cruise, baby!"
-    else
+    } else {
         gameResult = "You failed to reach the revenue goal...Maybe a lunch at the grandmother's restaurant?"
+    }
+
 
     // Description
-    EndGameScreen.question = new PIXI.Text(gameResult, descriptionTextStyle);
-    content.addChild(EndGameScreen.question)
-    EndGameScreen.question.position.x = holder.position.x - EndGameScreen.question.width/2;
-    EndGameScreen.question.position.y = holder.position.y;
+    var question = new PIXI.Text(gameResult, EndGameScreen.descriptionTextStyle);
+    content.addChild(question)
+    question.position.x = holder.position.x - question.width/2;
+    question.position.y = holder.position.y;
 
 
-    ///confirm button
-    EndGameScreen.button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
+    // Confirm button
+    var button = Button.newButton("assets/ChoicesScreen/bt_doit.png", {
         "onRelease": function() {
             EndGameScreen.restart()
         },
     })
 
-    EndGameScreen.button.position.x = centerX;
-    EndGameScreen.button.position.y = holder.position.y + 103
-    content.addChild(EndGameScreen.button)
+    button.position.x = centerX;
+    button.position.y = holder.position.y + 103
+    content.addChild(button)
 
+    // Create boat instance
     var boat = new PIXI.extras.MovieClip(EndGameScreen.boatTextureArray);
     boat.animationSpeed = 0.3
     boat.scale.x = 2;
@@ -101,11 +101,10 @@ EndGameScreen.showEnding = function(good) {
     boat.play()
 
     content.addChild(boat);
-
-    stage.addChild(content)
 }
 
-EndGameScreen.restart = function(index)
-{
+
+
+EndGameScreen.restart = function(index) {
 	location.reload();
 }
