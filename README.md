@@ -1,6 +1,6 @@
 
 #Po's Panic Simulator
-This is a game created for a Game Jam hosted at Tapps Headquarters. Our purpose with this game is to spread awarness of how hard, wonderful, and funny is to manage a team in game development. We hope you enjoy this game.
+This is a game created for a Game Jam hosted at Tapps Headquarters. Our purpose with this game is to spread awarness of how hard, wonderful, and funny it is to manage a team in game development. We hope you enjoy this game.
 
 
 # The Team
