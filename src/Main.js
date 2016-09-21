@@ -32,24 +32,6 @@ function update(dt){
 
 
 
-
-// Debug show fps
-// Check init.js for flag DEBUGMODE
-if (DEBUGMODE) {
-    var statsGizmo = new Stats();
-    statsGizmo.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
-    document.body.appendChild(statsGizmo.dom);
-
-    var _oldUpdate = update
-    update = function(dt) {
-        statsGizmo.begin();
-        _oldUpdate(dt)
-        statsGizmo.end();
-    }
-}
-
-
-
 function setupPreLoad() {
     // Prepare pos load elements, like fonts
     TimerManager.startTimer(timeToStart, function (){
@@ -68,7 +50,6 @@ function setupPreLoad() {
 
     // Add the renderer view element to the DOM
     document.body.appendChild(renderer.view);
-    requestAnimationFrame(animate);
 
     var lastUpdateTime = 0;
     var logicDt = 1000/60;
@@ -91,6 +72,24 @@ function setupPreLoad() {
         // render the stage
         renderer.render(stage);
     }
+    requestAnimationFrame(animate);
+
+
+    // Debug show fps
+    // Check init.js for flag DEBUGMODE
+    if (DEBUGMODE) {
+        var statsGizmo = new Stats();
+        statsGizmo.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+        document.body.appendChild(statsGizmo.dom);
+
+        var _oldAnimate = animate
+        animate = function(dt) {
+            statsGizmo.begin();
+            _oldAnimate(dt)
+            statsGizmo.end();
+        }
+    }
+
 
     preLoadFont('gameFont')
     preLoadFont('gameFontBold')
