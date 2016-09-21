@@ -8,14 +8,18 @@ var expectedRevenueTextStyle  = {fontFamily : 'gameFontBold', fill: Colors.yello
 
 
 EventScreen.showEvent = function(index) {
-	Game.pause(true);
-
     var content = new PIXI.Container();
-    content.position.x = centerX
-    content.position.y = centerY
-
+    content.position.x  = centerX
+    content.position.y  = centerY
     EventScreen.content = content;
 
+    content.scale.x = 0.001
+    content.scale.y = 0.001
+
+    stage.addChild(content)
+
+
+    // Holder
     var holder = Utils.newImage({
         "name": "assets/EventScreen/event_holder.png",
     })
@@ -29,7 +33,7 @@ EventScreen.showEvent = function(index) {
     title.position.y = - 120;
 
 
-    // Description
+    // Description Values
     var expectedDescriptionText = new PIXI.Text("Expected Revenue: ", eventDescriptionTextStyle);
     content.addChild(expectedDescriptionText)
     expectedDescriptionText.anchor.x = 1
@@ -41,7 +45,6 @@ EventScreen.showEvent = function(index) {
     expectedamountText.anchor.x = 0
     expectedamountText.position.x = expectedDescriptionText.position.x + 10
     expectedamountText.position.y = expectedDescriptionText.position.y - 1
-
 
     var currentRevenueDescriptionText = new PIXI.Text("Current Revenue: ", eventDescriptionTextStyle);
     content.addChild(currentRevenueDescriptionText)
@@ -65,12 +68,10 @@ EventScreen.showEvent = function(index) {
     button.position.y = 100
     content.addChild(button)
 
-    stage.addChild(content)
 
-    content.scale.x = 0.001
-    content.scale.y = 0.001
-
+    // Animations
     content.animateIn = function() {
+        Game.pause(true);
         AudioLib.playSFX("assets/Sounds/sfx/menu_in.wav")
         TransitionManager.startTransition(content.scale, {
             "time": 400,
@@ -88,7 +89,10 @@ EventScreen.showEvent = function(index) {
                 "x" : 0.001,
                 "y" : 0.001,
                 "easing" : "inBack",
-                "onComplete" : callback,
+                "onComplete" : function() {
+                    EventScreen.content.destroy()
+                    if (callback) { callback() };
+                }
             })
         }
     }
@@ -97,15 +101,16 @@ EventScreen.showEvent = function(index) {
 }
 
 
-EventScreen.closeEvent = function()
-{
+EventScreen.closeEvent = function() {
     EventScreen.content.animateOut(function() {
     	Game.pause(false);
     })
 }
 
-
 NotificationManager.register("newMonth", EventScreen.showEvent)
+
+
+// //Debug, uncoment if needed.
 // TimerManager.startTimer(3000, function() {
 //     NotificationManager.notify("newMonth", 3)
 // })
