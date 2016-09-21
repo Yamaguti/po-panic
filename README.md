@@ -4,11 +4,11 @@ This is a game created for a game jam made on Tapps Headquarters.
 
 
 # The Team
-. Epaminondas Neto
-. Felipe Yamaguti
-. Fernando Fioravante
-. Renan Carneiro
-. Sérgio Tomo
+* Epaminondas Neto
+* Felipe Yamaguti
+* Fernando Fioravante
+* Renan Carneiro
+* Sérgio Tomo
 
 
 # Credits
