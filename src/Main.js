@@ -36,11 +36,11 @@ function setupPreLoad() {
         setupPosLoad()
     })
 
-
-    WindowUtils.setResize()
-
     // Add the renderer view element to the DOM
     document.body.appendChild(renderer.view);
+
+    // Activate renderer's view reposition on window change
+    WindowUtils.setResize()
 
     var lastUpdateTime = 0;
     var logicDt = 1000/60;

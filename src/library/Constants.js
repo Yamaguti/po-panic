@@ -9,4 +9,3 @@ var screenBottom = screenHeight
 var screenRight  = screenWidth
 var screenTop    = 0
 var screenLeft   = 0
-
