@@ -52,9 +52,11 @@ TutorialScreen.nextTutorial = function() {
 
 
 TutorialScreen.microManageTutorial = function(index) {
-    var content = new PIXI.Container();
-    TutorialScreen.content = content;
-    TutorialScreen.index = index;
+    var content = new PIXI.Container()
+    stage.addChild(content)
+
+    TutorialScreen.content = content
+    TutorialScreen.index = index
     Game.pause(true);
 
     if (DEBUGSKIP) {
@@ -70,15 +72,14 @@ TutorialScreen.microManageTutorial = function(index) {
     content.addChild(holder)
 
     // Text
-    TutorialScreen.question = new PIXI.Text("CLICK AT THE SCREEN LIKE A MAD MAN!\nIt's your time to shine! You have the power to micro manage your team and earn extra revenue!", TutorialScreen.descriptionTextStyle);
-    content.addChild(TutorialScreen.question)
-    TutorialScreen.question.position.x = holder.position.x - TutorialScreen.question.width/2;
-    TutorialScreen.question.position.y = holder.position.y - TutorialScreen.question.height/2;
+    var question = new PIXI.Text("CLICK AT THE SCREEN LIKE A MAD MAN!\nIt's your time to shine! You have the power to micro manage your team and earn extra revenue!", TutorialScreen.descriptionTextStyle);
+    content.addChild(question)
+    question.position.x = holder.position.x - question.width/2;
+    question.position.y = holder.position.y - question.height/2;
+    TutorialScreen.question = question
 
-    stage.addChild(content)
-
-    TutorialScreen.question.interactive = true;
-    TutorialScreen.question.on('mousedown', function(){
+    holder.interactive = true;
+    holder.on('mousedown', function() {
         TutorialScreen.closeTutorial()
         Revenue.setMicromanage(true)
     });
@@ -86,8 +87,7 @@ TutorialScreen.microManageTutorial = function(index) {
 
 
 
-TutorialScreen.closeTutorial = function()
-{
+TutorialScreen.closeTutorial = function() {
 	Game.pause(false);
 	TimerManager.startTimer(100, function() {
         TutorialScreen.content.destroy()
