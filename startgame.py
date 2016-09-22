@@ -1,11 +1,10 @@
-#Instancia o arquivo Web e abre o Browser
+# Instancia o arquivo Web e abre o Browser
 
 import os
-import time
-import traceback
 import sys
 
 import webbrowser
+
 
 #
 # Methods
@@ -25,7 +24,6 @@ def getHTTPServerExecutable():
         return "SimpleHTTPServer"
 
 
-
 # get python executable
 executable = sys.executable
 
@@ -33,4 +31,3 @@ webbrowser.open("http://localhost:8000/index.html")
 
 # start http server
 os.system(executable + " -m " + getHTTPServerExecutable())
-
